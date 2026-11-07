@@ -509,7 +509,7 @@ class IdentityStore:
                 self.desk_notify(
                     "info",
                     "Unrostered Orca run",
-                    f"{name or run_id}: no Titanwarden principal until added to team.json",
+                    f"{name or run_id}: no Titanwarden principal until added to the roster file",
                 )
         return {"added": added, "updated": updated, "disabled": disabled, "refused": []}
 
