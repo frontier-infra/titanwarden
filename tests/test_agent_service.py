@@ -421,6 +421,32 @@ class AgentServiceTests(unittest.TestCase):
         self.assertEqual(calls, [("dispatch-one", "run-alpha")])
         self.assertEqual(result["bound_handle"], "worker_handle")
 
+    def test_roster_sync_reads_the_home_roster_file_by_default(self):
+        (self.home / "roster.json").write_text(
+            json.dumps({"ai": [{"id": "alpha", "run": "run-alpha"}, {"id": "beta", "run": "run-beta"}]}),
+            encoding="utf-8",
+        )
+        with mock.patch("tw.agent_service._orca_run_rows", return_value=[]):
+            result = self.service._master_operation("roster_sync", {})
+        self.assertIn("lead:beta", result["added"])
+
+    def test_roster_sync_default_path_stays_inside_home(self):
+        with mock.patch("tw.agent_service._orca_run_rows", return_value=[]):
+            with self.assertRaises(FileNotFoundError) as caught:
+                self.service._master_operation("roster_sync", {"path": ""})
+        self.assertEqual(Path(caught.exception.filename), self.home / "roster.json")
+
+    def test_roster_sync_honors_an_explicit_path(self):
+        roster = self.home / "elsewhere" / "custom-roster.json"
+        roster.parent.mkdir()
+        roster.write_text(
+            json.dumps({"ai": [{"id": "alpha", "run": "run-alpha"}, {"id": "gamma", "run": "run-gamma"}]}),
+            encoding="utf-8",
+        )
+        with mock.patch("tw.agent_service._orca_run_rows", return_value=[]):
+            result = self.service._master_operation("roster_sync", {"path": str(roster)})
+        self.assertIn("lead:gamma", result["added"])
+
     def test_roster_client_roots_feed_production_import_policy(self):
         client_root = self.home / "fake-client"
         source = client_root / ".env"

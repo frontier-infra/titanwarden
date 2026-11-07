@@ -10,6 +10,7 @@ import base64
 import collections
 import html
 import json
+import os
 import socket
 import threading
 import time
@@ -25,6 +26,20 @@ from .store import StoreError
 COOKIE = "__Host-tw-console"
 SECRET_CLASSES = ("standard", "sensitive", "restricted")
 ASSETS = Path(__file__).with_name("console_assets")
+DEFAULT_SUPPORT_CONTACT = ("Support: https://github.com/frontier-infra/titanwarden/issues. "
+                           "Security reports: the repository Security tab (see SECURITY.md)")
+
+
+def support_contact() -> str:
+    """The contact line on the /support pages. TW_SUPPORT_CONTACT replaces the default."""
+    return os.environ.get("TW_SUPPORT_CONTACT", "").strip() or DEFAULT_SUPPORT_CONTACT
+
+
+def support_text() -> str:
+    return ("Titanwarden human console. Read-only metadata requires Tailscale identity "
+            "and a passkey. Agents cannot enroll, initialize, unseal or reveal. "
+            "Use the CLI agent surface for credential use. Never send a passphrase, "
+            "recovery key or credential value to an agent. " + support_contact() + "\n")
 
 
 def page(content: str, *, csrf="", title="Overview", authenticated=False) -> str:
@@ -399,11 +414,7 @@ class ConsoleHandler(BaseHTTPRequestHandler):
                     "text/css; charset=utf-8" if name.endswith("css") else "text/javascript; charset=utf-8"))
                 return
             if self.path in {"/support/llms.txt", "/support/agent.md"}:
-                self._send(200, "Titanwarden human console. Read-only metadata requires Tailscale identity "
-                           "and a passkey. Agents cannot enroll, initialize, unseal or reveal. "
-                           "Use the CLI agent surface for credential use. Never send a passphrase, "
-                           "recovery key or credential value to an agent. Support: help@myagents.email\n",
-                           content_type="text/plain; charset=utf-8")
+                self._send(200, support_text(), content_type="text/plain; charset=utf-8")
                 return
             if self.path not in {"/", "/secrets"}:
                 self._send(404, "Not found")

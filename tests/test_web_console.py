@@ -11,6 +11,7 @@ import threading
 import unittest
 from pathlib import Path
 from types import SimpleNamespace
+from unittest import mock
 
 from webauthn.helpers.encode_cbor import encode_cbor
 
@@ -384,6 +385,23 @@ class ConsoleHTTPTests(unittest.TestCase):
         result = response.status, dict(response.getheaders()), response.read().decode()
         connection.close()
         return result
+
+    def test_support_pages_point_at_the_public_tracker_by_default(self):
+        with mock.patch.dict(os.environ):
+            os.environ.pop("TW_SUPPORT_CONTACT", None)
+            for path in ("/support/llms.txt", "/support/agent.md"):
+                status, _, body = self.request(path)
+                self.assertEqual(status, 200)
+                self.assertIn("Support: https://github.com/frontier-infra/titanwarden/issues", body)
+                self.assertIn("SECURITY.md", body)
+                self.assertNotIn("@", body)
+
+    def test_support_contact_is_configurable(self):
+        with mock.patch.dict(os.environ, {"TW_SUPPORT_CONTACT": "Support: https://support.example.test"}):
+            status, _, body = self.request("/support/llms.txt")
+        self.assertEqual(status, 200)
+        self.assertIn("Support: https://support.example.test", body)
+        self.assertNotIn("github.com/frontier-infra/titanwarden/issues", body)
 
     def test_forged_identity_headers_alone_cannot_read_metadata(self):
         status, headers, body = self.request("/secrets")
