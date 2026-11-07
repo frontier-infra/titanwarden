@@ -574,7 +574,8 @@ class AgentService:
             )
             return {"request_id": request_id, "state": "approved" if decision == "approve" else "denied"}
         if op == "roster_sync":
-            roster_path = Path(str(args.get("path") or "~/code/command/state/team/team.json")).expanduser()
+            # The roster lives in this install's TW_HOME unless the caller names a path.
+            roster_path = Path(str(args.get("path") or Path(self.home) / "state" / "team.json")).expanduser()
             roster = json.loads(roster_path.read_text(encoding="utf-8"))
             return self.identities.roster_sync(roster, _orca_run_rows())
         raise AgentServiceError("E_NOT_IMPLEMENTED", "operation is not implemented")

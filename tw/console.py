@@ -25,6 +25,11 @@ from .store import StoreError
 COOKIE = "__Host-tw-console"
 SECRET_CLASSES = ("standard", "sensitive", "restricted")
 ASSETS = Path(__file__).with_name("console_assets")
+# Shown by /support/llms.txt and /support/agent.md. An install can replace it with
+# its own contact through `python -m tw.broker --console-support` or TW_CONSOLE_SUPPORT.
+DEFAULT_SUPPORT = ("open an issue at https://github.com/frontier-infra/titanwarden/issues. "
+                   "Report a security problem privately from the repository's Security tab: "
+                   "https://github.com/frontier-infra/titanwarden/security")
 
 
 def page(content: str, *, csrf="", title="Overview", authenticated=False) -> str:
@@ -209,8 +214,10 @@ def put_fields(payload: dict) -> tuple[dict | None, str | None]:
 
 class ConsoleApplication:
     def __init__(self, metadata, config: PasskeyConfig, put=None, reveal=None, check_passphrase=None,
-                 unseal=None, seal=None):
+                 unseal=None, seal=None, support=DEFAULT_SUPPORT):
         self.metadata = metadata
+        # One line of plain text; line breaks are folded so the support text stays one line.
+        self.support = " ".join(str(support or DEFAULT_SUPPORT).split())
         self.auth = ConsoleAuth(config)
         self.config = config
         # AdminService.put_value when the broker wires it; None keeps the console read-only.
@@ -402,7 +409,7 @@ class ConsoleHandler(BaseHTTPRequestHandler):
                 self._send(200, "Titanwarden human console. Read-only metadata requires Tailscale identity "
                            "and a passkey. Agents cannot enroll, initialize, unseal or reveal. "
                            "Use the CLI agent surface for credential use. Never send a passphrase, "
-                           "recovery key or credential value to an agent. Support: help@myagents.email\n",
+                           "recovery key or credential value to an agent. Support: " + self.app.support + "\n",
                            content_type="text/plain; charset=utf-8")
                 return
             if self.path not in {"/", "/secrets"}:

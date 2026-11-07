@@ -571,6 +571,9 @@ def main(argv: list[str] | None = None) -> int:
                         help="Opt-in human console configuration; binds only 127.0.0.1:8787")
     parser.add_argument("--console-rp-id", help="Exact ts.net hostname")
     parser.add_argument("--console-user", help="Exact allowed Tailscale login")
+    parser.add_argument("--console-support", default=os.environ.get("TW_CONSOLE_SUPPORT"),
+                        help="Support contact the console's /support pages show; defaults to the project's "
+                             "GitHub Issues and Security tab")
     options = parser.parse_args(argv)
     if (options.console_config is None) != (options.console_rp_id is None and options.console_user is None):
         parser.error("Console requires config, RP ID and user together")
@@ -598,7 +601,8 @@ def main(argv: list[str] | None = None) -> int:
                                                               reveal=broker.admin.service.reveal_value,
                                                               check_passphrase=broker.seal.check_passphrase,
                                                               unseal=broker.admin.service.unseal_value,
-                                                              seal=broker.admin.service.seal_value))
+                                                              seal=broker.admin.service.seal_value,
+                                                              support=options.console_support))
         broker.run()
     finally:
         broker.close()

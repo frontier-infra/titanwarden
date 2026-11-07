@@ -26,11 +26,13 @@ class RepositoryTests(unittest.TestCase):
             self.assertNotIn("\N{EM DASH}", text, str(path))
             self.assertNotIn("\N{EN DASH}", text, str(path))
 
-    def test_workflow_uses_hosted_runners(self) -> None:
+    def test_workflow_uses_blacksmith_runners(self) -> None:
         workflow = (ROOT / ".github/workflows/test.yml").read_text(encoding="utf-8")
         self.assertNotIn("self-hosted", workflow)
-        self.assertIn("ubuntu-latest", workflow)
-        self.assertIn("macos-latest", workflow)
+        self.assertNotIn("ubuntu-latest", workflow)
+        self.assertNotIn("macos-latest", workflow)
+        self.assertIn("blacksmith-4vcpu-ubuntu-2404", workflow)
+        self.assertIn("blacksmith-6vcpu-macos-15", workflow)
 
     def test_public_docs_have_no_private_infrastructure(self) -> None:
         for path in (ROOT / "docs/support").glob("*"):

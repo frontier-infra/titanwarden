@@ -145,6 +145,17 @@ class AgentServiceTests(unittest.TestCase):
     def _request(self, op, args):
         return {"v": 1, "op": op, "request_id": "request", "token": self.token, "args": args, "ctx": {}}
 
+    def test_roster_sync_defaults_to_tw_home_roster(self):
+        roster = self.home / "state" / "team.json"
+        roster.parent.mkdir(exist_ok=True)
+        roster.write_text(json.dumps({"ai": [{"id": "alpha", "run": "run-alpha"}]}), encoding="utf-8")
+        with mock.patch("tw.agent_service._orca_run_rows", return_value=[]):
+            self.service._master_operation("roster_sync", {})
+            roster.unlink()
+            with self.assertRaises(FileNotFoundError) as raised:
+                self.service._master_operation("roster_sync", {})
+        self.assertEqual(Path(raised.exception.filename), roster)
+
     def test_status_records_matching_attestation(self):
         result = self.service.status(self._request("status", {}), 40)
         self.assertEqual(result["principal"], "lead:alpha")

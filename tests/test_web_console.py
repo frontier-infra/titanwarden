@@ -396,6 +396,18 @@ class ConsoleHTTPTests(unittest.TestCase):
             self.assertIn(flag, cookie)
         self.assertEqual(headers["Cache-Control"], "no-store")
 
+    def test_support_text_points_at_project_and_is_configurable(self):
+        for path in ("/support/llms.txt", "/support/agent.md"):
+            status, _, body = self.request(path)
+            self.assertEqual(status, 200)
+            self.assertIn("https://github.com/frontier-infra/titanwarden/issues", body)
+            self.assertIn("https://github.com/frontier-infra/titanwarden/security", body)
+        self.app.support = ConsoleApplication(self.app.metadata, self.config,
+                                              support="ops@example.test\nsecond line").support
+        status, _, body = self.request("/support/llms.txt")
+        self.assertEqual(status, 200)
+        self.assertTrue(body.endswith("Support: ops@example.test second line\n"))
+
     def test_wrong_identity_and_host_are_denied(self):
         self.assertEqual(self.request(headers={"Tailscale-User-Login": "other@example.test"})[0], 403)
         self.assertEqual(self.request(headers={"Host": "localhost"})[0], 403)
