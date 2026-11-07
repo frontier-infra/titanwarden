@@ -1,0 +1,9 @@
+[Unit]
+Description=Titanwarden health watch (names-only; posts a Desk blocker when the broker stops answering)
+
+[Service]
+Type=oneshot
+User=titanwarden
+Group=titanwarden
+Environment=PATH=/usr/local/bin:/usr/bin:/bin
+ExecStart=/data/titanwarden/current/.venv/bin/python /data/titanwarden/current/scripts/watch.py --home /data/titanwarden

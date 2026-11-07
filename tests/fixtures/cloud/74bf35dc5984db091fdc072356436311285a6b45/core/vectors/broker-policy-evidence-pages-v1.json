@@ -1,0 +1,181 @@
+{
+  "revision": 1,
+  "schema": "tw-policy-evidence-pages-fixture-v1",
+  "profile": "production",
+  "production_acceptable": true,
+  "source_fixture": "broker-epoch-pages-v2.json",
+  "source_sha256": "66b1c59dc2e944e5cf3e7516c56ef8ae16227f525adc09664be659e9a6d6e087",
+  "producer": {
+    "generator": "node core/scripts/export-evidence-pages-fixture.mjs",
+    "handler": "resolvePublicStage through real SQLite replay and process restart"
+  },
+  "cases": [
+    {
+      "id": "pending",
+      "intent_seq": 4,
+      "through_seq": 4,
+      "head": {
+        "hash": "960448bbf92cf361c7e7e2ae713465e5beaaf941a44fa96fb922884c4021dbd1",
+        "seq": 4
+      },
+      "private_deleted": false,
+      "restarted": false,
+      "response": {
+        "status": 200,
+        "body": "{\"ok\":true,\"code\":\"ok\",\"result\":{\"schema\":\"tw-epoch-public-v1\",\"policy_seq\":4,\"plan_id\":\"paginated\",\"fence\":1,\"created_at\":\"2027-01-15T08:00:00.000Z\",\"keyring\":[{\"digest\":\"ea6c2d077587220255613f3e77fe9a8cb124a01df7c84cda028712fb1454f36a\",\"key_id\":\"kek_a_2\",\"purpose\":\"kek\",\"scope\":\"a\"},{\"digest\":\"ff60cece71934384052cd204fe7ce97e256d57d6ad064223df966c28dd2645b4\",\"key_id\":\"kek_b_2\",\"purpose\":\"kek\",\"scope\":\"b\"},{\"digest\":\"980f5bb71eb0d40db4eb9a96915975874f8226280e47c1279822f7575f20cc6e\",\"key_id\":\"kek_a_1\",\"purpose\":\"kek\",\"scope\":\"a\"},{\"digest\":\"2f1c4dc5b77c4fe68d6a60a854e70e1c923664c83bdda249e878cb7078d8e665\",\"key_id\":\"kek_b_1\",\"purpose\":\"kek\",\"scope\":\"b\"},{\"digest\":\"6200ee8eee6e5217b3aaf0da913fc8c735e4bc34899e0445f7f4718817d774a0\",\"key_id\":\"fk\",\"purpose\":\"fingerprint\",\"scope\":\"*\"}],\"keyring_metadata\":[{\"key_id\":\"kek_a_2\",\"purpose\":\"kek\",\"project\":\"a\",\"version\":2,\"mk_generation\":2,\"aad_v\":2},{\"key_id\":\"kek_b_2\",\"purpose\":\"kek\",\"project\":\"b\",\"version\":2,\"mk_generation\":2,\"aad_v\":2},{\"key_id\":\"kek_a_1\",\"purpose\":\"kek\",\"project\":\"a\",\"version\":1,\"mk_generation\":2,\"aad_v\":2},{\"key_id\":\"kek_b_1\",\"purpose\":\"kek\",\"project\":\"b\",\"version\":1,\"mk_generation\":2,\"aad_v\":2},{\"key_id\":\"fk\",\"purpose\":\"fingerprint\",\"project\":null,\"version\":1,\"mk_generation\":2,\"aad_v\":2}],\"recipients\":[{\"kind\":\"member_key\",\"id\":\"key-owner\",\"kx_pub_sha256\":\"d8e5eea5914084304e387df60aa123996b8ae331558f4fd2d436f2b52ed0ea69\",\"wrap_digest\":\"08e14a33470a272d91321957ff6dfa1075175c889ab744669241b0f88673cf20\"},{\"kind\":\"recovery\",\"id\":\"recovery\",\"kx_pub_sha256\":\"d8e5eea5914084304e387df60aa123996b8ae331558f4fd2d436f2b52ed0ea69\",\"wrap_digest\":\"a1590a593b71519f830447c76d9afb7de0d6d04c46aee2baf0433e0114fe667b\"}],\"scoped_seals\":[]}}"
+      }
+    },
+    {
+      "id": "committed",
+      "intent_seq": 4,
+      "through_seq": 6,
+      "head": {
+        "hash": "5943f3620e2cb374d998b9e261c57891aff4f7d76636355bb321e57f7a136f75",
+        "seq": 6
+      },
+      "private_deleted": false,
+      "restarted": false,
+      "response": {
+        "status": 200,
+        "body": "{\"ok\":true,\"code\":\"ok\",\"result\":{\"schema\":\"tw-epoch-public-v1\",\"policy_seq\":4,\"plan_id\":\"paginated\",\"fence\":1,\"created_at\":\"2027-01-15T08:00:00.000Z\",\"keyring\":[{\"digest\":\"ea6c2d077587220255613f3e77fe9a8cb124a01df7c84cda028712fb1454f36a\",\"key_id\":\"kek_a_2\",\"purpose\":\"kek\",\"scope\":\"a\"},{\"digest\":\"ff60cece71934384052cd204fe7ce97e256d57d6ad064223df966c28dd2645b4\",\"key_id\":\"kek_b_2\",\"purpose\":\"kek\",\"scope\":\"b\"},{\"digest\":\"980f5bb71eb0d40db4eb9a96915975874f8226280e47c1279822f7575f20cc6e\",\"key_id\":\"kek_a_1\",\"purpose\":\"kek\",\"scope\":\"a\"},{\"digest\":\"2f1c4dc5b77c4fe68d6a60a854e70e1c923664c83bdda249e878cb7078d8e665\",\"key_id\":\"kek_b_1\",\"purpose\":\"kek\",\"scope\":\"b\"},{\"digest\":\"6200ee8eee6e5217b3aaf0da913fc8c735e4bc34899e0445f7f4718817d774a0\",\"key_id\":\"fk\",\"purpose\":\"fingerprint\",\"scope\":\"*\"}],\"keyring_metadata\":[{\"key_id\":\"kek_a_2\",\"purpose\":\"kek\",\"project\":\"a\",\"version\":2,\"mk_generation\":2,\"aad_v\":2},{\"key_id\":\"kek_b_2\",\"purpose\":\"kek\",\"project\":\"b\",\"version\":2,\"mk_generation\":2,\"aad_v\":2},{\"key_id\":\"kek_a_1\",\"purpose\":\"kek\",\"project\":\"a\",\"version\":1,\"mk_generation\":2,\"aad_v\":2},{\"key_id\":\"kek_b_1\",\"purpose\":\"kek\",\"project\":\"b\",\"version\":1,\"mk_generation\":2,\"aad_v\":2},{\"key_id\":\"fk\",\"purpose\":\"fingerprint\",\"project\":null,\"version\":1,\"mk_generation\":2,\"aad_v\":2}],\"recipients\":[{\"kind\":\"member_key\",\"id\":\"key-owner\",\"kx_pub_sha256\":\"d8e5eea5914084304e387df60aa123996b8ae331558f4fd2d436f2b52ed0ea69\",\"wrap_digest\":\"08e14a33470a272d91321957ff6dfa1075175c889ab744669241b0f88673cf20\"},{\"kind\":\"recovery\",\"id\":\"recovery\",\"kx_pub_sha256\":\"d8e5eea5914084304e387df60aa123996b8ae331558f4fd2d436f2b52ed0ea69\",\"wrap_digest\":\"a1590a593b71519f830447c76d9afb7de0d6d04c46aee2baf0433e0114fe667b\"}],\"scoped_seals\":[]}}"
+      }
+    },
+    {
+      "id": "cancelled",
+      "intent_seq": 7,
+      "through_seq": 8,
+      "head": {
+        "hash": "583822196a5965f2571dd5d195c31edfdd8ce8746308504e50447c3bbf0a390d",
+        "seq": 8
+      },
+      "private_deleted": false,
+      "restarted": false,
+      "response": {
+        "status": 200,
+        "body": "{\"ok\":true,\"code\":\"ok\",\"result\":{\"schema\":\"tw-epoch-public-v1\",\"policy_seq\":7,\"plan_id\":\"cancelled-intent\",\"fence\":1,\"created_at\":\"2027-01-16T08:00:00.000Z\",\"keyring\":[{\"digest\":\"e424dfbed27882681ea0e45bf8bb31707a0c369e9fd9bbcb9b80b5c5ffbe34e0\",\"key_id\":\"kek_a_3\",\"purpose\":\"kek\",\"scope\":\"a\"},{\"digest\":\"0126326f733c892fe47423bdd132545173b9a1b4cf51ddb609d418817167d0a7\",\"key_id\":\"kek_b_3\",\"purpose\":\"kek\",\"scope\":\"b\"},{\"digest\":\"82052dc62492250607fc845fbe559ae7536c00244a43fe155697b886b9bd6bf9\",\"key_id\":\"kek_a_2\",\"purpose\":\"kek\",\"scope\":\"a\"},{\"digest\":\"6006d04404eb6f8cfcae063d097cca6e33b7fb5c6031aa056a3337b434dfb5c8\",\"key_id\":\"kek_b_2\",\"purpose\":\"kek\",\"scope\":\"b\"},{\"digest\":\"16236cf7228c372485ce7467109792c4bd81f03093f6e259fee833de8f67d6fd\",\"key_id\":\"fk\",\"purpose\":\"fingerprint\",\"scope\":\"*\"}],\"keyring_metadata\":[{\"key_id\":\"kek_a_3\",\"purpose\":\"kek\",\"project\":\"a\",\"version\":3,\"mk_generation\":3,\"aad_v\":2},{\"key_id\":\"kek_b_3\",\"purpose\":\"kek\",\"project\":\"b\",\"version\":3,\"mk_generation\":3,\"aad_v\":2},{\"key_id\":\"kek_a_2\",\"purpose\":\"kek\",\"project\":\"a\",\"version\":2,\"mk_generation\":3,\"aad_v\":2},{\"key_id\":\"kek_b_2\",\"purpose\":\"kek\",\"project\":\"b\",\"version\":2,\"mk_generation\":3,\"aad_v\":2},{\"key_id\":\"fk\",\"purpose\":\"fingerprint\",\"project\":null,\"version\":1,\"mk_generation\":3,\"aad_v\":2}],\"recipients\":[{\"kind\":\"member_key\",\"id\":\"key-owner\",\"kx_pub_sha256\":\"d8e5eea5914084304e387df60aa123996b8ae331558f4fd2d436f2b52ed0ea69\",\"wrap_digest\":\"67df54f4d359985f94d3cf7d561eeb1c583f99518b89c7f5dccbbe2f31c870f6\"},{\"kind\":\"recovery\",\"id\":\"recovery\",\"kx_pub_sha256\":\"d8e5eea5914084304e387df60aa123996b8ae331558f4fd2d436f2b52ed0ea69\",\"wrap_digest\":\"764f6b4c169a782956499adae94e5f9d605b29e95f331629307bc10d028b2dfb\"}],\"scoped_seals\":[]}}"
+      }
+    },
+    {
+      "id": "cancelled-private-cleanup-restart",
+      "intent_seq": 7,
+      "through_seq": 8,
+      "head": {
+        "hash": "583822196a5965f2571dd5d195c31edfdd8ce8746308504e50447c3bbf0a390d",
+        "seq": 8
+      },
+      "private_deleted": true,
+      "restarted": true,
+      "response": {
+        "status": 200,
+        "body": "{\"ok\":true,\"code\":\"ok\",\"result\":{\"schema\":\"tw-epoch-public-v1\",\"policy_seq\":7,\"plan_id\":\"cancelled-intent\",\"fence\":1,\"created_at\":\"2027-01-16T08:00:00.000Z\",\"keyring\":[{\"digest\":\"e424dfbed27882681ea0e45bf8bb31707a0c369e9fd9bbcb9b80b5c5ffbe34e0\",\"key_id\":\"kek_a_3\",\"purpose\":\"kek\",\"scope\":\"a\"},{\"digest\":\"0126326f733c892fe47423bdd132545173b9a1b4cf51ddb609d418817167d0a7\",\"key_id\":\"kek_b_3\",\"purpose\":\"kek\",\"scope\":\"b\"},{\"digest\":\"82052dc62492250607fc845fbe559ae7536c00244a43fe155697b886b9bd6bf9\",\"key_id\":\"kek_a_2\",\"purpose\":\"kek\",\"scope\":\"a\"},{\"digest\":\"6006d04404eb6f8cfcae063d097cca6e33b7fb5c6031aa056a3337b434dfb5c8\",\"key_id\":\"kek_b_2\",\"purpose\":\"kek\",\"scope\":\"b\"},{\"digest\":\"16236cf7228c372485ce7467109792c4bd81f03093f6e259fee833de8f67d6fd\",\"key_id\":\"fk\",\"purpose\":\"fingerprint\",\"scope\":\"*\"}],\"keyring_metadata\":[{\"key_id\":\"kek_a_3\",\"purpose\":\"kek\",\"project\":\"a\",\"version\":3,\"mk_generation\":3,\"aad_v\":2},{\"key_id\":\"kek_b_3\",\"purpose\":\"kek\",\"project\":\"b\",\"version\":3,\"mk_generation\":3,\"aad_v\":2},{\"key_id\":\"kek_a_2\",\"purpose\":\"kek\",\"project\":\"a\",\"version\":2,\"mk_generation\":3,\"aad_v\":2},{\"key_id\":\"kek_b_2\",\"purpose\":\"kek\",\"project\":\"b\",\"version\":2,\"mk_generation\":3,\"aad_v\":2},{\"key_id\":\"fk\",\"purpose\":\"fingerprint\",\"project\":null,\"version\":1,\"mk_generation\":3,\"aad_v\":2}],\"recipients\":[{\"kind\":\"member_key\",\"id\":\"key-owner\",\"kx_pub_sha256\":\"d8e5eea5914084304e387df60aa123996b8ae331558f4fd2d436f2b52ed0ea69\",\"wrap_digest\":\"67df54f4d359985f94d3cf7d561eeb1c583f99518b89c7f5dccbbe2f31c870f6\"},{\"kind\":\"recovery\",\"id\":\"recovery\",\"kx_pub_sha256\":\"d8e5eea5914084304e387df60aa123996b8ae331558f4fd2d436f2b52ed0ea69\",\"wrap_digest\":\"764f6b4c169a782956499adae94e5f9d605b29e95f331629307bc10d028b2dfb\"}],\"scoped_seals\":[]}}"
+      }
+    }
+  ],
+  "client_refusals": [
+    {
+      "id": "recipient-array-hash-mismatch",
+      "source_case": "pending",
+      "response": {
+        "ok": true,
+        "code": "ok",
+        "result": {
+          "schema": "tw-epoch-public-v1",
+          "policy_seq": 4,
+          "plan_id": "paginated",
+          "fence": 1,
+          "created_at": "2027-01-15T08:00:00.000Z",
+          "keyring": [
+            {
+              "digest": "ea6c2d077587220255613f3e77fe9a8cb124a01df7c84cda028712fb1454f36a",
+              "key_id": "kek_a_2",
+              "purpose": "kek",
+              "scope": "a"
+            },
+            {
+              "digest": "ff60cece71934384052cd204fe7ce97e256d57d6ad064223df966c28dd2645b4",
+              "key_id": "kek_b_2",
+              "purpose": "kek",
+              "scope": "b"
+            },
+            {
+              "digest": "980f5bb71eb0d40db4eb9a96915975874f8226280e47c1279822f7575f20cc6e",
+              "key_id": "kek_a_1",
+              "purpose": "kek",
+              "scope": "a"
+            },
+            {
+              "digest": "2f1c4dc5b77c4fe68d6a60a854e70e1c923664c83bdda249e878cb7078d8e665",
+              "key_id": "kek_b_1",
+              "purpose": "kek",
+              "scope": "b"
+            },
+            {
+              "digest": "6200ee8eee6e5217b3aaf0da913fc8c735e4bc34899e0445f7f4718817d774a0",
+              "key_id": "fk",
+              "purpose": "fingerprint",
+              "scope": "*"
+            }
+          ],
+          "keyring_metadata": [
+            {
+              "key_id": "kek_a_2",
+              "purpose": "kek",
+              "project": "a",
+              "version": 2,
+              "mk_generation": 2,
+              "aad_v": 2
+            },
+            {
+              "key_id": "kek_b_2",
+              "purpose": "kek",
+              "project": "b",
+              "version": 2,
+              "mk_generation": 2,
+              "aad_v": 2
+            },
+            {
+              "key_id": "kek_a_1",
+              "purpose": "kek",
+              "project": "a",
+              "version": 1,
+              "mk_generation": 2,
+              "aad_v": 2
+            },
+            {
+              "key_id": "kek_b_1",
+              "purpose": "kek",
+              "project": "b",
+              "version": 1,
+              "mk_generation": 2,
+              "aad_v": 2
+            },
+            {
+              "key_id": "fk",
+              "purpose": "fingerprint",
+              "project": null,
+              "version": 1,
+              "mk_generation": 2,
+              "aad_v": 2
+            }
+          ],
+          "recipients": [
+            {
+              "kind": "member_key",
+              "id": "key-owner",
+              "kx_pub_sha256": "d8e5eea5914084304e387df60aa123996b8ae331558f4fd2d436f2b52ed0ea69",
+              "wrap_digest": "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"
+            },
+            {
+              "kind": "recovery",
+              "id": "recovery",
+              "kx_pub_sha256": "d8e5eea5914084304e387df60aa123996b8ae331558f4fd2d436f2b52ed0ea69",
+              "wrap_digest": "a1590a593b71519f830447c76d9afb7de0d6d04c46aee2baf0433e0114fe667b"
+            }
+          ],
+          "scoped_seals": []
+        }
+      },
+      "expected": "refuse"
+    }
+  ]
+}

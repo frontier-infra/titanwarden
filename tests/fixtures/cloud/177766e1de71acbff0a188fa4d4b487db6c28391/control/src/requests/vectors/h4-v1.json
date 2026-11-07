@@ -1,0 +1,2727 @@
+{
+  "v": 1,
+  "grant_id_rule": "grt_ plus canonical request id suffix",
+  "cases": [
+    {
+      "name": "exact target bounded grant",
+      "body": {
+        "request_id": "req_cccccccccccc"
+      },
+      "opened": {
+        "request": {
+          "request_id": "req_cccccccccccc",
+          "principal_id": "prn_dddddddddddd",
+          "token_id": "tok_eeeeeeeeeeee",
+          "kind": "access",
+          "target": "shared/api",
+          "ops": [
+            "inject",
+            "use"
+          ],
+          "reason": "Need service access",
+          "ttl_seconds": 604800
+        },
+        "origin": "broker",
+        "opened_at": "2026-10-16T12:00:00.000Z",
+        "open_seq": 10,
+        "default_at": "2026-10-16T13:00:00.000Z",
+        "rule": {
+          "delay_seconds": 3600,
+          "ttl_cap_seconds": 604800,
+          "enabled": true,
+          "ops": [
+            "audit",
+            "inject",
+            "put",
+            "use"
+          ]
+        },
+        "state": "open"
+      },
+      "context": {
+        "now": 1792155601000,
+        "principal": {
+          "id": "prn_dddddddddddd",
+          "project": "app",
+          "active": true
+        },
+        "token": {
+          "id": "tok_eeeeeeeeeeee",
+          "principal_id": "prn_dddddddddddd",
+          "active": true
+        },
+        "target": {
+          "path": "shared/api",
+          "project": "shared",
+          "class": "standard",
+          "active": true,
+          "client_approval_required": false
+        },
+        "rules": {
+          "own": {
+            "delay_seconds": 0,
+            "ttl_cap_seconds": 604800,
+            "enabled": true,
+            "ops": [
+              "audit",
+              "inject",
+              "put",
+              "use"
+            ]
+          },
+          "shared_standard": {
+            "delay_seconds": 3600,
+            "ttl_cap_seconds": 604800,
+            "enabled": true,
+            "ops": [
+              "audit",
+              "inject",
+              "put",
+              "use"
+            ]
+          },
+          "other_standard": {
+            "delay_seconds": 3600,
+            "ttl_cap_seconds": 86400,
+            "enabled": true,
+            "ops": [
+              "audit",
+              "inject",
+              "put",
+              "use"
+            ]
+          },
+          "cross_sensitive": {
+            "delay_seconds": 3600,
+            "ttl_cap_seconds": 14400,
+            "enabled": true,
+            "ops": [
+              "audit",
+              "inject",
+              "put",
+              "use"
+            ]
+          },
+          "restricted": {
+            "delay_seconds": 0,
+            "ttl_cap_seconds": 14400,
+            "enabled": false,
+            "ops": [
+              "audit",
+              "inject",
+              "put",
+              "use"
+            ]
+          },
+          "client": {
+            "delay_seconds": 0,
+            "ttl_cap_seconds": 14400,
+            "enabled": false,
+            "ops": [
+              "audit",
+              "inject",
+              "put",
+              "use"
+            ]
+          },
+          "create": {
+            "delay_seconds": 0,
+            "ttl_cap_seconds": 604800,
+            "enabled": true,
+            "ops": [
+              "put"
+            ]
+          },
+          "rotate": {
+            "delay_seconds": 0,
+            "ttl_cap_seconds": 14400,
+            "enabled": false,
+            "ops": [
+              "put"
+            ]
+          }
+        },
+        "policy_fresh": true
+      },
+      "accepted": true,
+      "body_canonical": "{\"request_id\":\"req_cccccccccccc\"}",
+      "body_sha256": "a72ecc1878d50bb1c7c248f59d00a2b42ed261ebf284fb26b8923c6356a5d7aa",
+      "request_grant_id": "grt_cccccccccccc",
+      "grant": {
+        "principal_id": "prn_dddddddddddd",
+        "pattern": "shared/api",
+        "ops": [
+          "inject",
+          "use"
+        ],
+        "max_class": "standard",
+        "expires_at": "2026-10-23T13:00:00.000Z"
+      },
+      "grant_canonical": "{\"expires_at\":\"2026-10-23T13:00:00.000Z\",\"max_class\":\"standard\",\"ops\":[\"inject\",\"use\"],\"pattern\":\"shared/api\",\"principal_id\":\"prn_dddddddddddd\"}",
+      "grant_sha256": "f2d32dd05d4f80a8f0670e055b0eb277ea07f86a6365682df14a43956fdb7497"
+    },
+    {
+      "name": "denied precedes default",
+      "body": {
+        "request_id": "req_cccccccccccc"
+      },
+      "opened": {
+        "request": {
+          "request_id": "req_cccccccccccc",
+          "principal_id": "prn_dddddddddddd",
+          "token_id": "tok_eeeeeeeeeeee",
+          "kind": "access",
+          "target": "shared/api",
+          "ops": [
+            "inject",
+            "use"
+          ],
+          "reason": "Need service access",
+          "ttl_seconds": 604800
+        },
+        "origin": "broker",
+        "opened_at": "2026-10-16T12:00:00.000Z",
+        "open_seq": 10,
+        "default_at": "2026-10-16T13:00:00.000Z",
+        "rule": {
+          "delay_seconds": 3600,
+          "ttl_cap_seconds": 604800,
+          "enabled": true,
+          "ops": [
+            "audit",
+            "inject",
+            "put",
+            "use"
+          ]
+        },
+        "state": "denied"
+      },
+      "context": {
+        "now": 1792155601000,
+        "principal": {
+          "id": "prn_dddddddddddd",
+          "project": "app",
+          "active": true
+        },
+        "token": {
+          "id": "tok_eeeeeeeeeeee",
+          "principal_id": "prn_dddddddddddd",
+          "active": true
+        },
+        "target": {
+          "path": "shared/api",
+          "project": "shared",
+          "class": "standard",
+          "active": true,
+          "client_approval_required": false
+        },
+        "rules": {
+          "own": {
+            "delay_seconds": 0,
+            "ttl_cap_seconds": 604800,
+            "enabled": true,
+            "ops": [
+              "audit",
+              "inject",
+              "put",
+              "use"
+            ]
+          },
+          "shared_standard": {
+            "delay_seconds": 3600,
+            "ttl_cap_seconds": 604800,
+            "enabled": true,
+            "ops": [
+              "audit",
+              "inject",
+              "put",
+              "use"
+            ]
+          },
+          "other_standard": {
+            "delay_seconds": 3600,
+            "ttl_cap_seconds": 86400,
+            "enabled": true,
+            "ops": [
+              "audit",
+              "inject",
+              "put",
+              "use"
+            ]
+          },
+          "cross_sensitive": {
+            "delay_seconds": 3600,
+            "ttl_cap_seconds": 14400,
+            "enabled": true,
+            "ops": [
+              "audit",
+              "inject",
+              "put",
+              "use"
+            ]
+          },
+          "restricted": {
+            "delay_seconds": 0,
+            "ttl_cap_seconds": 14400,
+            "enabled": false,
+            "ops": [
+              "audit",
+              "inject",
+              "put",
+              "use"
+            ]
+          },
+          "client": {
+            "delay_seconds": 0,
+            "ttl_cap_seconds": 14400,
+            "enabled": false,
+            "ops": [
+              "audit",
+              "inject",
+              "put",
+              "use"
+            ]
+          },
+          "create": {
+            "delay_seconds": 0,
+            "ttl_cap_seconds": 604800,
+            "enabled": true,
+            "ops": [
+              "put"
+            ]
+          },
+          "rotate": {
+            "delay_seconds": 0,
+            "ttl_cap_seconds": 14400,
+            "enabled": false,
+            "ops": [
+              "put"
+            ]
+          }
+        },
+        "policy_fresh": true
+      },
+      "accepted": false,
+      "body_canonical": "{\"request_id\":\"req_cccccccccccc\"}",
+      "body_sha256": "a72ecc1878d50bb1c7c248f59d00a2b42ed261ebf284fb26b8923c6356a5d7aa"
+    },
+    {
+      "name": "approved precedes default",
+      "body": {
+        "request_id": "req_cccccccccccc"
+      },
+      "opened": {
+        "request": {
+          "request_id": "req_cccccccccccc",
+          "principal_id": "prn_dddddddddddd",
+          "token_id": "tok_eeeeeeeeeeee",
+          "kind": "access",
+          "target": "shared/api",
+          "ops": [
+            "inject",
+            "use"
+          ],
+          "reason": "Need service access",
+          "ttl_seconds": 604800
+        },
+        "origin": "broker",
+        "opened_at": "2026-10-16T12:00:00.000Z",
+        "open_seq": 10,
+        "default_at": "2026-10-16T13:00:00.000Z",
+        "rule": {
+          "delay_seconds": 3600,
+          "ttl_cap_seconds": 604800,
+          "enabled": true,
+          "ops": [
+            "audit",
+            "inject",
+            "put",
+            "use"
+          ]
+        },
+        "state": "approved"
+      },
+      "context": {
+        "now": 1792155601000,
+        "principal": {
+          "id": "prn_dddddddddddd",
+          "project": "app",
+          "active": true
+        },
+        "token": {
+          "id": "tok_eeeeeeeeeeee",
+          "principal_id": "prn_dddddddddddd",
+          "active": true
+        },
+        "target": {
+          "path": "shared/api",
+          "project": "shared",
+          "class": "standard",
+          "active": true,
+          "client_approval_required": false
+        },
+        "rules": {
+          "own": {
+            "delay_seconds": 0,
+            "ttl_cap_seconds": 604800,
+            "enabled": true,
+            "ops": [
+              "audit",
+              "inject",
+              "put",
+              "use"
+            ]
+          },
+          "shared_standard": {
+            "delay_seconds": 3600,
+            "ttl_cap_seconds": 604800,
+            "enabled": true,
+            "ops": [
+              "audit",
+              "inject",
+              "put",
+              "use"
+            ]
+          },
+          "other_standard": {
+            "delay_seconds": 3600,
+            "ttl_cap_seconds": 86400,
+            "enabled": true,
+            "ops": [
+              "audit",
+              "inject",
+              "put",
+              "use"
+            ]
+          },
+          "cross_sensitive": {
+            "delay_seconds": 3600,
+            "ttl_cap_seconds": 14400,
+            "enabled": true,
+            "ops": [
+              "audit",
+              "inject",
+              "put",
+              "use"
+            ]
+          },
+          "restricted": {
+            "delay_seconds": 0,
+            "ttl_cap_seconds": 14400,
+            "enabled": false,
+            "ops": [
+              "audit",
+              "inject",
+              "put",
+              "use"
+            ]
+          },
+          "client": {
+            "delay_seconds": 0,
+            "ttl_cap_seconds": 14400,
+            "enabled": false,
+            "ops": [
+              "audit",
+              "inject",
+              "put",
+              "use"
+            ]
+          },
+          "create": {
+            "delay_seconds": 0,
+            "ttl_cap_seconds": 604800,
+            "enabled": true,
+            "ops": [
+              "put"
+            ]
+          },
+          "rotate": {
+            "delay_seconds": 0,
+            "ttl_cap_seconds": 14400,
+            "enabled": false,
+            "ops": [
+              "put"
+            ]
+          }
+        },
+        "policy_fresh": true
+      },
+      "accepted": false,
+      "body_canonical": "{\"request_id\":\"req_cccccccccccc\"}",
+      "body_sha256": "a72ecc1878d50bb1c7c248f59d00a2b42ed261ebf284fb26b8923c6356a5d7aa"
+    },
+    {
+      "name": "defaulted precedes default",
+      "body": {
+        "request_id": "req_cccccccccccc"
+      },
+      "opened": {
+        "request": {
+          "request_id": "req_cccccccccccc",
+          "principal_id": "prn_dddddddddddd",
+          "token_id": "tok_eeeeeeeeeeee",
+          "kind": "access",
+          "target": "shared/api",
+          "ops": [
+            "inject",
+            "use"
+          ],
+          "reason": "Need service access",
+          "ttl_seconds": 604800
+        },
+        "origin": "broker",
+        "opened_at": "2026-10-16T12:00:00.000Z",
+        "open_seq": 10,
+        "default_at": "2026-10-16T13:00:00.000Z",
+        "rule": {
+          "delay_seconds": 3600,
+          "ttl_cap_seconds": 604800,
+          "enabled": true,
+          "ops": [
+            "audit",
+            "inject",
+            "put",
+            "use"
+          ]
+        },
+        "state": "defaulted"
+      },
+      "context": {
+        "now": 1792155601000,
+        "principal": {
+          "id": "prn_dddddddddddd",
+          "project": "app",
+          "active": true
+        },
+        "token": {
+          "id": "tok_eeeeeeeeeeee",
+          "principal_id": "prn_dddddddddddd",
+          "active": true
+        },
+        "target": {
+          "path": "shared/api",
+          "project": "shared",
+          "class": "standard",
+          "active": true,
+          "client_approval_required": false
+        },
+        "rules": {
+          "own": {
+            "delay_seconds": 0,
+            "ttl_cap_seconds": 604800,
+            "enabled": true,
+            "ops": [
+              "audit",
+              "inject",
+              "put",
+              "use"
+            ]
+          },
+          "shared_standard": {
+            "delay_seconds": 3600,
+            "ttl_cap_seconds": 604800,
+            "enabled": true,
+            "ops": [
+              "audit",
+              "inject",
+              "put",
+              "use"
+            ]
+          },
+          "other_standard": {
+            "delay_seconds": 3600,
+            "ttl_cap_seconds": 86400,
+            "enabled": true,
+            "ops": [
+              "audit",
+              "inject",
+              "put",
+              "use"
+            ]
+          },
+          "cross_sensitive": {
+            "delay_seconds": 3600,
+            "ttl_cap_seconds": 14400,
+            "enabled": true,
+            "ops": [
+              "audit",
+              "inject",
+              "put",
+              "use"
+            ]
+          },
+          "restricted": {
+            "delay_seconds": 0,
+            "ttl_cap_seconds": 14400,
+            "enabled": false,
+            "ops": [
+              "audit",
+              "inject",
+              "put",
+              "use"
+            ]
+          },
+          "client": {
+            "delay_seconds": 0,
+            "ttl_cap_seconds": 14400,
+            "enabled": false,
+            "ops": [
+              "audit",
+              "inject",
+              "put",
+              "use"
+            ]
+          },
+          "create": {
+            "delay_seconds": 0,
+            "ttl_cap_seconds": 604800,
+            "enabled": true,
+            "ops": [
+              "put"
+            ]
+          },
+          "rotate": {
+            "delay_seconds": 0,
+            "ttl_cap_seconds": 14400,
+            "enabled": false,
+            "ops": [
+              "put"
+            ]
+          }
+        },
+        "policy_fresh": true
+      },
+      "accepted": false,
+      "body_canonical": "{\"request_id\":\"req_cccccccccccc\"}",
+      "body_sha256": "a72ecc1878d50bb1c7c248f59d00a2b42ed261ebf284fb26b8923c6356a5d7aa"
+    },
+    {
+      "name": "withdrawn precedes default",
+      "body": {
+        "request_id": "req_cccccccccccc"
+      },
+      "opened": {
+        "request": {
+          "request_id": "req_cccccccccccc",
+          "principal_id": "prn_dddddddddddd",
+          "token_id": "tok_eeeeeeeeeeee",
+          "kind": "access",
+          "target": "shared/api",
+          "ops": [
+            "inject",
+            "use"
+          ],
+          "reason": "Need service access",
+          "ttl_seconds": 604800
+        },
+        "origin": "broker",
+        "opened_at": "2026-10-16T12:00:00.000Z",
+        "open_seq": 10,
+        "default_at": "2026-10-16T13:00:00.000Z",
+        "rule": {
+          "delay_seconds": 3600,
+          "ttl_cap_seconds": 604800,
+          "enabled": true,
+          "ops": [
+            "audit",
+            "inject",
+            "put",
+            "use"
+          ]
+        },
+        "state": "withdrawn"
+      },
+      "context": {
+        "now": 1792155601000,
+        "principal": {
+          "id": "prn_dddddddddddd",
+          "project": "app",
+          "active": true
+        },
+        "token": {
+          "id": "tok_eeeeeeeeeeee",
+          "principal_id": "prn_dddddddddddd",
+          "active": true
+        },
+        "target": {
+          "path": "shared/api",
+          "project": "shared",
+          "class": "standard",
+          "active": true,
+          "client_approval_required": false
+        },
+        "rules": {
+          "own": {
+            "delay_seconds": 0,
+            "ttl_cap_seconds": 604800,
+            "enabled": true,
+            "ops": [
+              "audit",
+              "inject",
+              "put",
+              "use"
+            ]
+          },
+          "shared_standard": {
+            "delay_seconds": 3600,
+            "ttl_cap_seconds": 604800,
+            "enabled": true,
+            "ops": [
+              "audit",
+              "inject",
+              "put",
+              "use"
+            ]
+          },
+          "other_standard": {
+            "delay_seconds": 3600,
+            "ttl_cap_seconds": 86400,
+            "enabled": true,
+            "ops": [
+              "audit",
+              "inject",
+              "put",
+              "use"
+            ]
+          },
+          "cross_sensitive": {
+            "delay_seconds": 3600,
+            "ttl_cap_seconds": 14400,
+            "enabled": true,
+            "ops": [
+              "audit",
+              "inject",
+              "put",
+              "use"
+            ]
+          },
+          "restricted": {
+            "delay_seconds": 0,
+            "ttl_cap_seconds": 14400,
+            "enabled": false,
+            "ops": [
+              "audit",
+              "inject",
+              "put",
+              "use"
+            ]
+          },
+          "client": {
+            "delay_seconds": 0,
+            "ttl_cap_seconds": 14400,
+            "enabled": false,
+            "ops": [
+              "audit",
+              "inject",
+              "put",
+              "use"
+            ]
+          },
+          "create": {
+            "delay_seconds": 0,
+            "ttl_cap_seconds": 604800,
+            "enabled": true,
+            "ops": [
+              "put"
+            ]
+          },
+          "rotate": {
+            "delay_seconds": 0,
+            "ttl_cap_seconds": 14400,
+            "enabled": false,
+            "ops": [
+              "put"
+            ]
+          }
+        },
+        "policy_fresh": true
+      },
+      "accepted": false,
+      "body_canonical": "{\"request_id\":\"req_cccccccccccc\"}",
+      "body_sha256": "a72ecc1878d50bb1c7c248f59d00a2b42ed261ebf284fb26b8923c6356a5d7aa"
+    },
+    {
+      "name": "expired precedes default",
+      "body": {
+        "request_id": "req_cccccccccccc"
+      },
+      "opened": {
+        "request": {
+          "request_id": "req_cccccccccccc",
+          "principal_id": "prn_dddddddddddd",
+          "token_id": "tok_eeeeeeeeeeee",
+          "kind": "access",
+          "target": "shared/api",
+          "ops": [
+            "inject",
+            "use"
+          ],
+          "reason": "Need service access",
+          "ttl_seconds": 604800
+        },
+        "origin": "broker",
+        "opened_at": "2026-10-16T12:00:00.000Z",
+        "open_seq": 10,
+        "default_at": "2026-10-16T13:00:00.000Z",
+        "rule": {
+          "delay_seconds": 3600,
+          "ttl_cap_seconds": 604800,
+          "enabled": true,
+          "ops": [
+            "audit",
+            "inject",
+            "put",
+            "use"
+          ]
+        },
+        "state": "expired"
+      },
+      "context": {
+        "now": 1792155601000,
+        "principal": {
+          "id": "prn_dddddddddddd",
+          "project": "app",
+          "active": true
+        },
+        "token": {
+          "id": "tok_eeeeeeeeeeee",
+          "principal_id": "prn_dddddddddddd",
+          "active": true
+        },
+        "target": {
+          "path": "shared/api",
+          "project": "shared",
+          "class": "standard",
+          "active": true,
+          "client_approval_required": false
+        },
+        "rules": {
+          "own": {
+            "delay_seconds": 0,
+            "ttl_cap_seconds": 604800,
+            "enabled": true,
+            "ops": [
+              "audit",
+              "inject",
+              "put",
+              "use"
+            ]
+          },
+          "shared_standard": {
+            "delay_seconds": 3600,
+            "ttl_cap_seconds": 604800,
+            "enabled": true,
+            "ops": [
+              "audit",
+              "inject",
+              "put",
+              "use"
+            ]
+          },
+          "other_standard": {
+            "delay_seconds": 3600,
+            "ttl_cap_seconds": 86400,
+            "enabled": true,
+            "ops": [
+              "audit",
+              "inject",
+              "put",
+              "use"
+            ]
+          },
+          "cross_sensitive": {
+            "delay_seconds": 3600,
+            "ttl_cap_seconds": 14400,
+            "enabled": true,
+            "ops": [
+              "audit",
+              "inject",
+              "put",
+              "use"
+            ]
+          },
+          "restricted": {
+            "delay_seconds": 0,
+            "ttl_cap_seconds": 14400,
+            "enabled": false,
+            "ops": [
+              "audit",
+              "inject",
+              "put",
+              "use"
+            ]
+          },
+          "client": {
+            "delay_seconds": 0,
+            "ttl_cap_seconds": 14400,
+            "enabled": false,
+            "ops": [
+              "audit",
+              "inject",
+              "put",
+              "use"
+            ]
+          },
+          "create": {
+            "delay_seconds": 0,
+            "ttl_cap_seconds": 604800,
+            "enabled": true,
+            "ops": [
+              "put"
+            ]
+          },
+          "rotate": {
+            "delay_seconds": 0,
+            "ttl_cap_seconds": 14400,
+            "enabled": false,
+            "ops": [
+              "put"
+            ]
+          }
+        },
+        "policy_fresh": true
+      },
+      "accepted": false,
+      "body_canonical": "{\"request_id\":\"req_cccccccccccc\"}",
+      "body_sha256": "a72ecc1878d50bb1c7c248f59d00a2b42ed261ebf284fb26b8923c6356a5d7aa"
+    },
+    {
+      "name": "agent origin",
+      "body": {
+        "request_id": "req_cccccccccccc"
+      },
+      "opened": {
+        "request": {
+          "request_id": "req_cccccccccccc",
+          "principal_id": "prn_dddddddddddd",
+          "token_id": "tok_eeeeeeeeeeee",
+          "kind": "access",
+          "target": "shared/api",
+          "ops": [
+            "inject",
+            "use"
+          ],
+          "reason": "Need service access",
+          "ttl_seconds": 604800
+        },
+        "origin": "agent",
+        "opened_at": "2026-10-16T12:00:00.000Z",
+        "open_seq": null,
+        "default_at": null,
+        "rule": {
+          "delay_seconds": 3600,
+          "ttl_cap_seconds": 604800,
+          "enabled": true,
+          "ops": [
+            "audit",
+            "inject",
+            "put",
+            "use"
+          ]
+        },
+        "state": "open"
+      },
+      "context": {
+        "now": 1792155601000,
+        "principal": {
+          "id": "prn_dddddddddddd",
+          "project": "app",
+          "active": true
+        },
+        "token": {
+          "id": "tok_eeeeeeeeeeee",
+          "principal_id": "prn_dddddddddddd",
+          "active": true
+        },
+        "target": {
+          "path": "shared/api",
+          "project": "shared",
+          "class": "standard",
+          "active": true,
+          "client_approval_required": false
+        },
+        "rules": {
+          "own": {
+            "delay_seconds": 0,
+            "ttl_cap_seconds": 604800,
+            "enabled": true,
+            "ops": [
+              "audit",
+              "inject",
+              "put",
+              "use"
+            ]
+          },
+          "shared_standard": {
+            "delay_seconds": 3600,
+            "ttl_cap_seconds": 604800,
+            "enabled": true,
+            "ops": [
+              "audit",
+              "inject",
+              "put",
+              "use"
+            ]
+          },
+          "other_standard": {
+            "delay_seconds": 3600,
+            "ttl_cap_seconds": 86400,
+            "enabled": true,
+            "ops": [
+              "audit",
+              "inject",
+              "put",
+              "use"
+            ]
+          },
+          "cross_sensitive": {
+            "delay_seconds": 3600,
+            "ttl_cap_seconds": 14400,
+            "enabled": true,
+            "ops": [
+              "audit",
+              "inject",
+              "put",
+              "use"
+            ]
+          },
+          "restricted": {
+            "delay_seconds": 0,
+            "ttl_cap_seconds": 14400,
+            "enabled": false,
+            "ops": [
+              "audit",
+              "inject",
+              "put",
+              "use"
+            ]
+          },
+          "client": {
+            "delay_seconds": 0,
+            "ttl_cap_seconds": 14400,
+            "enabled": false,
+            "ops": [
+              "audit",
+              "inject",
+              "put",
+              "use"
+            ]
+          },
+          "create": {
+            "delay_seconds": 0,
+            "ttl_cap_seconds": 604800,
+            "enabled": true,
+            "ops": [
+              "put"
+            ]
+          },
+          "rotate": {
+            "delay_seconds": 0,
+            "ttl_cap_seconds": 14400,
+            "enabled": false,
+            "ops": [
+              "put"
+            ]
+          }
+        },
+        "policy_fresh": true
+      },
+      "accepted": false,
+      "body_canonical": "{\"request_id\":\"req_cccccccccccc\"}",
+      "body_sha256": "a72ecc1878d50bb1c7c248f59d00a2b42ed261ebf284fb26b8923c6356a5d7aa"
+    },
+    {
+      "name": "revoked token",
+      "body": {
+        "request_id": "req_cccccccccccc"
+      },
+      "opened": {
+        "request": {
+          "request_id": "req_cccccccccccc",
+          "principal_id": "prn_dddddddddddd",
+          "token_id": "tok_eeeeeeeeeeee",
+          "kind": "access",
+          "target": "shared/api",
+          "ops": [
+            "inject",
+            "use"
+          ],
+          "reason": "Need service access",
+          "ttl_seconds": 604800
+        },
+        "origin": "broker",
+        "opened_at": "2026-10-16T12:00:00.000Z",
+        "open_seq": 10,
+        "default_at": "2026-10-16T13:00:00.000Z",
+        "rule": {
+          "delay_seconds": 3600,
+          "ttl_cap_seconds": 604800,
+          "enabled": true,
+          "ops": [
+            "audit",
+            "inject",
+            "put",
+            "use"
+          ]
+        },
+        "state": "open"
+      },
+      "context": {
+        "now": 1792155601000,
+        "principal": {
+          "id": "prn_dddddddddddd",
+          "project": "app",
+          "active": true
+        },
+        "token": {
+          "id": "tok_eeeeeeeeeeee",
+          "principal_id": "prn_dddddddddddd",
+          "active": false
+        },
+        "target": {
+          "path": "shared/api",
+          "project": "shared",
+          "class": "standard",
+          "active": true,
+          "client_approval_required": false
+        },
+        "rules": {
+          "own": {
+            "delay_seconds": 0,
+            "ttl_cap_seconds": 604800,
+            "enabled": true,
+            "ops": [
+              "audit",
+              "inject",
+              "put",
+              "use"
+            ]
+          },
+          "shared_standard": {
+            "delay_seconds": 3600,
+            "ttl_cap_seconds": 604800,
+            "enabled": true,
+            "ops": [
+              "audit",
+              "inject",
+              "put",
+              "use"
+            ]
+          },
+          "other_standard": {
+            "delay_seconds": 3600,
+            "ttl_cap_seconds": 86400,
+            "enabled": true,
+            "ops": [
+              "audit",
+              "inject",
+              "put",
+              "use"
+            ]
+          },
+          "cross_sensitive": {
+            "delay_seconds": 3600,
+            "ttl_cap_seconds": 14400,
+            "enabled": true,
+            "ops": [
+              "audit",
+              "inject",
+              "put",
+              "use"
+            ]
+          },
+          "restricted": {
+            "delay_seconds": 0,
+            "ttl_cap_seconds": 14400,
+            "enabled": false,
+            "ops": [
+              "audit",
+              "inject",
+              "put",
+              "use"
+            ]
+          },
+          "client": {
+            "delay_seconds": 0,
+            "ttl_cap_seconds": 14400,
+            "enabled": false,
+            "ops": [
+              "audit",
+              "inject",
+              "put",
+              "use"
+            ]
+          },
+          "create": {
+            "delay_seconds": 0,
+            "ttl_cap_seconds": 604800,
+            "enabled": true,
+            "ops": [
+              "put"
+            ]
+          },
+          "rotate": {
+            "delay_seconds": 0,
+            "ttl_cap_seconds": 14400,
+            "enabled": false,
+            "ops": [
+              "put"
+            ]
+          }
+        },
+        "policy_fresh": true
+      },
+      "accepted": false,
+      "body_canonical": "{\"request_id\":\"req_cccccccccccc\"}",
+      "body_sha256": "a72ecc1878d50bb1c7c248f59d00a2b42ed261ebf284fb26b8923c6356a5d7aa"
+    },
+    {
+      "name": "disabled principal",
+      "body": {
+        "request_id": "req_cccccccccccc"
+      },
+      "opened": {
+        "request": {
+          "request_id": "req_cccccccccccc",
+          "principal_id": "prn_dddddddddddd",
+          "token_id": "tok_eeeeeeeeeeee",
+          "kind": "access",
+          "target": "shared/api",
+          "ops": [
+            "inject",
+            "use"
+          ],
+          "reason": "Need service access",
+          "ttl_seconds": 604800
+        },
+        "origin": "broker",
+        "opened_at": "2026-10-16T12:00:00.000Z",
+        "open_seq": 10,
+        "default_at": "2026-10-16T13:00:00.000Z",
+        "rule": {
+          "delay_seconds": 3600,
+          "ttl_cap_seconds": 604800,
+          "enabled": true,
+          "ops": [
+            "audit",
+            "inject",
+            "put",
+            "use"
+          ]
+        },
+        "state": "open"
+      },
+      "context": {
+        "now": 1792155601000,
+        "principal": {
+          "id": "prn_dddddddddddd",
+          "project": "app",
+          "active": false
+        },
+        "token": {
+          "id": "tok_eeeeeeeeeeee",
+          "principal_id": "prn_dddddddddddd",
+          "active": true
+        },
+        "target": {
+          "path": "shared/api",
+          "project": "shared",
+          "class": "standard",
+          "active": true,
+          "client_approval_required": false
+        },
+        "rules": {
+          "own": {
+            "delay_seconds": 0,
+            "ttl_cap_seconds": 604800,
+            "enabled": true,
+            "ops": [
+              "audit",
+              "inject",
+              "put",
+              "use"
+            ]
+          },
+          "shared_standard": {
+            "delay_seconds": 3600,
+            "ttl_cap_seconds": 604800,
+            "enabled": true,
+            "ops": [
+              "audit",
+              "inject",
+              "put",
+              "use"
+            ]
+          },
+          "other_standard": {
+            "delay_seconds": 3600,
+            "ttl_cap_seconds": 86400,
+            "enabled": true,
+            "ops": [
+              "audit",
+              "inject",
+              "put",
+              "use"
+            ]
+          },
+          "cross_sensitive": {
+            "delay_seconds": 3600,
+            "ttl_cap_seconds": 14400,
+            "enabled": true,
+            "ops": [
+              "audit",
+              "inject",
+              "put",
+              "use"
+            ]
+          },
+          "restricted": {
+            "delay_seconds": 0,
+            "ttl_cap_seconds": 14400,
+            "enabled": false,
+            "ops": [
+              "audit",
+              "inject",
+              "put",
+              "use"
+            ]
+          },
+          "client": {
+            "delay_seconds": 0,
+            "ttl_cap_seconds": 14400,
+            "enabled": false,
+            "ops": [
+              "audit",
+              "inject",
+              "put",
+              "use"
+            ]
+          },
+          "create": {
+            "delay_seconds": 0,
+            "ttl_cap_seconds": 604800,
+            "enabled": true,
+            "ops": [
+              "put"
+            ]
+          },
+          "rotate": {
+            "delay_seconds": 0,
+            "ttl_cap_seconds": 14400,
+            "enabled": false,
+            "ops": [
+              "put"
+            ]
+          }
+        },
+        "policy_fresh": true
+      },
+      "accepted": false,
+      "body_canonical": "{\"request_id\":\"req_cccccccccccc\"}",
+      "body_sha256": "a72ecc1878d50bb1c7c248f59d00a2b42ed261ebf284fb26b8923c6356a5d7aa"
+    },
+    {
+      "name": "edited deadline",
+      "body": {
+        "request_id": "req_cccccccccccc"
+      },
+      "opened": {
+        "request": {
+          "request_id": "req_cccccccccccc",
+          "principal_id": "prn_dddddddddddd",
+          "token_id": "tok_eeeeeeeeeeee",
+          "kind": "access",
+          "target": "shared/api",
+          "ops": [
+            "inject",
+            "use"
+          ],
+          "reason": "Need service access",
+          "ttl_seconds": 604800
+        },
+        "origin": "broker",
+        "opened_at": "2026-10-16T12:00:00.000Z",
+        "open_seq": 10,
+        "default_at": "2026-10-16T12:00:00.000Z",
+        "rule": {
+          "delay_seconds": 3600,
+          "ttl_cap_seconds": 604800,
+          "enabled": true,
+          "ops": [
+            "audit",
+            "inject",
+            "put",
+            "use"
+          ]
+        },
+        "state": "open"
+      },
+      "context": {
+        "now": 1792155601000,
+        "principal": {
+          "id": "prn_dddddddddddd",
+          "project": "app",
+          "active": true
+        },
+        "token": {
+          "id": "tok_eeeeeeeeeeee",
+          "principal_id": "prn_dddddddddddd",
+          "active": true
+        },
+        "target": {
+          "path": "shared/api",
+          "project": "shared",
+          "class": "standard",
+          "active": true,
+          "client_approval_required": false
+        },
+        "rules": {
+          "own": {
+            "delay_seconds": 0,
+            "ttl_cap_seconds": 604800,
+            "enabled": true,
+            "ops": [
+              "audit",
+              "inject",
+              "put",
+              "use"
+            ]
+          },
+          "shared_standard": {
+            "delay_seconds": 3600,
+            "ttl_cap_seconds": 604800,
+            "enabled": true,
+            "ops": [
+              "audit",
+              "inject",
+              "put",
+              "use"
+            ]
+          },
+          "other_standard": {
+            "delay_seconds": 3600,
+            "ttl_cap_seconds": 86400,
+            "enabled": true,
+            "ops": [
+              "audit",
+              "inject",
+              "put",
+              "use"
+            ]
+          },
+          "cross_sensitive": {
+            "delay_seconds": 3600,
+            "ttl_cap_seconds": 14400,
+            "enabled": true,
+            "ops": [
+              "audit",
+              "inject",
+              "put",
+              "use"
+            ]
+          },
+          "restricted": {
+            "delay_seconds": 0,
+            "ttl_cap_seconds": 14400,
+            "enabled": false,
+            "ops": [
+              "audit",
+              "inject",
+              "put",
+              "use"
+            ]
+          },
+          "client": {
+            "delay_seconds": 0,
+            "ttl_cap_seconds": 14400,
+            "enabled": false,
+            "ops": [
+              "audit",
+              "inject",
+              "put",
+              "use"
+            ]
+          },
+          "create": {
+            "delay_seconds": 0,
+            "ttl_cap_seconds": 604800,
+            "enabled": true,
+            "ops": [
+              "put"
+            ]
+          },
+          "rotate": {
+            "delay_seconds": 0,
+            "ttl_cap_seconds": 14400,
+            "enabled": false,
+            "ops": [
+              "put"
+            ]
+          }
+        },
+        "policy_fresh": true
+      },
+      "accepted": false,
+      "body_canonical": "{\"request_id\":\"req_cccccccccccc\"}",
+      "body_sha256": "a72ecc1878d50bb1c7c248f59d00a2b42ed261ebf284fb26b8923c6356a5d7aa"
+    },
+    {
+      "name": "restricted reclassification",
+      "body": {
+        "request_id": "req_cccccccccccc"
+      },
+      "opened": {
+        "request": {
+          "request_id": "req_cccccccccccc",
+          "principal_id": "prn_dddddddddddd",
+          "token_id": "tok_eeeeeeeeeeee",
+          "kind": "access",
+          "target": "shared/api",
+          "ops": [
+            "inject",
+            "use"
+          ],
+          "reason": "Need service access",
+          "ttl_seconds": 604800
+        },
+        "origin": "broker",
+        "opened_at": "2026-10-16T12:00:00.000Z",
+        "open_seq": 10,
+        "default_at": "2026-10-16T13:00:00.000Z",
+        "rule": {
+          "delay_seconds": 3600,
+          "ttl_cap_seconds": 604800,
+          "enabled": true,
+          "ops": [
+            "audit",
+            "inject",
+            "put",
+            "use"
+          ]
+        },
+        "state": "open"
+      },
+      "context": {
+        "now": 1792155601000,
+        "principal": {
+          "id": "prn_dddddddddddd",
+          "project": "app",
+          "active": true
+        },
+        "token": {
+          "id": "tok_eeeeeeeeeeee",
+          "principal_id": "prn_dddddddddddd",
+          "active": true
+        },
+        "target": {
+          "path": "shared/api",
+          "project": "shared",
+          "class": "restricted",
+          "active": true,
+          "client_approval_required": false
+        },
+        "rules": {
+          "own": {
+            "delay_seconds": 0,
+            "ttl_cap_seconds": 604800,
+            "enabled": true,
+            "ops": [
+              "audit",
+              "inject",
+              "put",
+              "use"
+            ]
+          },
+          "shared_standard": {
+            "delay_seconds": 3600,
+            "ttl_cap_seconds": 604800,
+            "enabled": true,
+            "ops": [
+              "audit",
+              "inject",
+              "put",
+              "use"
+            ]
+          },
+          "other_standard": {
+            "delay_seconds": 3600,
+            "ttl_cap_seconds": 86400,
+            "enabled": true,
+            "ops": [
+              "audit",
+              "inject",
+              "put",
+              "use"
+            ]
+          },
+          "cross_sensitive": {
+            "delay_seconds": 3600,
+            "ttl_cap_seconds": 14400,
+            "enabled": true,
+            "ops": [
+              "audit",
+              "inject",
+              "put",
+              "use"
+            ]
+          },
+          "restricted": {
+            "delay_seconds": 0,
+            "ttl_cap_seconds": 14400,
+            "enabled": false,
+            "ops": [
+              "audit",
+              "inject",
+              "put",
+              "use"
+            ]
+          },
+          "client": {
+            "delay_seconds": 0,
+            "ttl_cap_seconds": 14400,
+            "enabled": false,
+            "ops": [
+              "audit",
+              "inject",
+              "put",
+              "use"
+            ]
+          },
+          "create": {
+            "delay_seconds": 0,
+            "ttl_cap_seconds": 604800,
+            "enabled": true,
+            "ops": [
+              "put"
+            ]
+          },
+          "rotate": {
+            "delay_seconds": 0,
+            "ttl_cap_seconds": 14400,
+            "enabled": false,
+            "ops": [
+              "put"
+            ]
+          }
+        },
+        "policy_fresh": true
+      },
+      "accepted": false,
+      "body_canonical": "{\"request_id\":\"req_cccccccccccc\"}",
+      "body_sha256": "a72ecc1878d50bb1c7c248f59d00a2b42ed261ebf284fb26b8923c6356a5d7aa"
+    },
+    {
+      "name": "client project",
+      "body": {
+        "request_id": "req_cccccccccccc"
+      },
+      "opened": {
+        "request": {
+          "request_id": "req_cccccccccccc",
+          "principal_id": "prn_dddddddddddd",
+          "token_id": "tok_eeeeeeeeeeee",
+          "kind": "access",
+          "target": "shared/api",
+          "ops": [
+            "inject",
+            "use"
+          ],
+          "reason": "Need service access",
+          "ttl_seconds": 604800
+        },
+        "origin": "broker",
+        "opened_at": "2026-10-16T12:00:00.000Z",
+        "open_seq": 10,
+        "default_at": "2026-10-16T13:00:00.000Z",
+        "rule": {
+          "delay_seconds": 3600,
+          "ttl_cap_seconds": 604800,
+          "enabled": true,
+          "ops": [
+            "audit",
+            "inject",
+            "put",
+            "use"
+          ]
+        },
+        "state": "open"
+      },
+      "context": {
+        "now": 1792155601000,
+        "principal": {
+          "id": "prn_dddddddddddd",
+          "project": "app",
+          "active": true
+        },
+        "token": {
+          "id": "tok_eeeeeeeeeeee",
+          "principal_id": "prn_dddddddddddd",
+          "active": true
+        },
+        "target": {
+          "path": "shared/api",
+          "project": "shared",
+          "class": "standard",
+          "active": true,
+          "client_approval_required": true
+        },
+        "rules": {
+          "own": {
+            "delay_seconds": 0,
+            "ttl_cap_seconds": 604800,
+            "enabled": true,
+            "ops": [
+              "audit",
+              "inject",
+              "put",
+              "use"
+            ]
+          },
+          "shared_standard": {
+            "delay_seconds": 3600,
+            "ttl_cap_seconds": 604800,
+            "enabled": true,
+            "ops": [
+              "audit",
+              "inject",
+              "put",
+              "use"
+            ]
+          },
+          "other_standard": {
+            "delay_seconds": 3600,
+            "ttl_cap_seconds": 86400,
+            "enabled": true,
+            "ops": [
+              "audit",
+              "inject",
+              "put",
+              "use"
+            ]
+          },
+          "cross_sensitive": {
+            "delay_seconds": 3600,
+            "ttl_cap_seconds": 14400,
+            "enabled": true,
+            "ops": [
+              "audit",
+              "inject",
+              "put",
+              "use"
+            ]
+          },
+          "restricted": {
+            "delay_seconds": 0,
+            "ttl_cap_seconds": 14400,
+            "enabled": false,
+            "ops": [
+              "audit",
+              "inject",
+              "put",
+              "use"
+            ]
+          },
+          "client": {
+            "delay_seconds": 0,
+            "ttl_cap_seconds": 14400,
+            "enabled": false,
+            "ops": [
+              "audit",
+              "inject",
+              "put",
+              "use"
+            ]
+          },
+          "create": {
+            "delay_seconds": 0,
+            "ttl_cap_seconds": 604800,
+            "enabled": true,
+            "ops": [
+              "put"
+            ]
+          },
+          "rotate": {
+            "delay_seconds": 0,
+            "ttl_cap_seconds": 14400,
+            "enabled": false,
+            "ops": [
+              "put"
+            ]
+          }
+        },
+        "policy_fresh": true
+      },
+      "accepted": false,
+      "body_canonical": "{\"request_id\":\"req_cccccccccccc\"}",
+      "body_sha256": "a72ecc1878d50bb1c7c248f59d00a2b42ed261ebf284fb26b8923c6356a5d7aa"
+    },
+    {
+      "name": "extra grant field",
+      "body": {
+        "request_id": "req_cccccccccccc",
+        "grant": {
+          "pattern": "*"
+        }
+      },
+      "opened": {
+        "request": {
+          "request_id": "req_cccccccccccc",
+          "principal_id": "prn_dddddddddddd",
+          "token_id": "tok_eeeeeeeeeeee",
+          "kind": "access",
+          "target": "shared/api",
+          "ops": [
+            "inject",
+            "use"
+          ],
+          "reason": "Need service access",
+          "ttl_seconds": 604800
+        },
+        "origin": "broker",
+        "opened_at": "2026-10-16T12:00:00.000Z",
+        "open_seq": 10,
+        "default_at": "2026-10-16T13:00:00.000Z",
+        "rule": {
+          "delay_seconds": 3600,
+          "ttl_cap_seconds": 604800,
+          "enabled": true,
+          "ops": [
+            "audit",
+            "inject",
+            "put",
+            "use"
+          ]
+        },
+        "state": "open"
+      },
+      "context": {
+        "now": 1792155601000,
+        "principal": {
+          "id": "prn_dddddddddddd",
+          "project": "app",
+          "active": true
+        },
+        "token": {
+          "id": "tok_eeeeeeeeeeee",
+          "principal_id": "prn_dddddddddddd",
+          "active": true
+        },
+        "target": {
+          "path": "shared/api",
+          "project": "shared",
+          "class": "standard",
+          "active": true,
+          "client_approval_required": false
+        },
+        "rules": {
+          "own": {
+            "delay_seconds": 0,
+            "ttl_cap_seconds": 604800,
+            "enabled": true,
+            "ops": [
+              "audit",
+              "inject",
+              "put",
+              "use"
+            ]
+          },
+          "shared_standard": {
+            "delay_seconds": 3600,
+            "ttl_cap_seconds": 604800,
+            "enabled": true,
+            "ops": [
+              "audit",
+              "inject",
+              "put",
+              "use"
+            ]
+          },
+          "other_standard": {
+            "delay_seconds": 3600,
+            "ttl_cap_seconds": 86400,
+            "enabled": true,
+            "ops": [
+              "audit",
+              "inject",
+              "put",
+              "use"
+            ]
+          },
+          "cross_sensitive": {
+            "delay_seconds": 3600,
+            "ttl_cap_seconds": 14400,
+            "enabled": true,
+            "ops": [
+              "audit",
+              "inject",
+              "put",
+              "use"
+            ]
+          },
+          "restricted": {
+            "delay_seconds": 0,
+            "ttl_cap_seconds": 14400,
+            "enabled": false,
+            "ops": [
+              "audit",
+              "inject",
+              "put",
+              "use"
+            ]
+          },
+          "client": {
+            "delay_seconds": 0,
+            "ttl_cap_seconds": 14400,
+            "enabled": false,
+            "ops": [
+              "audit",
+              "inject",
+              "put",
+              "use"
+            ]
+          },
+          "create": {
+            "delay_seconds": 0,
+            "ttl_cap_seconds": 604800,
+            "enabled": true,
+            "ops": [
+              "put"
+            ]
+          },
+          "rotate": {
+            "delay_seconds": 0,
+            "ttl_cap_seconds": 14400,
+            "enabled": false,
+            "ops": [
+              "put"
+            ]
+          }
+        },
+        "policy_fresh": true
+      },
+      "accepted": false,
+      "body_canonical": "{\"grant\":{\"pattern\":\"*\"},\"request_id\":\"req_cccccccccccc\"}",
+      "body_sha256": "16576cfd7432a4170b5f0512095911f2b9ba50daa844d4a65b3ce7a91d6bdbe1"
+    },
+    {
+      "name": "no explicit rule",
+      "body": {
+        "request_id": "req_cccccccccccc"
+      },
+      "opened": {
+        "request": {
+          "request_id": "req_cccccccccccc",
+          "principal_id": "prn_dddddddddddd",
+          "token_id": "tok_eeeeeeeeeeee",
+          "kind": "access",
+          "target": "shared/api",
+          "ops": [
+            "inject",
+            "use"
+          ],
+          "reason": "Need service access",
+          "ttl_seconds": 604800
+        },
+        "origin": "broker",
+        "opened_at": "2026-10-16T12:00:00.000Z",
+        "open_seq": 10,
+        "default_at": "2026-10-16T13:00:00.000Z",
+        "rule": {
+          "delay_seconds": 3600,
+          "ttl_cap_seconds": 604800,
+          "enabled": true,
+          "ops": [
+            "audit",
+            "inject",
+            "put",
+            "use"
+          ]
+        },
+        "state": "open"
+      },
+      "context": {
+        "now": 1792155601000,
+        "principal": {
+          "id": "prn_dddddddddddd",
+          "project": "app",
+          "active": true
+        },
+        "token": {
+          "id": "tok_eeeeeeeeeeee",
+          "principal_id": "prn_dddddddddddd",
+          "active": true
+        },
+        "target": {
+          "path": "shared/api",
+          "project": "shared",
+          "class": "standard",
+          "active": true,
+          "client_approval_required": false
+        },
+        "rules": {},
+        "policy_fresh": true
+      },
+      "accepted": false,
+      "body_canonical": "{\"request_id\":\"req_cccccccccccc\"}",
+      "body_sha256": "a72ecc1878d50bb1c7c248f59d00a2b42ed261ebf284fb26b8923c6356a5d7aa"
+    },
+    {
+      "name": "no fresh live policy",
+      "body": {
+        "request_id": "req_cccccccccccc"
+      },
+      "opened": {
+        "request": {
+          "request_id": "req_cccccccccccc",
+          "principal_id": "prn_dddddddddddd",
+          "token_id": "tok_eeeeeeeeeeee",
+          "kind": "access",
+          "target": "shared/api",
+          "ops": [
+            "inject",
+            "use"
+          ],
+          "reason": "Need service access",
+          "ttl_seconds": 604800
+        },
+        "origin": "broker",
+        "opened_at": "2026-10-16T12:00:00.000Z",
+        "open_seq": 10,
+        "default_at": "2026-10-16T13:00:00.000Z",
+        "rule": {
+          "delay_seconds": 3600,
+          "ttl_cap_seconds": 604800,
+          "enabled": true,
+          "ops": [
+            "audit",
+            "inject",
+            "put",
+            "use"
+          ]
+        },
+        "state": "open"
+      },
+      "context": {
+        "now": 1792155601000,
+        "principal": {
+          "id": "prn_dddddddddddd",
+          "project": "app",
+          "active": true
+        },
+        "token": {
+          "id": "tok_eeeeeeeeeeee",
+          "principal_id": "prn_dddddddddddd",
+          "active": true
+        },
+        "target": {
+          "path": "shared/api",
+          "project": "shared",
+          "class": "standard",
+          "active": true,
+          "client_approval_required": false
+        },
+        "rules": {
+          "own": {
+            "delay_seconds": 0,
+            "ttl_cap_seconds": 604800,
+            "enabled": true,
+            "ops": [
+              "audit",
+              "inject",
+              "put",
+              "use"
+            ]
+          },
+          "shared_standard": {
+            "delay_seconds": 3600,
+            "ttl_cap_seconds": 604800,
+            "enabled": true,
+            "ops": [
+              "audit",
+              "inject",
+              "put",
+              "use"
+            ]
+          },
+          "other_standard": {
+            "delay_seconds": 3600,
+            "ttl_cap_seconds": 86400,
+            "enabled": true,
+            "ops": [
+              "audit",
+              "inject",
+              "put",
+              "use"
+            ]
+          },
+          "cross_sensitive": {
+            "delay_seconds": 3600,
+            "ttl_cap_seconds": 14400,
+            "enabled": true,
+            "ops": [
+              "audit",
+              "inject",
+              "put",
+              "use"
+            ]
+          },
+          "restricted": {
+            "delay_seconds": 0,
+            "ttl_cap_seconds": 14400,
+            "enabled": false,
+            "ops": [
+              "audit",
+              "inject",
+              "put",
+              "use"
+            ]
+          },
+          "client": {
+            "delay_seconds": 0,
+            "ttl_cap_seconds": 14400,
+            "enabled": false,
+            "ops": [
+              "audit",
+              "inject",
+              "put",
+              "use"
+            ]
+          },
+          "create": {
+            "delay_seconds": 0,
+            "ttl_cap_seconds": 604800,
+            "enabled": true,
+            "ops": [
+              "put"
+            ]
+          },
+          "rotate": {
+            "delay_seconds": 0,
+            "ttl_cap_seconds": 14400,
+            "enabled": false,
+            "ops": [
+              "put"
+            ]
+          }
+        },
+        "policy_fresh": false
+      },
+      "accepted": false,
+      "body_canonical": "{\"request_id\":\"req_cccccccccccc\"}",
+      "body_sha256": "a72ecc1878d50bb1c7c248f59d00a2b42ed261ebf284fb26b8923c6356a5d7aa"
+    },
+    {
+      "name": "disjoint ops",
+      "body": {
+        "request_id": "req_cccccccccccc"
+      },
+      "opened": {
+        "request": {
+          "request_id": "req_cccccccccccc",
+          "principal_id": "prn_dddddddddddd",
+          "token_id": "tok_eeeeeeeeeeee",
+          "kind": "access",
+          "target": "shared/api",
+          "ops": [
+            "inject",
+            "use"
+          ],
+          "reason": "Need service access",
+          "ttl_seconds": 604800
+        },
+        "origin": "broker",
+        "opened_at": "2026-10-16T12:00:00.000Z",
+        "open_seq": 10,
+        "default_at": "2026-10-16T13:00:00.000Z",
+        "rule": {
+          "delay_seconds": 3600,
+          "ttl_cap_seconds": 604800,
+          "enabled": true,
+          "ops": [
+            "audit",
+            "inject",
+            "put",
+            "use"
+          ]
+        },
+        "state": "open"
+      },
+      "context": {
+        "now": 1792155601000,
+        "principal": {
+          "id": "prn_dddddddddddd",
+          "project": "app",
+          "active": true
+        },
+        "token": {
+          "id": "tok_eeeeeeeeeeee",
+          "principal_id": "prn_dddddddddddd",
+          "active": true
+        },
+        "target": {
+          "path": "shared/api",
+          "project": "shared",
+          "class": "standard",
+          "active": true,
+          "client_approval_required": false
+        },
+        "rules": {
+          "own": {
+            "delay_seconds": 0,
+            "ttl_cap_seconds": 604800,
+            "enabled": true,
+            "ops": [
+              "audit",
+              "inject",
+              "put",
+              "use"
+            ]
+          },
+          "shared_standard": {
+            "delay_seconds": 3600,
+            "ttl_cap_seconds": 604800,
+            "enabled": true,
+            "ops": [
+              "put"
+            ]
+          },
+          "other_standard": {
+            "delay_seconds": 3600,
+            "ttl_cap_seconds": 86400,
+            "enabled": true,
+            "ops": [
+              "audit",
+              "inject",
+              "put",
+              "use"
+            ]
+          },
+          "cross_sensitive": {
+            "delay_seconds": 3600,
+            "ttl_cap_seconds": 14400,
+            "enabled": true,
+            "ops": [
+              "audit",
+              "inject",
+              "put",
+              "use"
+            ]
+          },
+          "restricted": {
+            "delay_seconds": 0,
+            "ttl_cap_seconds": 14400,
+            "enabled": false,
+            "ops": [
+              "audit",
+              "inject",
+              "put",
+              "use"
+            ]
+          },
+          "client": {
+            "delay_seconds": 0,
+            "ttl_cap_seconds": 14400,
+            "enabled": false,
+            "ops": [
+              "audit",
+              "inject",
+              "put",
+              "use"
+            ]
+          },
+          "create": {
+            "delay_seconds": 0,
+            "ttl_cap_seconds": 604800,
+            "enabled": true,
+            "ops": [
+              "put"
+            ]
+          },
+          "rotate": {
+            "delay_seconds": 0,
+            "ttl_cap_seconds": 14400,
+            "enabled": false,
+            "ops": [
+              "put"
+            ]
+          }
+        },
+        "policy_fresh": true
+      },
+      "accepted": false,
+      "body_canonical": "{\"request_id\":\"req_cccccccccccc\"}",
+      "body_sha256": "a72ecc1878d50bb1c7c248f59d00a2b42ed261ebf284fb26b8923c6356a5d7aa"
+    },
+    {
+      "name": "intersection",
+      "body": {
+        "request_id": "req_cccccccccccc"
+      },
+      "opened": {
+        "request": {
+          "request_id": "req_cccccccccccc",
+          "principal_id": "prn_dddddddddddd",
+          "token_id": "tok_eeeeeeeeeeee",
+          "kind": "access",
+          "target": "shared/api",
+          "ops": [
+            "inject",
+            "use"
+          ],
+          "reason": "Need service access",
+          "ttl_seconds": 604800
+        },
+        "origin": "broker",
+        "opened_at": "2026-10-16T12:00:00.000Z",
+        "open_seq": 10,
+        "default_at": "2026-10-16T13:00:00.000Z",
+        "rule": {
+          "delay_seconds": 3600,
+          "ttl_cap_seconds": 604800,
+          "enabled": true,
+          "ops": [
+            "audit",
+            "inject",
+            "put",
+            "use"
+          ]
+        },
+        "state": "open"
+      },
+      "context": {
+        "now": 1792155601000,
+        "principal": {
+          "id": "prn_dddddddddddd",
+          "project": "app",
+          "active": true
+        },
+        "token": {
+          "id": "tok_eeeeeeeeeeee",
+          "principal_id": "prn_dddddddddddd",
+          "active": true
+        },
+        "target": {
+          "path": "shared/api",
+          "project": "shared",
+          "class": "standard",
+          "active": true,
+          "client_approval_required": false
+        },
+        "rules": {
+          "own": {
+            "delay_seconds": 0,
+            "ttl_cap_seconds": 604800,
+            "enabled": true,
+            "ops": [
+              "audit",
+              "inject",
+              "put",
+              "use"
+            ]
+          },
+          "shared_standard": {
+            "delay_seconds": 3600,
+            "ttl_cap_seconds": 604800,
+            "enabled": true,
+            "ops": [
+              "inject"
+            ]
+          },
+          "other_standard": {
+            "delay_seconds": 3600,
+            "ttl_cap_seconds": 86400,
+            "enabled": true,
+            "ops": [
+              "audit",
+              "inject",
+              "put",
+              "use"
+            ]
+          },
+          "cross_sensitive": {
+            "delay_seconds": 3600,
+            "ttl_cap_seconds": 14400,
+            "enabled": true,
+            "ops": [
+              "audit",
+              "inject",
+              "put",
+              "use"
+            ]
+          },
+          "restricted": {
+            "delay_seconds": 0,
+            "ttl_cap_seconds": 14400,
+            "enabled": false,
+            "ops": [
+              "audit",
+              "inject",
+              "put",
+              "use"
+            ]
+          },
+          "client": {
+            "delay_seconds": 0,
+            "ttl_cap_seconds": 14400,
+            "enabled": false,
+            "ops": [
+              "audit",
+              "inject",
+              "put",
+              "use"
+            ]
+          },
+          "create": {
+            "delay_seconds": 0,
+            "ttl_cap_seconds": 604800,
+            "enabled": true,
+            "ops": [
+              "put"
+            ]
+          },
+          "rotate": {
+            "delay_seconds": 0,
+            "ttl_cap_seconds": 14400,
+            "enabled": false,
+            "ops": [
+              "put"
+            ]
+          }
+        },
+        "policy_fresh": true
+      },
+      "accepted": true,
+      "body_canonical": "{\"request_id\":\"req_cccccccccccc\"}",
+      "body_sha256": "a72ecc1878d50bb1c7c248f59d00a2b42ed261ebf284fb26b8923c6356a5d7aa",
+      "request_grant_id": "grt_cccccccccccc",
+      "grant": {
+        "principal_id": "prn_dddddddddddd",
+        "pattern": "shared/api",
+        "ops": [
+          "inject"
+        ],
+        "max_class": "standard",
+        "expires_at": "2026-10-23T13:00:00.000Z"
+      },
+      "grant_canonical": "{\"expires_at\":\"2026-10-23T13:00:00.000Z\",\"max_class\":\"standard\",\"ops\":[\"inject\"],\"pattern\":\"shared/api\",\"principal_id\":\"prn_dddddddddddd\"}",
+      "grant_sha256": "a0c0acbc24bb0ba8f8e700633241fa04659b857ecff7ab9704c7d7a0dfd8ff6e"
+    },
+    {
+      "name": "opening cap retained",
+      "body": {
+        "request_id": "req_cccccccccccc"
+      },
+      "opened": {
+        "request": {
+          "request_id": "req_cccccccccccc",
+          "principal_id": "prn_dddddddddddd",
+          "token_id": "tok_eeeeeeeeeeee",
+          "kind": "access",
+          "target": "shared/api",
+          "ops": [
+            "inject",
+            "use"
+          ],
+          "reason": "Need service access",
+          "ttl_seconds": 604800
+        },
+        "origin": "broker",
+        "opened_at": "2026-10-16T12:00:00.000Z",
+        "open_seq": 10,
+        "default_at": "2026-10-16T13:00:00.000Z",
+        "rule": {
+          "delay_seconds": 3600,
+          "ttl_cap_seconds": 60,
+          "enabled": true,
+          "ops": [
+            "audit",
+            "inject",
+            "put",
+            "use"
+          ]
+        },
+        "state": "open"
+      },
+      "context": {
+        "now": 1792155601000,
+        "principal": {
+          "id": "prn_dddddddddddd",
+          "project": "app",
+          "active": true
+        },
+        "token": {
+          "id": "tok_eeeeeeeeeeee",
+          "principal_id": "prn_dddddddddddd",
+          "active": true
+        },
+        "target": {
+          "path": "shared/api",
+          "project": "shared",
+          "class": "standard",
+          "active": true,
+          "client_approval_required": false
+        },
+        "rules": {
+          "own": {
+            "delay_seconds": 0,
+            "ttl_cap_seconds": 604800,
+            "enabled": true,
+            "ops": [
+              "audit",
+              "inject",
+              "put",
+              "use"
+            ]
+          },
+          "shared_standard": {
+            "delay_seconds": 3600,
+            "ttl_cap_seconds": 604800,
+            "enabled": true,
+            "ops": [
+              "audit",
+              "inject",
+              "put",
+              "use"
+            ]
+          },
+          "other_standard": {
+            "delay_seconds": 3600,
+            "ttl_cap_seconds": 86400,
+            "enabled": true,
+            "ops": [
+              "audit",
+              "inject",
+              "put",
+              "use"
+            ]
+          },
+          "cross_sensitive": {
+            "delay_seconds": 3600,
+            "ttl_cap_seconds": 14400,
+            "enabled": true,
+            "ops": [
+              "audit",
+              "inject",
+              "put",
+              "use"
+            ]
+          },
+          "restricted": {
+            "delay_seconds": 0,
+            "ttl_cap_seconds": 14400,
+            "enabled": false,
+            "ops": [
+              "audit",
+              "inject",
+              "put",
+              "use"
+            ]
+          },
+          "client": {
+            "delay_seconds": 0,
+            "ttl_cap_seconds": 14400,
+            "enabled": false,
+            "ops": [
+              "audit",
+              "inject",
+              "put",
+              "use"
+            ]
+          },
+          "create": {
+            "delay_seconds": 0,
+            "ttl_cap_seconds": 604800,
+            "enabled": true,
+            "ops": [
+              "put"
+            ]
+          },
+          "rotate": {
+            "delay_seconds": 0,
+            "ttl_cap_seconds": 14400,
+            "enabled": false,
+            "ops": [
+              "put"
+            ]
+          }
+        },
+        "policy_fresh": true
+      },
+      "accepted": true,
+      "body_canonical": "{\"request_id\":\"req_cccccccccccc\"}",
+      "body_sha256": "a72ecc1878d50bb1c7c248f59d00a2b42ed261ebf284fb26b8923c6356a5d7aa",
+      "request_grant_id": "grt_cccccccccccc",
+      "grant": {
+        "principal_id": "prn_dddddddddddd",
+        "pattern": "shared/api",
+        "ops": [
+          "inject",
+          "use"
+        ],
+        "max_class": "standard",
+        "expires_at": "2026-10-16T13:01:00.000Z"
+      },
+      "grant_canonical": "{\"expires_at\":\"2026-10-16T13:01:00.000Z\",\"max_class\":\"standard\",\"ops\":[\"inject\",\"use\"],\"pattern\":\"shared/api\",\"principal_id\":\"prn_dddddddddddd\"}",
+      "grant_sha256": "2a21400a9d7bc2aefc0fff5daf8716b51c89b37f5b23149f8100b45ef3c068f2"
+    },
+    {
+      "name": "shared sensitive remains cross row for shared principal",
+      "body": {
+        "request_id": "req_cccccccccccc"
+      },
+      "opened": {
+        "request": {
+          "request_id": "req_cccccccccccc",
+          "principal_id": "prn_dddddddddddd",
+          "token_id": "tok_eeeeeeeeeeee",
+          "kind": "access",
+          "target": "shared/api",
+          "ops": [
+            "inject",
+            "use"
+          ],
+          "reason": "Need service access",
+          "ttl_seconds": 604800
+        },
+        "origin": "broker",
+        "opened_at": "2026-10-16T12:00:00.000Z",
+        "open_seq": 10,
+        "default_at": "2026-10-16T13:00:00.000Z",
+        "rule": {
+          "delay_seconds": 3600,
+          "ttl_cap_seconds": 14400,
+          "enabled": true,
+          "ops": [
+            "audit",
+            "inject",
+            "put",
+            "use"
+          ]
+        },
+        "state": "open"
+      },
+      "context": {
+        "now": 1792155601000,
+        "principal": {
+          "id": "prn_dddddddddddd",
+          "project": "shared",
+          "active": true
+        },
+        "token": {
+          "id": "tok_eeeeeeeeeeee",
+          "principal_id": "prn_dddddddddddd",
+          "active": true
+        },
+        "target": {
+          "path": "shared/api",
+          "project": "shared",
+          "class": "sensitive",
+          "active": true,
+          "client_approval_required": false
+        },
+        "rules": {
+          "own": {
+            "delay_seconds": 0,
+            "ttl_cap_seconds": 604800,
+            "enabled": true,
+            "ops": [
+              "audit",
+              "inject",
+              "put",
+              "use"
+            ]
+          },
+          "shared_standard": {
+            "delay_seconds": 3600,
+            "ttl_cap_seconds": 604800,
+            "enabled": true,
+            "ops": [
+              "audit",
+              "inject",
+              "put",
+              "use"
+            ]
+          },
+          "other_standard": {
+            "delay_seconds": 3600,
+            "ttl_cap_seconds": 86400,
+            "enabled": true,
+            "ops": [
+              "audit",
+              "inject",
+              "put",
+              "use"
+            ]
+          },
+          "cross_sensitive": {
+            "delay_seconds": 3600,
+            "ttl_cap_seconds": 14400,
+            "enabled": true,
+            "ops": [
+              "audit",
+              "inject",
+              "put",
+              "use"
+            ]
+          },
+          "restricted": {
+            "delay_seconds": 0,
+            "ttl_cap_seconds": 14400,
+            "enabled": false,
+            "ops": [
+              "audit",
+              "inject",
+              "put",
+              "use"
+            ]
+          },
+          "client": {
+            "delay_seconds": 0,
+            "ttl_cap_seconds": 14400,
+            "enabled": false,
+            "ops": [
+              "audit",
+              "inject",
+              "put",
+              "use"
+            ]
+          },
+          "create": {
+            "delay_seconds": 0,
+            "ttl_cap_seconds": 604800,
+            "enabled": true,
+            "ops": [
+              "put"
+            ]
+          },
+          "rotate": {
+            "delay_seconds": 0,
+            "ttl_cap_seconds": 14400,
+            "enabled": false,
+            "ops": [
+              "put"
+            ]
+          }
+        },
+        "policy_fresh": true
+      },
+      "accepted": true,
+      "body_canonical": "{\"request_id\":\"req_cccccccccccc\"}",
+      "body_sha256": "a72ecc1878d50bb1c7c248f59d00a2b42ed261ebf284fb26b8923c6356a5d7aa",
+      "request_grant_id": "grt_cccccccccccc",
+      "grant": {
+        "principal_id": "prn_dddddddddddd",
+        "pattern": "shared/api",
+        "ops": [
+          "inject",
+          "use"
+        ],
+        "max_class": "sensitive",
+        "expires_at": "2026-10-16T17:00:00.000Z"
+      },
+      "grant_canonical": "{\"expires_at\":\"2026-10-16T17:00:00.000Z\",\"max_class\":\"sensitive\",\"ops\":[\"inject\",\"use\"],\"pattern\":\"shared/api\",\"principal_id\":\"prn_dddddddddddd\"}",
+      "grant_sha256": "f59849b69ffed1bcad75ff57db3a2312b5ffdbcc26468ed6ce4285f4d5fc9122",
+      "expected_row": "cross_sensitive"
+    }
+  ]
+}

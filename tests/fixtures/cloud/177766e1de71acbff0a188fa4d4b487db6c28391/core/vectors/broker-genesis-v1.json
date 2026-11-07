@@ -1,0 +1,1363 @@
+{
+  "revision": 1,
+  "description": "Pinned broker-founder genesis and initial full-custody epoch without a browser certificate or recovery recipient.",
+  "producer": {
+    "base_commit": "96ee0c4",
+    "generator": "npm run fixtures",
+    "verifier": "createAuthorityEpochLog with enrollment and genesis hooks, reference only",
+    "crypto": "Test-only deterministic WebCrypto entropy and RFC6979 P-256 signatures; no deployed keys"
+  },
+  "org_id": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+  "pinned_root": "c440abed8012856b3058324960275cd7420966aaa03f14ad1f347a2e01b83493",
+  "recovery_hooks": false,
+  "profile": "reference_only",
+  "production_acceptable": false,
+  "composition": [
+    "authority",
+    "epochs"
+  ],
+  "finalize_expected": null,
+  "records": [
+    {
+      "id": "broker-genesis",
+      "predecessor": {
+        "head": {
+          "seq": 0,
+          "hash": "0000000000000000000000000000000000000000000000000000000000000000"
+        },
+        "authority_sha256": "69d46903dda687eb088df61d018aafa34333db98688606872486f1d948133dfa",
+        "epoch_sha256": "ae2ec070336c365df24ea6425543c8ea7abc37fb73f6bcf56feb1bba92ade712",
+        "snapshot": null,
+        "commitments": [],
+        "custody": {}
+      },
+      "entry": {
+        "v": 2,
+        "org_id": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "seq": 1,
+        "prev_hash": "0000000000000000000000000000000000000000000000000000000000000000",
+        "ts": "2027-01-15T08:00:00.000Z",
+        "kind": "genesis",
+        "signer": {
+          "kind": "broker",
+          "id": "founding-broker"
+        },
+        "body": {
+          "org_id": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "founder": {
+            "kind": "broker",
+            "id": "founding-broker",
+            "sign_pub": "BNk_SpI70h9J2no7FC7pkkhRMmB-NgjtNsen6ex8nn8ZwX_ngfQ7XCM4eSwZf1tc-6tCcZ5OjJyp7S_5xvdrlqk",
+            "kx_pub": "BHOfOHf7h2vlfZCamQOcNJ5asOYozVRQFHO8xzZBJag3TnYrnmhSHmHaXf2dTAZYm3YVs-tfKXnJIs_1JJ1zLg0"
+          },
+          "recovery_kx_pub": null,
+          "recovery_sign_pub": null,
+          "default_rules": {},
+          "max_policy_age": 3600
+        }
+      },
+      "sig": "xxZvOlMqixKerGAl5eUl2hYllBe3rjNyLaEvLZIzfnpDmE4Fh4bFuqAF_BDlWDuS9P_uBBp4nw-RyDYzz1d-zQ",
+      "hash": "c440abed8012856b3058324960275cd7420966aaa03f14ad1f347a2e01b83493",
+      "canonical_hex": "7b22626f6479223a7b2264656661756c745f72756c6573223a7b7d2c22666f756e646572223a7b226964223a22666f756e64696e672d62726f6b6572222c226b696e64223a2262726f6b6572222c226b785f707562223a2242484f664f4866376832766c665a43616d514f634e4a3561734f596f7a56525146484f38787a5a424a616733546e59726e6d6853486d48615866326454415a596d335956732d74664b586e4a49735f314a4a317a4c6730222c227369676e5f707562223a22424e6b5f537049373068394a326e6f37464337706b6b68524d6d422d4e676a744e73656e366578386e6e385a77585f6e6766513758434d346553775a663174632d367443635a354f6a4a797037535f35787664726c716b227d2c226d61785f706f6c6963795f616765223a333630302c226f72675f6964223a226161616161616161616161616161616161616161616161616161616161616161222c227265636f766572795f6b785f707562223a6e756c6c2c227265636f766572795f7369676e5f707562223a6e756c6c7d2c226b696e64223a2267656e65736973222c226f72675f6964223a226161616161616161616161616161616161616161616161616161616161616161222c22707265765f68617368223a2230303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030222c22736571223a312c227369676e6572223a7b226964223a22666f756e64696e672d62726f6b6572222c226b696e64223a2262726f6b6572227d2c227473223a22323032372d30312d31355430383a30303a30302e3030305a222c2276223a327d",
+      "received_at": "2027-01-15T08:00:00.000Z",
+      "mode": "history",
+      "evidence": [
+        {
+          "table": "brokers",
+          "rows": [
+            {
+              "broker_id": "founding-broker",
+              "state": "active",
+              "full_custody_generation": null
+            }
+          ]
+        }
+      ],
+      "expected": {
+        "status": "accepted",
+        "events": [],
+        "head": {
+          "hash": "c440abed8012856b3058324960275cd7420966aaa03f14ad1f347a2e01b83493",
+          "seq": 1
+        },
+        "authority_sha256": "7bf3d213b421eb82e8db10bc4236f7d69083a4b00ad15f5aa16c9b1239d2e8b4",
+        "epoch_sha256": "ae2ec070336c365df24ea6425543c8ea7abc37fb73f6bcf56feb1bba92ade712",
+        "snapshot": {
+          "head": {
+            "seq": 1,
+            "hash": "c440abed8012856b3058324960275cd7420966aaa03f14ad1f347a2e01b83493"
+          },
+          "members": [],
+          "brokers": [
+            {
+              "id": "founding-broker",
+              "kx_pub": "04739f3877fb876be57d909a99039c349e5ab0e628cd54501473bcc7364125a8374e762b9e68521e61da5dfd9d4c06589b7615b3eb5f2979c922cff5249d732e0d",
+              "scope": [
+                "*"
+              ],
+              "keeper": true,
+              "keeper_since_seq": 1,
+              "full_custody_generation": null,
+              "scope_changes": [],
+              "pending_removed_projects": []
+            }
+          ],
+          "rekey_triggers": [],
+          "recovery": null,
+          "projects": [
+            "a",
+            "b"
+          ],
+          "founder": {
+            "mode": "broker",
+            "signer": {
+              "id": "founding-broker",
+              "kind": "broker"
+            },
+            "init_after_seq": 1
+          }
+        },
+        "commitments": [],
+        "custody": {
+          "founding-broker": {
+            "verified": true,
+            "head": {
+              "hash": "c440abed8012856b3058324960275cd7420966aaa03f14ad1f347a2e01b83493",
+              "seq": 1
+            },
+            "custody": "full",
+            "pending_downgrades": [],
+            "covered_triggers": [],
+            "generation": 0,
+            "full_custody_generation": null
+          }
+        }
+      }
+    },
+    {
+      "id": "broker-epoch-init",
+      "predecessor": {
+        "head": {
+          "hash": "c440abed8012856b3058324960275cd7420966aaa03f14ad1f347a2e01b83493",
+          "seq": 1
+        },
+        "authority_sha256": "7bf3d213b421eb82e8db10bc4236f7d69083a4b00ad15f5aa16c9b1239d2e8b4",
+        "epoch_sha256": "ae2ec070336c365df24ea6425543c8ea7abc37fb73f6bcf56feb1bba92ade712",
+        "snapshot": {
+          "head": {
+            "seq": 1,
+            "hash": "c440abed8012856b3058324960275cd7420966aaa03f14ad1f347a2e01b83493"
+          },
+          "members": [],
+          "brokers": [
+            {
+              "id": "founding-broker",
+              "kx_pub": "04739f3877fb876be57d909a99039c349e5ab0e628cd54501473bcc7364125a8374e762b9e68521e61da5dfd9d4c06589b7615b3eb5f2979c922cff5249d732e0d",
+              "scope": [
+                "*"
+              ],
+              "keeper": true,
+              "keeper_since_seq": 1,
+              "full_custody_generation": null,
+              "scope_changes": [],
+              "pending_removed_projects": []
+            }
+          ],
+          "rekey_triggers": [],
+          "recovery": null,
+          "projects": [
+            "a",
+            "b"
+          ],
+          "founder": {
+            "mode": "broker",
+            "signer": {
+              "id": "founding-broker",
+              "kind": "broker"
+            },
+            "init_after_seq": 1
+          }
+        },
+        "commitments": [],
+        "custody": {
+          "founding-broker": {
+            "verified": true,
+            "head": {
+              "hash": "c440abed8012856b3058324960275cd7420966aaa03f14ad1f347a2e01b83493",
+              "seq": 1
+            },
+            "custody": "full",
+            "pending_downgrades": [],
+            "covered_triggers": [],
+            "generation": 0,
+            "full_custody_generation": null
+          }
+        }
+      },
+      "entry": {
+        "v": 2,
+        "org_id": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "seq": 2,
+        "prev_hash": "c440abed8012856b3058324960275cd7420966aaa03f14ad1f347a2e01b83493",
+        "ts": "2027-01-15T08:00:00.000Z",
+        "kind": "epoch_init",
+        "body": {
+          "generation": 1,
+          "recipients": [
+            {
+              "kind": "broker",
+              "id": "founding-broker",
+              "kx_pub_sha256": "29420e5cda9d29f84cd10c308a77c25a221c2ecf8fc5630de0f8e44d8220f510",
+              "wrap_digest": "51fe73f2177f90c6ec4d66196499929066860d668308973caa84ee619af34d04"
+            }
+          ],
+          "scoped_seals": [],
+          "keyring": [
+            {
+              "key_id": "kek_a_1",
+              "purpose": "kek",
+              "scope": "a",
+              "digest": "90a545266cdfc5d07c2e8c63666a045b703680cd4c3d61abe5921f5a15667d8f"
+            },
+            {
+              "key_id": "kek_b_1",
+              "purpose": "kek",
+              "scope": "b",
+              "digest": "f6963bc8f1b5a6d239fb0b53814d6fbaf36ab1798765ed8f618700529e9130fe"
+            },
+            {
+              "key_id": "fk",
+              "purpose": "fingerprint",
+              "scope": "*",
+              "digest": "54e6041670e5dbc15ee8d563e0265b19635e7d1fb091dbcff7289b6c1599cb68"
+            }
+          ],
+          "active_kek": {
+            "a": "kek_a_1",
+            "b": "kek_b_1"
+          }
+        },
+        "signer": {
+          "kind": "broker",
+          "id": "founding-broker"
+        }
+      },
+      "sig": "_jusrbPt7lPcHU83CWAPunABoEUACvl08SggVtlw4pkCBlajtUB5pnd4xh6LPkgIh0RfdDV7otBe6R4nFskKPA",
+      "hash": "5f5f14536d28767ca675598f7b3715555bc132cb868e159898c89b190fe73b4f",
+      "canonical_hex": "7b22626f6479223a7b226163746976655f6b656b223a7b2261223a226b656b5f615f31222c2262223a226b656b5f625f31227d2c2267656e65726174696f6e223a312c226b657972696e67223a5b7b22646967657374223a2239306135343532363663646663356430376332653863363336363661303435623730333638306364346333643631616265353932316635613135363637643866222c226b65795f6964223a226b656b5f615f31222c22707572706f7365223a226b656b222c2273636f7065223a2261227d2c7b22646967657374223a2266363936336263386631623561366432333966623062353338313464366662616633366162313739383736356564386636313837303035323965393133306665222c226b65795f6964223a226b656b5f625f31222c22707572706f7365223a226b656b222c2273636f7065223a2262227d2c7b22646967657374223a2235346536303431363730653564626331356565386435363365303236356231393633356537643166623039316462636666373238396236633135393963623638222c226b65795f6964223a22666b222c22707572706f7365223a2266696e6765727072696e74222c2273636f7065223a222a227d5d2c22726563697069656e7473223a5b7b226964223a22666f756e64696e672d62726f6b6572222c226b696e64223a2262726f6b6572222c226b785f7075625f736861323536223a2232393432306535636461396432396638346364313063333038613737633235613232316332656366386663353633306465306638653434643832323066353130222c22777261705f646967657374223a2235316665373366323137376639306336656334643636313936343939393239303636383630643636383330383937336361613834656536313961663334643034227d5d2c2273636f7065645f7365616c73223a5b5d7d2c226b696e64223a2265706f63685f696e6974222c226f72675f6964223a226161616161616161616161616161616161616161616161616161616161616161222c22707265765f68617368223a2263343430616265643830313238353662333035383332343936303237356364373432303936366161613033663134616431663334376132653031623833343933222c22736571223a322c227369676e6572223a7b226964223a22666f756e64696e672d62726f6b6572222c226b696e64223a2262726f6b6572227d2c227473223a22323032372d30312d31355430383a30303a30302e3030305a222c2276223a327d",
+      "received_at": "2027-01-15T08:00:00.000Z",
+      "mode": "history",
+      "evidence": [
+        {
+          "table": "epoch_staging",
+          "source": "blobs",
+          "rows": [
+            {
+              "plan_id": "__epoch_init__",
+              "fence": 0,
+              "payload_json": "{\"keyring\":[{\"aad_v\":2,\"key_id\":\"kek_a_1\",\"mk_generation\":1,\"nonce\":\"145da6ef3881ca135ca5ee37\",\"project\":\"a\",\"purpose\":\"kek\",\"version\":1,\"wrapped_key\":\"eb9c811f8c79fb6af5ca164d0aed53833dd9ece478fa5bc12b1290dfe7bc5451233220bd783145a2fb2465aeeb7e27f8\"},{\"aad_v\":2,\"key_id\":\"kek_b_1\",\"mk_generation\":1,\"nonce\":\"80c9125ba4ed367fc8115aa3\",\"project\":\"b\",\"purpose\":\"kek\",\"version\":1,\"wrapped_key\":\"6cac3913cc7f985d73e662ff7731794bf612becc32a07a83042063139f30cfedbb55fbae4319c642b0cf2c9db05a9f8a\"},{\"aad_v\":2,\"key_id\":\"fk\",\"mk_generation\":1,\"nonce\":\"ec357ec71059a2eb347dc60f\",\"project\":null,\"purpose\":\"fingerprint\",\"version\":1,\"wrapped_key\":\"9f28d90b68ddbf307b03608aa7a7c2a83475a81ec04eb0f676b041632961ec743e099bb1e2729828c70e726e7f80dc01\"}],\"scoped_seals\":[],\"wraps\":[{\"eph_pub\":\"04754fd80b9761dce84a1a304cdeeb1675c2b274b7f3851e1ac334a06c0b99687453459b5e671f1db5f43332ce363085245c1b5372abf968f7c770668b62640eaf\",\"nonce\":\"78c10a539ce52e77c009529b\",\"omk_generation\":1,\"recipient_id\":\"founding-broker\",\"recipient_kind\":\"broker\",\"wrap_digest\":\"51fe73f2177f90c6ec4d66196499929066860d668308973caa84ee619af34d04\",\"wrapped_omk\":\"f162352351b814170afd88954c15ddfa60cace6198a21801b9b1431fa08e060196e45d969b46c7edca61b967dcd2ce8b\"}]}"
+            }
+          ]
+        }
+      ],
+      "expected": {
+        "status": "accepted",
+        "events": [],
+        "head": {
+          "hash": "5f5f14536d28767ca675598f7b3715555bc132cb868e159898c89b190fe73b4f",
+          "seq": 2
+        },
+        "authority_sha256": "558053c23b9a7b319805b33944ea6bc6a59e15123de3a80e2b2c6c0730905553",
+        "epoch_sha256": "218cb5b483cfb922d8fc76662814fe52a1e79175e4946c2b5f73cf284cecd922",
+        "snapshot": {
+          "head": {
+            "seq": 2,
+            "hash": "5f5f14536d28767ca675598f7b3715555bc132cb868e159898c89b190fe73b4f"
+          },
+          "members": [],
+          "brokers": [
+            {
+              "id": "founding-broker",
+              "kx_pub": "04739f3877fb876be57d909a99039c349e5ab0e628cd54501473bcc7364125a8374e762b9e68521e61da5dfd9d4c06589b7615b3eb5f2979c922cff5249d732e0d",
+              "scope": [
+                "*"
+              ],
+              "keeper": true,
+              "keeper_since_seq": 1,
+              "full_custody_generation": 1,
+              "scope_changes": [],
+              "pending_removed_projects": []
+            }
+          ],
+          "rekey_triggers": [],
+          "recovery": null,
+          "projects": [
+            "a",
+            "b"
+          ],
+          "founder": {
+            "mode": "broker",
+            "signer": {
+              "id": "founding-broker",
+              "kind": "broker"
+            },
+            "init_after_seq": 1
+          }
+        },
+        "commitments": [
+          {
+            "id": "keyring:kek_a_1",
+            "digest": "90a545266cdfc5d07c2e8c63666a045b703680cd4c3d61abe5921f5a15667d8f"
+          },
+          {
+            "id": "keyring:kek_b_1",
+            "digest": "f6963bc8f1b5a6d239fb0b53814d6fbaf36ab1798765ed8f618700529e9130fe"
+          },
+          {
+            "id": "keyring:fk",
+            "digest": "54e6041670e5dbc15ee8d563e0265b19635e7d1fb091dbcff7289b6c1599cb68"
+          },
+          {
+            "id": "org_wrap:1:broker:founding-broker",
+            "digest": "51fe73f2177f90c6ec4d66196499929066860d668308973caa84ee619af34d04"
+          }
+        ],
+        "custody": {
+          "founding-broker": {
+            "verified": true,
+            "head": {
+              "hash": "5f5f14536d28767ca675598f7b3715555bc132cb868e159898c89b190fe73b4f",
+              "seq": 2
+            },
+            "custody": "full",
+            "pending_downgrades": [],
+            "covered_triggers": [],
+            "generation": 1,
+            "full_custody_generation": 1
+          }
+        }
+      }
+    }
+  ],
+  "cases": [
+    {
+      "id": "bad-broker-signature",
+      "prefix_length": 1,
+      "record": {
+        "id": "bad-broker-signature",
+        "predecessor": {
+          "head": {
+            "hash": "c440abed8012856b3058324960275cd7420966aaa03f14ad1f347a2e01b83493",
+            "seq": 1
+          },
+          "authority_sha256": "7bf3d213b421eb82e8db10bc4236f7d69083a4b00ad15f5aa16c9b1239d2e8b4",
+          "epoch_sha256": "ae2ec070336c365df24ea6425543c8ea7abc37fb73f6bcf56feb1bba92ade712",
+          "snapshot": {
+            "head": {
+              "seq": 1,
+              "hash": "c440abed8012856b3058324960275cd7420966aaa03f14ad1f347a2e01b83493"
+            },
+            "members": [],
+            "brokers": [
+              {
+                "id": "founding-broker",
+                "kx_pub": "04739f3877fb876be57d909a99039c349e5ab0e628cd54501473bcc7364125a8374e762b9e68521e61da5dfd9d4c06589b7615b3eb5f2979c922cff5249d732e0d",
+                "scope": [
+                  "*"
+                ],
+                "keeper": true,
+                "keeper_since_seq": 1,
+                "full_custody_generation": null,
+                "scope_changes": [],
+                "pending_removed_projects": []
+              }
+            ],
+            "rekey_triggers": [],
+            "recovery": null,
+            "projects": [
+              "a",
+              "b"
+            ],
+            "founder": {
+              "mode": "broker",
+              "signer": {
+                "id": "founding-broker",
+                "kind": "broker"
+              },
+              "init_after_seq": 1
+            }
+          },
+          "commitments": [],
+          "custody": {
+            "founding-broker": {
+              "verified": true,
+              "head": {
+                "hash": "c440abed8012856b3058324960275cd7420966aaa03f14ad1f347a2e01b83493",
+                "seq": 1
+              },
+              "custody": "full",
+              "pending_downgrades": [],
+              "covered_triggers": [],
+              "generation": 0,
+              "full_custody_generation": null
+            }
+          }
+        },
+        "entry": {
+          "v": 2,
+          "org_id": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "seq": 2,
+          "prev_hash": "c440abed8012856b3058324960275cd7420966aaa03f14ad1f347a2e01b83493",
+          "ts": "2027-01-15T08:00:00.000Z",
+          "kind": "epoch_init",
+          "body": {
+            "generation": 1,
+            "recipients": [
+              {
+                "kind": "broker",
+                "id": "founding-broker",
+                "kx_pub_sha256": "29420e5cda9d29f84cd10c308a77c25a221c2ecf8fc5630de0f8e44d8220f510",
+                "wrap_digest": "51fe73f2177f90c6ec4d66196499929066860d668308973caa84ee619af34d04"
+              }
+            ],
+            "scoped_seals": [],
+            "keyring": [
+              {
+                "key_id": "kek_a_1",
+                "purpose": "kek",
+                "scope": "a",
+                "digest": "90a545266cdfc5d07c2e8c63666a045b703680cd4c3d61abe5921f5a15667d8f"
+              },
+              {
+                "key_id": "kek_b_1",
+                "purpose": "kek",
+                "scope": "b",
+                "digest": "f6963bc8f1b5a6d239fb0b53814d6fbaf36ab1798765ed8f618700529e9130fe"
+              },
+              {
+                "key_id": "fk",
+                "purpose": "fingerprint",
+                "scope": "*",
+                "digest": "54e6041670e5dbc15ee8d563e0265b19635e7d1fb091dbcff7289b6c1599cb68"
+              }
+            ],
+            "active_kek": {
+              "a": "kek_a_1",
+              "b": "kek_b_1"
+            }
+          },
+          "signer": {
+            "kind": "broker",
+            "id": "founding-broker"
+          }
+        },
+        "sig": "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+        "hash": "5f5f14536d28767ca675598f7b3715555bc132cb868e159898c89b190fe73b4f",
+        "canonical_hex": "7b22626f6479223a7b226163746976655f6b656b223a7b2261223a226b656b5f615f31222c2262223a226b656b5f625f31227d2c2267656e65726174696f6e223a312c226b657972696e67223a5b7b22646967657374223a2239306135343532363663646663356430376332653863363336363661303435623730333638306364346333643631616265353932316635613135363637643866222c226b65795f6964223a226b656b5f615f31222c22707572706f7365223a226b656b222c2273636f7065223a2261227d2c7b22646967657374223a2266363936336263386631623561366432333966623062353338313464366662616633366162313739383736356564386636313837303035323965393133306665222c226b65795f6964223a226b656b5f625f31222c22707572706f7365223a226b656b222c2273636f7065223a2262227d2c7b22646967657374223a2235346536303431363730653564626331356565386435363365303236356231393633356537643166623039316462636666373238396236633135393963623638222c226b65795f6964223a22666b222c22707572706f7365223a2266696e6765727072696e74222c2273636f7065223a222a227d5d2c22726563697069656e7473223a5b7b226964223a22666f756e64696e672d62726f6b6572222c226b696e64223a2262726f6b6572222c226b785f7075625f736861323536223a2232393432306535636461396432396638346364313063333038613737633235613232316332656366386663353633306465306638653434643832323066353130222c22777261705f646967657374223a2235316665373366323137376639306336656334643636313936343939393239303636383630643636383330383937336361613834656536313961663334643034227d5d2c2273636f7065645f7365616c73223a5b5d7d2c226b696e64223a2265706f63685f696e6974222c226f72675f6964223a226161616161616161616161616161616161616161616161616161616161616161222c22707265765f68617368223a2263343430616265643830313238353662333035383332343936303237356364373432303936366161613033663134616431663334376132653031623833343933222c22736571223a322c227369676e6572223a7b226964223a22666f756e64696e672d62726f6b6572222c226b696e64223a2262726f6b6572227d2c227473223a22323032372d30312d31355430383a30303a30302e3030305a222c2276223a327d",
+        "received_at": "2027-01-15T08:00:00.000Z",
+        "mode": "history",
+        "evidence": [
+          {
+            "table": "epoch_staging",
+            "source": "blobs",
+            "rows": [
+              {
+                "plan_id": "__epoch_init__",
+                "fence": 0,
+                "payload_json": "{\"keyring\":[{\"aad_v\":2,\"key_id\":\"kek_a_1\",\"mk_generation\":1,\"nonce\":\"145da6ef3881ca135ca5ee37\",\"project\":\"a\",\"purpose\":\"kek\",\"version\":1,\"wrapped_key\":\"eb9c811f8c79fb6af5ca164d0aed53833dd9ece478fa5bc12b1290dfe7bc5451233220bd783145a2fb2465aeeb7e27f8\"},{\"aad_v\":2,\"key_id\":\"kek_b_1\",\"mk_generation\":1,\"nonce\":\"80c9125ba4ed367fc8115aa3\",\"project\":\"b\",\"purpose\":\"kek\",\"version\":1,\"wrapped_key\":\"6cac3913cc7f985d73e662ff7731794bf612becc32a07a83042063139f30cfedbb55fbae4319c642b0cf2c9db05a9f8a\"},{\"aad_v\":2,\"key_id\":\"fk\",\"mk_generation\":1,\"nonce\":\"ec357ec71059a2eb347dc60f\",\"project\":null,\"purpose\":\"fingerprint\",\"version\":1,\"wrapped_key\":\"9f28d90b68ddbf307b03608aa7a7c2a83475a81ec04eb0f676b041632961ec743e099bb1e2729828c70e726e7f80dc01\"}],\"scoped_seals\":[],\"wraps\":[{\"eph_pub\":\"04754fd80b9761dce84a1a304cdeeb1675c2b274b7f3851e1ac334a06c0b99687453459b5e671f1db5f43332ce363085245c1b5372abf968f7c770668b62640eaf\",\"nonce\":\"78c10a539ce52e77c009529b\",\"omk_generation\":1,\"recipient_id\":\"founding-broker\",\"recipient_kind\":\"broker\",\"wrap_digest\":\"51fe73f2177f90c6ec4d66196499929066860d668308973caa84ee619af34d04\",\"wrapped_omk\":\"f162352351b814170afd88954c15ddfa60cace6198a21801b9b1431fa08e060196e45d969b46c7edca61b967dcd2ce8b\"}]}"
+              }
+            ]
+          }
+        ],
+        "expected": {
+          "status": "rejected",
+          "code": "E_POLICY_CONFLICT",
+          "message": "bad signature",
+          "head": {
+            "hash": "c440abed8012856b3058324960275cd7420966aaa03f14ad1f347a2e01b83493",
+            "seq": 1
+          },
+          "authority_sha256": "7bf3d213b421eb82e8db10bc4236f7d69083a4b00ad15f5aa16c9b1239d2e8b4",
+          "epoch_sha256": "ae2ec070336c365df24ea6425543c8ea7abc37fb73f6bcf56feb1bba92ade712",
+          "snapshot": {
+            "head": {
+              "seq": 1,
+              "hash": "c440abed8012856b3058324960275cd7420966aaa03f14ad1f347a2e01b83493"
+            },
+            "members": [],
+            "brokers": [
+              {
+                "id": "founding-broker",
+                "kx_pub": "04739f3877fb876be57d909a99039c349e5ab0e628cd54501473bcc7364125a8374e762b9e68521e61da5dfd9d4c06589b7615b3eb5f2979c922cff5249d732e0d",
+                "scope": [
+                  "*"
+                ],
+                "keeper": true,
+                "keeper_since_seq": 1,
+                "full_custody_generation": null,
+                "scope_changes": [],
+                "pending_removed_projects": []
+              }
+            ],
+            "rekey_triggers": [],
+            "recovery": null,
+            "projects": [
+              "a",
+              "b"
+            ],
+            "founder": {
+              "mode": "broker",
+              "signer": {
+                "id": "founding-broker",
+                "kind": "broker"
+              },
+              "init_after_seq": 1
+            }
+          },
+          "commitments": [],
+          "custody": {
+            "founding-broker": {
+              "verified": true,
+              "head": {
+                "hash": "c440abed8012856b3058324960275cd7420966aaa03f14ad1f347a2e01b83493",
+                "seq": 1
+              },
+              "custody": "full",
+              "pending_downgrades": [],
+              "covered_triggers": [],
+              "generation": 0,
+              "full_custody_generation": null
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "broken-broker-chain",
+      "prefix_length": 1,
+      "record": {
+        "id": "broken-broker-chain",
+        "predecessor": {
+          "head": {
+            "hash": "c440abed8012856b3058324960275cd7420966aaa03f14ad1f347a2e01b83493",
+            "seq": 1
+          },
+          "authority_sha256": "7bf3d213b421eb82e8db10bc4236f7d69083a4b00ad15f5aa16c9b1239d2e8b4",
+          "epoch_sha256": "ae2ec070336c365df24ea6425543c8ea7abc37fb73f6bcf56feb1bba92ade712",
+          "snapshot": {
+            "head": {
+              "seq": 1,
+              "hash": "c440abed8012856b3058324960275cd7420966aaa03f14ad1f347a2e01b83493"
+            },
+            "members": [],
+            "brokers": [
+              {
+                "id": "founding-broker",
+                "kx_pub": "04739f3877fb876be57d909a99039c349e5ab0e628cd54501473bcc7364125a8374e762b9e68521e61da5dfd9d4c06589b7615b3eb5f2979c922cff5249d732e0d",
+                "scope": [
+                  "*"
+                ],
+                "keeper": true,
+                "keeper_since_seq": 1,
+                "full_custody_generation": null,
+                "scope_changes": [],
+                "pending_removed_projects": []
+              }
+            ],
+            "rekey_triggers": [],
+            "recovery": null,
+            "projects": [
+              "a",
+              "b"
+            ],
+            "founder": {
+              "mode": "broker",
+              "signer": {
+                "id": "founding-broker",
+                "kind": "broker"
+              },
+              "init_after_seq": 1
+            }
+          },
+          "commitments": [],
+          "custody": {
+            "founding-broker": {
+              "verified": true,
+              "head": {
+                "hash": "c440abed8012856b3058324960275cd7420966aaa03f14ad1f347a2e01b83493",
+                "seq": 1
+              },
+              "custody": "full",
+              "pending_downgrades": [],
+              "covered_triggers": [],
+              "generation": 0,
+              "full_custody_generation": null
+            }
+          }
+        },
+        "entry": {
+          "v": 2,
+          "org_id": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "seq": 2,
+          "prev_hash": "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff",
+          "ts": "2027-01-15T08:00:00.000Z",
+          "kind": "epoch_init",
+          "body": {
+            "generation": 1,
+            "recipients": [
+              {
+                "kind": "broker",
+                "id": "founding-broker",
+                "kx_pub_sha256": "29420e5cda9d29f84cd10c308a77c25a221c2ecf8fc5630de0f8e44d8220f510",
+                "wrap_digest": "51fe73f2177f90c6ec4d66196499929066860d668308973caa84ee619af34d04"
+              }
+            ],
+            "scoped_seals": [],
+            "keyring": [
+              {
+                "key_id": "kek_a_1",
+                "purpose": "kek",
+                "scope": "a",
+                "digest": "90a545266cdfc5d07c2e8c63666a045b703680cd4c3d61abe5921f5a15667d8f"
+              },
+              {
+                "key_id": "kek_b_1",
+                "purpose": "kek",
+                "scope": "b",
+                "digest": "f6963bc8f1b5a6d239fb0b53814d6fbaf36ab1798765ed8f618700529e9130fe"
+              },
+              {
+                "key_id": "fk",
+                "purpose": "fingerprint",
+                "scope": "*",
+                "digest": "54e6041670e5dbc15ee8d563e0265b19635e7d1fb091dbcff7289b6c1599cb68"
+              }
+            ],
+            "active_kek": {
+              "a": "kek_a_1",
+              "b": "kek_b_1"
+            }
+          },
+          "signer": {
+            "kind": "broker",
+            "id": "founding-broker"
+          }
+        },
+        "sig": "nQoj4weckpvYKJc9pRgferDSoW_1VZDDxhFqPwscwxtYFMZnh_7Zjq8PyuL3pYK3F9n-IjpFhPipXO7N12w65Q",
+        "hash": "662639dc05b5f0f64fc2a887de07e69f429c0c741d6a3d1300b9463ac43cbfad",
+        "canonical_hex": "7b22626f6479223a7b226163746976655f6b656b223a7b2261223a226b656b5f615f31222c2262223a226b656b5f625f31227d2c2267656e65726174696f6e223a312c226b657972696e67223a5b7b22646967657374223a2239306135343532363663646663356430376332653863363336363661303435623730333638306364346333643631616265353932316635613135363637643866222c226b65795f6964223a226b656b5f615f31222c22707572706f7365223a226b656b222c2273636f7065223a2261227d2c7b22646967657374223a2266363936336263386631623561366432333966623062353338313464366662616633366162313739383736356564386636313837303035323965393133306665222c226b65795f6964223a226b656b5f625f31222c22707572706f7365223a226b656b222c2273636f7065223a2262227d2c7b22646967657374223a2235346536303431363730653564626331356565386435363365303236356231393633356537643166623039316462636666373238396236633135393963623638222c226b65795f6964223a22666b222c22707572706f7365223a2266696e6765727072696e74222c2273636f7065223a222a227d5d2c22726563697069656e7473223a5b7b226964223a22666f756e64696e672d62726f6b6572222c226b696e64223a2262726f6b6572222c226b785f7075625f736861323536223a2232393432306535636461396432396638346364313063333038613737633235613232316332656366386663353633306465306638653434643832323066353130222c22777261705f646967657374223a2235316665373366323137376639306336656334643636313936343939393239303636383630643636383330383937336361613834656536313961663334643034227d5d2c2273636f7065645f7365616c73223a5b5d7d2c226b696e64223a2265706f63685f696e6974222c226f72675f6964223a226161616161616161616161616161616161616161616161616161616161616161222c22707265765f68617368223a2266666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666222c22736571223a322c227369676e6572223a7b226964223a22666f756e64696e672d62726f6b6572222c226b696e64223a2262726f6b6572227d2c227473223a22323032372d30312d31355430383a30303a30302e3030305a222c2276223a327d",
+        "received_at": "2027-01-15T08:00:00.000Z",
+        "mode": "history",
+        "evidence": [],
+        "expected": {
+          "status": "rejected",
+          "code": "E_POLICY_CONFLICT",
+          "message": "chain mismatch",
+          "head": {
+            "hash": "c440abed8012856b3058324960275cd7420966aaa03f14ad1f347a2e01b83493",
+            "seq": 1
+          },
+          "authority_sha256": "7bf3d213b421eb82e8db10bc4236f7d69083a4b00ad15f5aa16c9b1239d2e8b4",
+          "epoch_sha256": "ae2ec070336c365df24ea6425543c8ea7abc37fb73f6bcf56feb1bba92ade712",
+          "snapshot": {
+            "head": {
+              "seq": 1,
+              "hash": "c440abed8012856b3058324960275cd7420966aaa03f14ad1f347a2e01b83493"
+            },
+            "members": [],
+            "brokers": [
+              {
+                "id": "founding-broker",
+                "kx_pub": "04739f3877fb876be57d909a99039c349e5ab0e628cd54501473bcc7364125a8374e762b9e68521e61da5dfd9d4c06589b7615b3eb5f2979c922cff5249d732e0d",
+                "scope": [
+                  "*"
+                ],
+                "keeper": true,
+                "keeper_since_seq": 1,
+                "full_custody_generation": null,
+                "scope_changes": [],
+                "pending_removed_projects": []
+              }
+            ],
+            "rekey_triggers": [],
+            "recovery": null,
+            "projects": [
+              "a",
+              "b"
+            ],
+            "founder": {
+              "mode": "broker",
+              "signer": {
+                "id": "founding-broker",
+                "kind": "broker"
+              },
+              "init_after_seq": 1
+            }
+          },
+          "commitments": [],
+          "custody": {
+            "founding-broker": {
+              "verified": true,
+              "head": {
+                "hash": "c440abed8012856b3058324960275cd7420966aaa03f14ad1f347a2e01b83493",
+                "seq": 1
+              },
+              "custody": "full",
+              "pending_downgrades": [],
+              "covered_triggers": [],
+              "generation": 0,
+              "full_custody_generation": null
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "wrong-founder-rank",
+      "prefix_length": 1,
+      "record": {
+        "id": "wrong-founder-rank",
+        "predecessor": {
+          "head": {
+            "hash": "c440abed8012856b3058324960275cd7420966aaa03f14ad1f347a2e01b83493",
+            "seq": 1
+          },
+          "authority_sha256": "7bf3d213b421eb82e8db10bc4236f7d69083a4b00ad15f5aa16c9b1239d2e8b4",
+          "epoch_sha256": "ae2ec070336c365df24ea6425543c8ea7abc37fb73f6bcf56feb1bba92ade712",
+          "snapshot": {
+            "head": {
+              "seq": 1,
+              "hash": "c440abed8012856b3058324960275cd7420966aaa03f14ad1f347a2e01b83493"
+            },
+            "members": [],
+            "brokers": [
+              {
+                "id": "founding-broker",
+                "kx_pub": "04739f3877fb876be57d909a99039c349e5ab0e628cd54501473bcc7364125a8374e762b9e68521e61da5dfd9d4c06589b7615b3eb5f2979c922cff5249d732e0d",
+                "scope": [
+                  "*"
+                ],
+                "keeper": true,
+                "keeper_since_seq": 1,
+                "full_custody_generation": null,
+                "scope_changes": [],
+                "pending_removed_projects": []
+              }
+            ],
+            "rekey_triggers": [],
+            "recovery": null,
+            "projects": [
+              "a",
+              "b"
+            ],
+            "founder": {
+              "mode": "broker",
+              "signer": {
+                "id": "founding-broker",
+                "kind": "broker"
+              },
+              "init_after_seq": 1
+            }
+          },
+          "commitments": [],
+          "custody": {
+            "founding-broker": {
+              "verified": true,
+              "head": {
+                "hash": "c440abed8012856b3058324960275cd7420966aaa03f14ad1f347a2e01b83493",
+                "seq": 1
+              },
+              "custody": "full",
+              "pending_downgrades": [],
+              "covered_triggers": [],
+              "generation": 0,
+              "full_custody_generation": null
+            }
+          }
+        },
+        "entry": {
+          "v": 2,
+          "org_id": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "seq": 2,
+          "prev_hash": "c440abed8012856b3058324960275cd7420966aaa03f14ad1f347a2e01b83493",
+          "ts": "2027-01-15T08:00:00.000Z",
+          "kind": "epoch_init",
+          "body": {
+            "generation": 1,
+            "recipients": [
+              {
+                "kind": "broker",
+                "id": "founding-broker",
+                "kx_pub_sha256": "29420e5cda9d29f84cd10c308a77c25a221c2ecf8fc5630de0f8e44d8220f510",
+                "wrap_digest": "51fe73f2177f90c6ec4d66196499929066860d668308973caa84ee619af34d04"
+              }
+            ],
+            "scoped_seals": [],
+            "keyring": [
+              {
+                "key_id": "kek_a_1",
+                "purpose": "kek",
+                "scope": "a",
+                "digest": "90a545266cdfc5d07c2e8c63666a045b703680cd4c3d61abe5921f5a15667d8f"
+              },
+              {
+                "key_id": "kek_b_1",
+                "purpose": "kek",
+                "scope": "b",
+                "digest": "f6963bc8f1b5a6d239fb0b53814d6fbaf36ab1798765ed8f618700529e9130fe"
+              },
+              {
+                "key_id": "fk",
+                "purpose": "fingerprint",
+                "scope": "*",
+                "digest": "54e6041670e5dbc15ee8d563e0265b19635e7d1fb091dbcff7289b6c1599cb68"
+              }
+            ],
+            "active_kek": {
+              "a": "kek_a_1",
+              "b": "kek_b_1"
+            }
+          },
+          "signer": {
+            "kind": "member",
+            "id": "founding-broker",
+            "key": "key-founding-broker"
+          }
+        },
+        "sig": "PWyy6BriDS8r5Rg4GGlLnVpyF26H2qAsNYfZJgqpMWQ90JsiMHS3VaFxzAS5by6FEexa-16LRzewNp_qaQlPUg",
+        "hash": "505b8c532a7677fbc4a522cd584ad792b5e4d165c75cee95f8e911f466dd8615",
+        "canonical_hex": "7b22626f6479223a7b226163746976655f6b656b223a7b2261223a226b656b5f615f31222c2262223a226b656b5f625f31227d2c2267656e65726174696f6e223a312c226b657972696e67223a5b7b22646967657374223a2239306135343532363663646663356430376332653863363336363661303435623730333638306364346333643631616265353932316635613135363637643866222c226b65795f6964223a226b656b5f615f31222c22707572706f7365223a226b656b222c2273636f7065223a2261227d2c7b22646967657374223a2266363936336263386631623561366432333966623062353338313464366662616633366162313739383736356564386636313837303035323965393133306665222c226b65795f6964223a226b656b5f625f31222c22707572706f7365223a226b656b222c2273636f7065223a2262227d2c7b22646967657374223a2235346536303431363730653564626331356565386435363365303236356231393633356537643166623039316462636666373238396236633135393963623638222c226b65795f6964223a22666b222c22707572706f7365223a2266696e6765727072696e74222c2273636f7065223a222a227d5d2c22726563697069656e7473223a5b7b226964223a22666f756e64696e672d62726f6b6572222c226b696e64223a2262726f6b6572222c226b785f7075625f736861323536223a2232393432306535636461396432396638346364313063333038613737633235613232316332656366386663353633306465306638653434643832323066353130222c22777261705f646967657374223a2235316665373366323137376639306336656334643636313936343939393239303636383630643636383330383937336361613834656536313961663334643034227d5d2c2273636f7065645f7365616c73223a5b5d7d2c226b696e64223a2265706f63685f696e6974222c226f72675f6964223a226161616161616161616161616161616161616161616161616161616161616161222c22707265765f68617368223a2263343430616265643830313238353662333035383332343936303237356364373432303936366161613033663134616431663334376132653031623833343933222c22736571223a322c227369676e6572223a7b226964223a22666f756e64696e672d62726f6b6572222c226b6579223a226b65792d666f756e64696e672d62726f6b6572222c226b696e64223a226d656d626572227d2c227473223a22323032372d30312d31355430383a30303a30302e3030305a222c2276223a327d",
+        "received_at": "2027-01-15T08:00:00.000Z",
+        "mode": "history",
+        "evidence": [],
+        "expected": {
+          "status": "rejected",
+          "code": "E_POLICY_CONFLICT",
+          "message": "Certified member signer required",
+          "head": {
+            "hash": "c440abed8012856b3058324960275cd7420966aaa03f14ad1f347a2e01b83493",
+            "seq": 1
+          },
+          "authority_sha256": "7bf3d213b421eb82e8db10bc4236f7d69083a4b00ad15f5aa16c9b1239d2e8b4",
+          "epoch_sha256": "ae2ec070336c365df24ea6425543c8ea7abc37fb73f6bcf56feb1bba92ade712",
+          "snapshot": {
+            "head": {
+              "seq": 1,
+              "hash": "c440abed8012856b3058324960275cd7420966aaa03f14ad1f347a2e01b83493"
+            },
+            "members": [],
+            "brokers": [
+              {
+                "id": "founding-broker",
+                "kx_pub": "04739f3877fb876be57d909a99039c349e5ab0e628cd54501473bcc7364125a8374e762b9e68521e61da5dfd9d4c06589b7615b3eb5f2979c922cff5249d732e0d",
+                "scope": [
+                  "*"
+                ],
+                "keeper": true,
+                "keeper_since_seq": 1,
+                "full_custody_generation": null,
+                "scope_changes": [],
+                "pending_removed_projects": []
+              }
+            ],
+            "rekey_triggers": [],
+            "recovery": null,
+            "projects": [
+              "a",
+              "b"
+            ],
+            "founder": {
+              "mode": "broker",
+              "signer": {
+                "id": "founding-broker",
+                "kind": "broker"
+              },
+              "init_after_seq": 1
+            }
+          },
+          "commitments": [],
+          "custody": {
+            "founding-broker": {
+              "verified": true,
+              "head": {
+                "hash": "c440abed8012856b3058324960275cd7420966aaa03f14ad1f347a2e01b83493",
+                "seq": 1
+              },
+              "custody": "full",
+              "pending_downgrades": [],
+              "covered_triggers": [],
+              "generation": 0,
+              "full_custody_generation": null
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "unknown-broker-kind",
+      "prefix_length": 1,
+      "record": {
+        "id": "unknown-broker-kind",
+        "predecessor": {
+          "head": {
+            "hash": "c440abed8012856b3058324960275cd7420966aaa03f14ad1f347a2e01b83493",
+            "seq": 1
+          },
+          "authority_sha256": "7bf3d213b421eb82e8db10bc4236f7d69083a4b00ad15f5aa16c9b1239d2e8b4",
+          "epoch_sha256": "ae2ec070336c365df24ea6425543c8ea7abc37fb73f6bcf56feb1bba92ade712",
+          "snapshot": {
+            "head": {
+              "seq": 1,
+              "hash": "c440abed8012856b3058324960275cd7420966aaa03f14ad1f347a2e01b83493"
+            },
+            "members": [],
+            "brokers": [
+              {
+                "id": "founding-broker",
+                "kx_pub": "04739f3877fb876be57d909a99039c349e5ab0e628cd54501473bcc7364125a8374e762b9e68521e61da5dfd9d4c06589b7615b3eb5f2979c922cff5249d732e0d",
+                "scope": [
+                  "*"
+                ],
+                "keeper": true,
+                "keeper_since_seq": 1,
+                "full_custody_generation": null,
+                "scope_changes": [],
+                "pending_removed_projects": []
+              }
+            ],
+            "rekey_triggers": [],
+            "recovery": null,
+            "projects": [
+              "a",
+              "b"
+            ],
+            "founder": {
+              "mode": "broker",
+              "signer": {
+                "id": "founding-broker",
+                "kind": "broker"
+              },
+              "init_after_seq": 1
+            }
+          },
+          "commitments": [],
+          "custody": {
+            "founding-broker": {
+              "verified": true,
+              "head": {
+                "hash": "c440abed8012856b3058324960275cd7420966aaa03f14ad1f347a2e01b83493",
+                "seq": 1
+              },
+              "custody": "full",
+              "pending_downgrades": [],
+              "covered_triggers": [],
+              "generation": 0,
+              "full_custody_generation": null
+            }
+          }
+        },
+        "entry": {
+          "v": 2,
+          "org_id": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "seq": 2,
+          "prev_hash": "c440abed8012856b3058324960275cd7420966aaa03f14ad1f347a2e01b83493",
+          "ts": "2027-01-15T08:00:00.000Z",
+          "kind": "unknown_kind",
+          "body": {
+            "generation": 1,
+            "recipients": [
+              {
+                "kind": "broker",
+                "id": "founding-broker",
+                "kx_pub_sha256": "29420e5cda9d29f84cd10c308a77c25a221c2ecf8fc5630de0f8e44d8220f510",
+                "wrap_digest": "51fe73f2177f90c6ec4d66196499929066860d668308973caa84ee619af34d04"
+              }
+            ],
+            "scoped_seals": [],
+            "keyring": [
+              {
+                "key_id": "kek_a_1",
+                "purpose": "kek",
+                "scope": "a",
+                "digest": "90a545266cdfc5d07c2e8c63666a045b703680cd4c3d61abe5921f5a15667d8f"
+              },
+              {
+                "key_id": "kek_b_1",
+                "purpose": "kek",
+                "scope": "b",
+                "digest": "f6963bc8f1b5a6d239fb0b53814d6fbaf36ab1798765ed8f618700529e9130fe"
+              },
+              {
+                "key_id": "fk",
+                "purpose": "fingerprint",
+                "scope": "*",
+                "digest": "54e6041670e5dbc15ee8d563e0265b19635e7d1fb091dbcff7289b6c1599cb68"
+              }
+            ],
+            "active_kek": {
+              "a": "kek_a_1",
+              "b": "kek_b_1"
+            }
+          },
+          "signer": {
+            "kind": "broker",
+            "id": "founding-broker"
+          }
+        },
+        "sig": "1kua4OjddhJT0e5orGY2TCHQRyo9L1p7_TLSHgWejTRcYNwNvVezLWlA-SYprJuUdjFoTcbP_hwagDyXn3Dh8w",
+        "hash": "c54714b4b53db2e318350e0f028b319936f27b955bad758bfbe8202045e14a8a",
+        "canonical_hex": "7b22626f6479223a7b226163746976655f6b656b223a7b2261223a226b656b5f615f31222c2262223a226b656b5f625f31227d2c2267656e65726174696f6e223a312c226b657972696e67223a5b7b22646967657374223a2239306135343532363663646663356430376332653863363336363661303435623730333638306364346333643631616265353932316635613135363637643866222c226b65795f6964223a226b656b5f615f31222c22707572706f7365223a226b656b222c2273636f7065223a2261227d2c7b22646967657374223a2266363936336263386631623561366432333966623062353338313464366662616633366162313739383736356564386636313837303035323965393133306665222c226b65795f6964223a226b656b5f625f31222c22707572706f7365223a226b656b222c2273636f7065223a2262227d2c7b22646967657374223a2235346536303431363730653564626331356565386435363365303236356231393633356537643166623039316462636666373238396236633135393963623638222c226b65795f6964223a22666b222c22707572706f7365223a2266696e6765727072696e74222c2273636f7065223a222a227d5d2c22726563697069656e7473223a5b7b226964223a22666f756e64696e672d62726f6b6572222c226b696e64223a2262726f6b6572222c226b785f7075625f736861323536223a2232393432306535636461396432396638346364313063333038613737633235613232316332656366386663353633306465306638653434643832323066353130222c22777261705f646967657374223a2235316665373366323137376639306336656334643636313936343939393239303636383630643636383330383937336361613834656536313961663334643034227d5d2c2273636f7065645f7365616c73223a5b5d7d2c226b696e64223a22756e6b6e6f776e5f6b696e64222c226f72675f6964223a226161616161616161616161616161616161616161616161616161616161616161222c22707265765f68617368223a2263343430616265643830313238353662333035383332343936303237356364373432303936366161613033663134616431663334376132653031623833343933222c22736571223a322c227369676e6572223a7b226964223a22666f756e64696e672d62726f6b6572222c226b696e64223a2262726f6b6572227d2c227473223a22323032372d30312d31355430383a30303a30302e3030305a222c2276223a327d",
+        "received_at": "2027-01-15T08:00:00.000Z",
+        "mode": "history",
+        "evidence": [],
+        "expected": {
+          "status": "rejected",
+          "code": "E_POLICY_CONFLICT",
+          "message": "Member signer required",
+          "head": {
+            "hash": "c440abed8012856b3058324960275cd7420966aaa03f14ad1f347a2e01b83493",
+            "seq": 1
+          },
+          "authority_sha256": "7bf3d213b421eb82e8db10bc4236f7d69083a4b00ad15f5aa16c9b1239d2e8b4",
+          "epoch_sha256": "ae2ec070336c365df24ea6425543c8ea7abc37fb73f6bcf56feb1bba92ade712",
+          "snapshot": {
+            "head": {
+              "seq": 1,
+              "hash": "c440abed8012856b3058324960275cd7420966aaa03f14ad1f347a2e01b83493"
+            },
+            "members": [],
+            "brokers": [
+              {
+                "id": "founding-broker",
+                "kx_pub": "04739f3877fb876be57d909a99039c349e5ab0e628cd54501473bcc7364125a8374e762b9e68521e61da5dfd9d4c06589b7615b3eb5f2979c922cff5249d732e0d",
+                "scope": [
+                  "*"
+                ],
+                "keeper": true,
+                "keeper_since_seq": 1,
+                "full_custody_generation": null,
+                "scope_changes": [],
+                "pending_removed_projects": []
+              }
+            ],
+            "rekey_triggers": [],
+            "recovery": null,
+            "projects": [
+              "a",
+              "b"
+            ],
+            "founder": {
+              "mode": "broker",
+              "signer": {
+                "id": "founding-broker",
+                "kind": "broker"
+              },
+              "init_after_seq": 1
+            }
+          },
+          "commitments": [],
+          "custody": {
+            "founding-broker": {
+              "verified": true,
+              "head": {
+                "hash": "c440abed8012856b3058324960275cd7420966aaa03f14ad1f347a2e01b83493",
+                "seq": 1
+              },
+              "custody": "full",
+              "pending_downgrades": [],
+              "covered_triggers": [],
+              "generation": 0,
+              "full_custody_generation": null
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "expired-broker-window",
+      "prefix_length": 1,
+      "record": {
+        "id": "expired-broker-window",
+        "predecessor": {
+          "head": {
+            "hash": "c440abed8012856b3058324960275cd7420966aaa03f14ad1f347a2e01b83493",
+            "seq": 1
+          },
+          "authority_sha256": "7bf3d213b421eb82e8db10bc4236f7d69083a4b00ad15f5aa16c9b1239d2e8b4",
+          "epoch_sha256": "ae2ec070336c365df24ea6425543c8ea7abc37fb73f6bcf56feb1bba92ade712",
+          "snapshot": {
+            "head": {
+              "seq": 1,
+              "hash": "c440abed8012856b3058324960275cd7420966aaa03f14ad1f347a2e01b83493"
+            },
+            "members": [],
+            "brokers": [
+              {
+                "id": "founding-broker",
+                "kx_pub": "04739f3877fb876be57d909a99039c349e5ab0e628cd54501473bcc7364125a8374e762b9e68521e61da5dfd9d4c06589b7615b3eb5f2979c922cff5249d732e0d",
+                "scope": [
+                  "*"
+                ],
+                "keeper": true,
+                "keeper_since_seq": 1,
+                "full_custody_generation": null,
+                "scope_changes": [],
+                "pending_removed_projects": []
+              }
+            ],
+            "rekey_triggers": [],
+            "recovery": null,
+            "projects": [
+              "a",
+              "b"
+            ],
+            "founder": {
+              "mode": "broker",
+              "signer": {
+                "id": "founding-broker",
+                "kind": "broker"
+              },
+              "init_after_seq": 1
+            }
+          },
+          "commitments": [],
+          "custody": {
+            "founding-broker": {
+              "verified": true,
+              "head": {
+                "hash": "c440abed8012856b3058324960275cd7420966aaa03f14ad1f347a2e01b83493",
+                "seq": 1
+              },
+              "custody": "full",
+              "pending_downgrades": [],
+              "covered_triggers": [],
+              "generation": 0,
+              "full_custody_generation": null
+            }
+          }
+        },
+        "entry": {
+          "v": 2,
+          "org_id": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "seq": 2,
+          "prev_hash": "c440abed8012856b3058324960275cd7420966aaa03f14ad1f347a2e01b83493",
+          "ts": "2027-01-15T08:00:00.000Z",
+          "kind": "epoch_init",
+          "body": {
+            "generation": 1,
+            "recipients": [
+              {
+                "kind": "broker",
+                "id": "founding-broker",
+                "kx_pub_sha256": "29420e5cda9d29f84cd10c308a77c25a221c2ecf8fc5630de0f8e44d8220f510",
+                "wrap_digest": "51fe73f2177f90c6ec4d66196499929066860d668308973caa84ee619af34d04"
+              }
+            ],
+            "scoped_seals": [],
+            "keyring": [
+              {
+                "key_id": "kek_a_1",
+                "purpose": "kek",
+                "scope": "a",
+                "digest": "90a545266cdfc5d07c2e8c63666a045b703680cd4c3d61abe5921f5a15667d8f"
+              },
+              {
+                "key_id": "kek_b_1",
+                "purpose": "kek",
+                "scope": "b",
+                "digest": "f6963bc8f1b5a6d239fb0b53814d6fbaf36ab1798765ed8f618700529e9130fe"
+              },
+              {
+                "key_id": "fk",
+                "purpose": "fingerprint",
+                "scope": "*",
+                "digest": "54e6041670e5dbc15ee8d563e0265b19635e7d1fb091dbcff7289b6c1599cb68"
+              }
+            ],
+            "active_kek": {
+              "a": "kek_a_1",
+              "b": "kek_b_1"
+            }
+          },
+          "signer": {
+            "kind": "broker",
+            "id": "founding-broker"
+          }
+        },
+        "sig": "_jusrbPt7lPcHU83CWAPunABoEUACvl08SggVtlw4pkCBlajtUB5pnd4xh6LPkgIh0RfdDV7otBe6R4nFskKPA",
+        "hash": "5f5f14536d28767ca675598f7b3715555bc132cb868e159898c89b190fe73b4f",
+        "canonical_hex": "7b22626f6479223a7b226163746976655f6b656b223a7b2261223a226b656b5f615f31222c2262223a226b656b5f625f31227d2c2267656e65726174696f6e223a312c226b657972696e67223a5b7b22646967657374223a2239306135343532363663646663356430376332653863363336363661303435623730333638306364346333643631616265353932316635613135363637643866222c226b65795f6964223a226b656b5f615f31222c22707572706f7365223a226b656b222c2273636f7065223a2261227d2c7b22646967657374223a2266363936336263386631623561366432333966623062353338313464366662616633366162313739383736356564386636313837303035323965393133306665222c226b65795f6964223a226b656b5f625f31222c22707572706f7365223a226b656b222c2273636f7065223a2262227d2c7b22646967657374223a2235346536303431363730653564626331356565386435363365303236356231393633356537643166623039316462636666373238396236633135393963623638222c226b65795f6964223a22666b222c22707572706f7365223a2266696e6765727072696e74222c2273636f7065223a222a227d5d2c22726563697069656e7473223a5b7b226964223a22666f756e64696e672d62726f6b6572222c226b696e64223a2262726f6b6572222c226b785f7075625f736861323536223a2232393432306535636461396432396638346364313063333038613737633235613232316332656366386663353633306465306638653434643832323066353130222c22777261705f646967657374223a2235316665373366323137376639306336656334643636313936343939393239303636383630643636383330383937336361613834656536313961663334643034227d5d2c2273636f7065645f7365616c73223a5b5d7d2c226b696e64223a2265706f63685f696e6974222c226f72675f6964223a226161616161616161616161616161616161616161616161616161616161616161222c22707265765f68617368223a2263343430616265643830313238353662333035383332343936303237356364373432303936366161613033663134616431663334376132653031623833343933222c22736571223a322c227369676e6572223a7b226964223a22666f756e64696e672d62726f6b6572222c226b696e64223a2262726f6b6572227d2c227473223a22323032372d30312d31355430383a30303a30302e3030305a222c2276223a327d",
+        "received_at": "2027-01-15T08:05:00.001Z",
+        "mode": "live",
+        "evidence": [],
+        "expected": {
+          "status": "rejected",
+          "code": "E_POLICY_TIME",
+          "message": "live timestamp outside bound",
+          "head": {
+            "hash": "c440abed8012856b3058324960275cd7420966aaa03f14ad1f347a2e01b83493",
+            "seq": 1
+          },
+          "authority_sha256": "7bf3d213b421eb82e8db10bc4236f7d69083a4b00ad15f5aa16c9b1239d2e8b4",
+          "epoch_sha256": "ae2ec070336c365df24ea6425543c8ea7abc37fb73f6bcf56feb1bba92ade712",
+          "snapshot": {
+            "head": {
+              "seq": 1,
+              "hash": "c440abed8012856b3058324960275cd7420966aaa03f14ad1f347a2e01b83493"
+            },
+            "members": [],
+            "brokers": [
+              {
+                "id": "founding-broker",
+                "kx_pub": "04739f3877fb876be57d909a99039c349e5ab0e628cd54501473bcc7364125a8374e762b9e68521e61da5dfd9d4c06589b7615b3eb5f2979c922cff5249d732e0d",
+                "scope": [
+                  "*"
+                ],
+                "keeper": true,
+                "keeper_since_seq": 1,
+                "full_custody_generation": null,
+                "scope_changes": [],
+                "pending_removed_projects": []
+              }
+            ],
+            "rekey_triggers": [],
+            "recovery": null,
+            "projects": [
+              "a",
+              "b"
+            ],
+            "founder": {
+              "mode": "broker",
+              "signer": {
+                "id": "founding-broker",
+                "kind": "broker"
+              },
+              "init_after_seq": 1
+            }
+          },
+          "commitments": [],
+          "custody": {
+            "founding-broker": {
+              "verified": true,
+              "head": {
+                "hash": "c440abed8012856b3058324960275cd7420966aaa03f14ad1f347a2e01b83493",
+                "seq": 1
+              },
+              "custody": "full",
+              "pending_downgrades": [],
+              "covered_triggers": [],
+              "generation": 0,
+              "full_custody_generation": null
+            }
+          }
+        }
+      }
+    }
+  ],
+  "final_state": {
+    "authority": {
+      "brokers": [],
+      "certificates": [],
+      "core_commitments": [],
+      "founder": {
+        "init_predecessor_seq": 1,
+        "mode": "broker",
+        "signer": {
+          "id": "founding-broker",
+          "kind": "broker"
+        }
+      },
+      "founder_pending": null,
+      "founding_broker": {
+        "id": "founding-broker",
+        "kx_pub": "BHOfOHf7h2vlfZCamQOcNJ5asOYozVRQFHO8xzZBJag3TnYrnmhSHmHaXf2dTAZYm3YVs-tfKXnJIs_1JJ1zLg0",
+        "sign_pub": "BNk_SpI70h9J2no7FC7pkkhRMmB-NgjtNsen6ex8nn8ZwX_ngfQ7XCM4eSwZf1tc-6tCcZ5OjJyp7S_5xvdrlqk"
+      },
+      "head": {
+        "hash": "5f5f14536d28767ca675598f7b3715555bc132cb868e159898c89b190fe73b4f",
+        "seq": 2
+      },
+      "org_id": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "proposals": {},
+      "recovery": null,
+      "recovery_ever_set": false,
+      "recovery_seq": 0,
+      "root": "c440abed8012856b3058324960275cd7420966aaa03f14ad1f347a2e01b83493",
+      "triggers": {},
+      "used_challenges": [],
+      "v": 1
+    },
+    "epoch": {
+      "active_kek": {
+        "a": "kek_a_1",
+        "b": "kek_b_1"
+      },
+      "broker_wraps": [],
+      "epochs": [
+        {
+          "active_kek": {
+            "a": "kek_a_1",
+            "b": "kek_b_1"
+          },
+          "commit_seq": 2,
+          "covered_triggers": [],
+          "generation": 1,
+          "kind": "full",
+          "projects": [
+            "a",
+            "b"
+          ],
+          "seq": 2
+        }
+      ],
+      "generation": 1,
+      "keyring": [
+        {
+          "aad_v": 2,
+          "key_id": "kek_a_1",
+          "mk_generation": 1,
+          "nonce": "145da6ef3881ca135ca5ee37",
+          "project": "a",
+          "purpose": "kek",
+          "version": 1,
+          "wrapped_key": "eb9c811f8c79fb6af5ca164d0aed53833dd9ece478fa5bc12b1290dfe7bc5451233220bd783145a2fb2465aeeb7e27f8"
+        },
+        {
+          "aad_v": 2,
+          "key_id": "kek_b_1",
+          "mk_generation": 1,
+          "nonce": "80c9125ba4ed367fc8115aa3",
+          "project": "b",
+          "purpose": "kek",
+          "version": 1,
+          "wrapped_key": "6cac3913cc7f985d73e662ff7731794bf612becc32a07a83042063139f30cfedbb55fbae4319c642b0cf2c9db05a9f8a"
+        },
+        {
+          "aad_v": 2,
+          "key_id": "fk",
+          "mk_generation": 1,
+          "nonce": "ec357ec71059a2eb347dc60f",
+          "project": null,
+          "purpose": "fingerprint",
+          "version": 1,
+          "wrapped_key": "9f28d90b68ddbf307b03608aa7a7c2a83475a81ec04eb0f676b041632961ec743e099bb1e2729828c70e726e7f80dc01"
+        }
+      ],
+      "last_discretionary_rotation": null,
+      "org_wraps": [
+        {
+          "eph_pub": "04754fd80b9761dce84a1a304cdeeb1675c2b274b7f3851e1ac334a06c0b99687453459b5e671f1db5f43332ce363085245c1b5372abf968f7c770668b62640eaf",
+          "nonce": "78c10a539ce52e77c009529b",
+          "omk_generation": 1,
+          "recipient_id": "founding-broker",
+          "recipient_kind": "broker",
+          "wrap_digest": "51fe73f2177f90c6ec4d66196499929066860d668308973caa84ee619af34d04",
+          "wrapped_omk": "f162352351b814170afd88954c15ddfa60cace6198a21801b9b1431fa08e060196e45d969b46c7edca61b967dcd2ce8b"
+        }
+      ],
+      "pending": null,
+      "used_triggers": [],
+      "versions": []
+    }
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "desk_identity": "master",
+  "desk_project": "master",
+  "max_leases": 64,
+  "max_leases_per_principal": 8
+}

@@ -1,0 +1,126 @@
+{
+  "revision": 2,
+  "description": "Deterministic paired broker fixture inventory; SHA256 covers exact UTF-8 file bytes including trailing newline.",
+  "files": [
+    {
+      "file": "broker-authority-ranks-v2.json",
+      "records": 26,
+      "cases": 24,
+      "sha256": "13f28234e468fdc1a5ccab245b58a6e329b4eaf640a79254242d1087f4052f3d"
+    },
+    {
+      "file": "broker-authority-holds-v2.json",
+      "records": 21,
+      "cases": 20,
+      "sha256": "84e97352c3a4bc2d930dfd567c5098628706ffcbf42ca3048d07c9a3a0d90ac2"
+    },
+    {
+      "file": "broker-epoch-manual-v2.json",
+      "records": 7,
+      "cases": 17,
+      "sha256": "06e68bdc85428d86cc0876fc893f16f553f17e296bda58b3d0cab53de620d00d"
+    },
+    {
+      "file": "broker-epoch-scheduled-v2.json",
+      "records": 7,
+      "cases": 17,
+      "sha256": "90a8d09eebe008c3d5aa0666c55a412b84c915fd71bef9bb63d81db0c5e862b5"
+    },
+    {
+      "file": "broker-epoch-pages-v2.json",
+      "records": 11,
+      "cases": 20,
+      "sha256": "66b1c59dc2e944e5cf3e7516c56ef8ae16227f525adc09664be659e9a6d6e087"
+    },
+    {
+      "file": "broker-full-revoke-v2.json",
+      "records": 7,
+      "cases": 11,
+      "sha256": "5c047d9b00446106cbbd1655989398327d76804ebdb98e08924a7f2b2595ed9a"
+    },
+    {
+      "file": "broker-brokers-rekeys-v2.json",
+      "records": 14,
+      "cases": 16,
+      "sha256": "ea3e8dcc79876064fe93b0ca2c035b4089df9ef4394ad115df21bbfe72a747cf"
+    },
+    {
+      "file": "broker-authority-invite-wrap-v2.json",
+      "records": 5,
+      "cases": 12,
+      "sha256": "b9230013498d5334bf48bc88ba7f96ddd3c844bed99758295adf5d6f416a2dd5"
+    },
+    {
+      "file": "broker-genesis-v2.json",
+      "records": 2,
+      "cases": 5,
+      "sha256": "99a4f57387366617c81ee735573f6321946783040dde0b41536b36e3363cfa86"
+    },
+    {
+      "file": "broker-typed-passkey-binding-v2.json",
+      "records": 6,
+      "cases": 17,
+      "sha256": "0878fe24ff3bfecbee4cc7b950c6f93c13396e95bb128e8d16eeb987f27296ba"
+    },
+    {
+      "file": "broker-authority-ranks-v1.json",
+      "records": 43,
+      "cases": 14,
+      "sha256": "b415bdaa7e126bd39ba32071bc29978f654b340ab1e6152ffb986596f6aacd95"
+    },
+    {
+      "file": "broker-authority-holds-v1.json",
+      "records": 19,
+      "cases": 20,
+      "sha256": "cf94c078ea7c44279061ba3af41f7f18713ef59f730a5be43a11fb5c39c02ff3"
+    },
+    {
+      "file": "broker-epoch-manual-v1.json",
+      "records": 7,
+      "cases": 17,
+      "sha256": "f808cf0b518d9de46b152b0d33491ba22c0f15201eb9f9345328d7d93f8d77a4"
+    },
+    {
+      "file": "broker-epoch-scheduled-v1.json",
+      "records": 7,
+      "cases": 17,
+      "sha256": "daa51904e5d0b4c52fcf20643e7e2297b46e7ef46eb6190549a22eb1bf3c1de8"
+    },
+    {
+      "file": "broker-epoch-pages-v1.json",
+      "records": 10,
+      "cases": 20,
+      "sha256": "6d63830569d929225490ea32ca1f35c1f1fbab601cc7d492c0ac3eee76c2524a"
+    },
+    {
+      "file": "broker-full-revoke-v1.json",
+      "records": 7,
+      "cases": 11,
+      "sha256": "d18e090277cc96ef77fb6f536c9fdad7ba36c086ed2168491f97a9c2ffce2df3"
+    },
+    {
+      "file": "broker-brokers-rekeys-v1.json",
+      "records": 13,
+      "cases": 16,
+      "sha256": "ba2ba8c7b28cda8d4f703e8f7f38b3620d2bfb37705b0e9a114cf5882e247e61"
+    },
+    {
+      "file": "broker-authority-invite-wrap-v1.json",
+      "records": 5,
+      "cases": 12,
+      "sha256": "e6a1d1a735126d2963bc9088fb0a0f9dddcaa05d413c6b861c9f002428347723"
+    },
+    {
+      "file": "broker-genesis-v1.json",
+      "records": 2,
+      "cases": 5,
+      "sha256": "29c43e819ddc338e3e14bada6e5c90206a4b9f4c77023e3ca15c4ba73f880be7"
+    },
+    {
+      "file": "broker-typed-passkey-binding-v1.json",
+      "records": 6,
+      "cases": 17,
+      "sha256": "2ae0ceba7a162418ffde272e17002862c81de90fbedc803c50217c7458348854"
+    }
+  ]
+}

@@ -1,0 +1,66 @@
+{
+  "revision": 1,
+  "description": "Deterministic paired broker fixture inventory; SHA256 covers exact UTF-8 file bytes including trailing newline.",
+  "files": [
+    {
+      "file": "broker-authority-ranks-v1.json",
+      "records": 43,
+      "cases": 14,
+      "sha256": "b415bdaa7e126bd39ba32071bc29978f654b340ab1e6152ffb986596f6aacd95"
+    },
+    {
+      "file": "broker-authority-holds-v1.json",
+      "records": 19,
+      "cases": 20,
+      "sha256": "cf94c078ea7c44279061ba3af41f7f18713ef59f730a5be43a11fb5c39c02ff3"
+    },
+    {
+      "file": "broker-epoch-manual-v1.json",
+      "records": 7,
+      "cases": 17,
+      "sha256": "f808cf0b518d9de46b152b0d33491ba22c0f15201eb9f9345328d7d93f8d77a4"
+    },
+    {
+      "file": "broker-epoch-scheduled-v1.json",
+      "records": 7,
+      "cases": 17,
+      "sha256": "daa51904e5d0b4c52fcf20643e7e2297b46e7ef46eb6190549a22eb1bf3c1de8"
+    },
+    {
+      "file": "broker-epoch-pages-v1.json",
+      "records": 10,
+      "cases": 20,
+      "sha256": "6d63830569d929225490ea32ca1f35c1f1fbab601cc7d492c0ac3eee76c2524a"
+    },
+    {
+      "file": "broker-full-revoke-v1.json",
+      "records": 7,
+      "cases": 11,
+      "sha256": "d18e090277cc96ef77fb6f536c9fdad7ba36c086ed2168491f97a9c2ffce2df3"
+    },
+    {
+      "file": "broker-brokers-rekeys-v1.json",
+      "records": 13,
+      "cases": 16,
+      "sha256": "ba2ba8c7b28cda8d4f703e8f7f38b3620d2bfb37705b0e9a114cf5882e247e61"
+    },
+    {
+      "file": "broker-authority-invite-wrap-v1.json",
+      "records": 5,
+      "cases": 12,
+      "sha256": "e6a1d1a735126d2963bc9088fb0a0f9dddcaa05d413c6b861c9f002428347723"
+    },
+    {
+      "file": "broker-genesis-v1.json",
+      "records": 2,
+      "cases": 5,
+      "sha256": "29c43e819ddc338e3e14bada6e5c90206a4b9f4c77023e3ca15c4ba73f880be7"
+    },
+    {
+      "file": "broker-typed-passkey-binding-v1.json",
+      "records": 6,
+      "cases": 17,
+      "sha256": "2ae0ceba7a162418ffde272e17002862c81de90fbedc803c50217c7458348854"
+    }
+  ]
+}

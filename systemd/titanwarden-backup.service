@@ -1,0 +1,11 @@
+[Unit]
+Description=Titanwarden nightly ciphertext backup (internal copy plus a verified second copy)
+
+[Service]
+Type=oneshot
+User=titanwarden
+Group=titanwarden
+Environment=PATH=/usr/local/bin:/usr/bin:/bin
+Environment=TW_HOME=/data/titanwarden
+Environment=TW_EXTERNAL_BACKUP=/data/titanwarden-backups
+ExecStart=/bin/sh /data/titanwarden/current/scripts/backup.sh

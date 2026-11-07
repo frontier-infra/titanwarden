@@ -1,0 +1,4 @@
+#!/bin/sh
+set -eu
+tw_home=${TW_HOME:-"$HOME/.titanwarden"}
+exec "$tw_home/current/.venv/bin/python" -m tw.cli "$@"

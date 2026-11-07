@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+  <key>Label</key>
+  <string>org.frontierinfra.titanwarden-backup</string>
+  <key>ProgramArguments</key>
+  <array>
+    <string>/Users/USERNAME/.titanwarden/current/scripts/backup.sh</string>
+  </array>
+  <key>EnvironmentVariables</key>
+  <dict>
+    <key>TW_HOME</key>
+    <string>/Users/USERNAME/.titanwarden</string>
+    <key>PATH</key>
+    <string>/Users/USERNAME/bin:/opt/homebrew/bin:/usr/bin:/bin:/usr/sbin:/sbin</string>
+  </dict>
+  <key>StartCalendarInterval</key>
+  <dict>
+    <key>Hour</key>
+    <integer>3</integer>
+    <key>Minute</key>
+    <integer>17</integer>
+  </dict>
+  <key>StandardOutPath</key>
+  <string>/Users/USERNAME/.titanwarden/log/backup.out.log</string>
+  <key>StandardErrorPath</key>
+  <string>/Users/USERNAME/.titanwarden/log/backup.err.log</string>
+</dict>
+</plist>

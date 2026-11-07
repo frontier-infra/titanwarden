@@ -1,0 +1,11 @@
+{
+  "revision": 1,
+  "files": [
+    {
+      "file": "broker-version-state-v1.json",
+      "sha256": "f743fafa337dd044d1bf2bc2f6d1cb6b0ed71a322e5582ac192cd6882e6e1839",
+      "records": 14,
+      "cases": 18
+    }
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "revision": 3,
+  "files": [
+    {
+      "file": "broker-admin-policy-v1.json",
+      "records": 22,
+      "cases": 13,
+      "sha256": "380a5d0a6893129de6ed7fbb7f2facde7c5ac23797ee23ff700fcdfe63bd7987"
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+# Titanwarden agent interface
+
+Titanwarden lets an agent use a named secret without reading its value.
+
+Core commands:
+
+tw status
+tw names [PROJECT]
+tw run --env VARIABLE=project/name -- COMMAND [ARGS]
+tw run --fd 3=project/name -- COMMAND [ARGS]
+tw run --stdin project/name -- COMMAND [ARGS]
+tw inject --manifest .env.tw -- COMMAND [ARGS]
+tw put project/name
+tw request access project/name --ops inject --reason TEXT
+tw who-touched project/name
+tw dependents project/name
+tw token revoke-self
+
+There is no get, read, reveal, or export operation on the agent socket. Never
+put a value or bearer token in an argument, message, log, or committed file.
+Treat paths, token ids, lease ids, request ids, and audit sequence numbers as
+the safe coordination vocabulary.

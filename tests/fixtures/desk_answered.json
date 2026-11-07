@@ -1,0 +1,22 @@
+[
+  {
+    "id": 101,
+    "status": "answered",
+    "options": ["Approve", "Deny"],
+    "done_by": null,
+    "thread": [
+      {
+        "id": 201,
+        "item_id": 101,
+        "kind": "answer",
+        "text": "Approve",
+        "author": "Operator",
+        "author_kind": "person",
+        "owner": "operator",
+        "created_at": "2026-10-09T00:00:00Z",
+        "delivered_at": "2026-10-09T00:00:01Z",
+        "status_changed": 1
+      }
+    ]
+  }
+]

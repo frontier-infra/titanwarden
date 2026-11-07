@@ -1,0 +1,18 @@
+[Unit]
+Description=Titanwarden secret broker (sealed on every start; unseal with twadmin over SSH)
+After=network.target
+
+[Service]
+Type=simple
+User=titanwarden
+Group=titanwarden
+WorkingDirectory=/data/titanwarden
+Environment=PATH=/usr/local/bin:/usr/bin:/bin
+ExecStart=/data/titanwarden/current/.venv/bin/python -m tw.broker --home /data/titanwarden --desk-identity master --desk-project master
+Restart=always
+RestartSec=2
+UMask=0077
+NoNewPrivileges=true
+
+[Install]
+WantedBy=multi-user.target

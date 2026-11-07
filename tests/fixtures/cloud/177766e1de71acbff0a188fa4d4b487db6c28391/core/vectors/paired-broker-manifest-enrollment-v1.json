@@ -1,0 +1,24 @@
+{
+  "revision": 3,
+  "description": "Production HTTP enrollment and admission inventory. Exact UTF-8 SHA256, including trailing newline. Existing v1 and v2 bytes are unchanged.",
+  "files": [
+    {
+      "file": "broker-enrollment-join-v3.json",
+      "records": 10,
+      "cases": 1,
+      "sha256": "e78300f04eb454cf50505a1316cbf72249f5cbe4d0a96bcd0801b6c1b74f4bcd"
+    },
+    {
+      "file": "broker-enrollment-adopt-v3.json",
+      "records": 7,
+      "cases": 3,
+      "sha256": "08c6b365b8c3ca7da013cebbcba742b898b1a002a82a8d8b955ff4f0bdeac77f"
+    },
+    {
+      "file": "broker-request-admission-v3.json",
+      "records": 22,
+      "cases": 9,
+      "sha256": "74bb98112c9895d3343680b6b3ec2bb0c2136f02eb72ceb44ee0e87f7ca8c34a"
+    }
+  ]
+}

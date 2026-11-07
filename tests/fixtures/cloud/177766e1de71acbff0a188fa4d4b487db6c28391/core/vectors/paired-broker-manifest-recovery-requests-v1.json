@@ -1,0 +1,111 @@
+{
+  "revision": 1,
+  "description": "Production recovery and request fixtures, exact UTF-8 byte hashes.",
+  "files": [
+    {
+      "file": "broker-recovery-slots-v1.json",
+      "records": 12,
+      "cases": 8,
+      "operations": 0,
+      "sha256": "e44f1bd555abfc421c00bf5af6be2f1333ee99f6d14c68afb0ad77a4fd06f91b"
+    },
+    {
+      "file": "broker-recovery-claims-activate-v1.json",
+      "records": 14,
+      "cases": 15,
+      "operations": 3,
+      "sha256": "2532dd79b9d145aeaf51002ac22d1c946c65a661a38201703963576301c1f4f1"
+    },
+    {
+      "file": "broker-recovery-claims-cancel-v1.json",
+      "records": 12,
+      "cases": 11,
+      "operations": 1,
+      "sha256": "5aa23466d419a6ec914490e3f14ebcf280c7a9ea3f232fcb9806a8db85acc774"
+    },
+    {
+      "file": "broker-recovery-claims-supersede-v1.json",
+      "records": 12,
+      "cases": 11,
+      "operations": 1,
+      "sha256": "79095847b8accb0e6d2edbce078fb0935af0f729b81f692d4d122e94f9f9003c"
+    },
+    {
+      "file": "broker-recovery-claims-expire-v1.json",
+      "records": 12,
+      "cases": 11,
+      "operations": 1,
+      "sha256": "beb33fc9d4a2234ee9f63a7c7580b80ac566a5eda45abe8e900819343463bd8d"
+    },
+    {
+      "file": "broker-requests-policy-decisions-v1.json",
+      "records": 18,
+      "cases": 8,
+      "operations": 0,
+      "sha256": "f33095a976ed115e360c53e9858d8b01ef46d73ccef5fc2dd584c7a3e0461c53"
+    },
+    {
+      "file": "broker-recovery-reset-activate-v1.json",
+      "records": 14,
+      "cases": 1,
+      "operations": 3,
+      "sha256": "da5cbb5221c40eb47d048ab008669ec5430405a70fb8223239d78e7ae0969c03"
+    },
+    {
+      "file": "broker-recovery-reset-old-key-cancel-v1.json",
+      "records": 7,
+      "cases": 0,
+      "operations": 3,
+      "sha256": "6b33da206476a920d917d4900757d0c7596407da040a6c5330f99a908aab4fb1"
+    },
+    {
+      "file": "broker-recovery-reset-owner-cancel-v1.json",
+      "records": 7,
+      "cases": 1,
+      "operations": 3,
+      "sha256": "51d6d433c3d726ed7ce4bb4143c5970625a1df1ecf6986492684c86005134932"
+    },
+    {
+      "file": "broker-recovery-reset-admin-cancel-v1.json",
+      "records": 9,
+      "cases": 1,
+      "operations": 3,
+      "sha256": "da8df3166591bf4c5c0a0450e5ff34be268be761ec81007a3b55697be410d856"
+    },
+    {
+      "file": "broker-recovery-session-v1.json",
+      "records": 4,
+      "cases": 1,
+      "operations": 2,
+      "sha256": "171962cb20f176f980edc127f8a19d9ffce3d14b3a23dbd9bdeb7bdd5d8dff63"
+    },
+    {
+      "file": "broker-recovery-revoke-and-set-v1.json",
+      "records": 9,
+      "cases": 1,
+      "operations": 0,
+      "sha256": "22314e10dea5261096c9721daadb9f5139b0a8f8f60a72d238b452d1f159d5f0"
+    },
+    {
+      "file": "broker-requests-broker-local-v1.json",
+      "records": 8,
+      "cases": 4,
+      "operations": 0,
+      "sha256": "70147f8d56deec0ee196dcb564fc8de397dbb8ad52932daacc925aacafca2060"
+    },
+    {
+      "file": "broker-recovery-nonholder-promotion-v1.json",
+      "records": 10,
+      "cases": 1,
+      "operations": 0,
+      "sha256": "6033b3c26edeed649990918d216879bab2a157e5d0b336b75be09cd98b0fb303"
+    },
+    {
+      "file": "broker-recovery-set-broker-boundary-v1.json",
+      "records": 2,
+      "cases": 2,
+      "operations": 0,
+      "sha256": "95f54a1dac37bb2cdd6901ae7491d566bb00a7a58477f0d0214495a5d1f40c67"
+    }
+  ]
+}

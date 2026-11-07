@@ -1,0 +1,53 @@
+{
+  "producer": "Node WHATWG URL, local test data only",
+  "node": "v24.11.1",
+  "cloud_pin": "177766e1de71acbff0a188fa4d4b487db6c28391",
+  "cloud_source": "control/src/enroll/protocol.ts",
+  "cloud_source_sha256": "1a0892a54e320460c715be3c5928cee75305f89442e4ff8f67382091299d81dd",
+  "cases": [
+    {
+      "url": "https://api.titanwarden.com/v1/orgs/aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/sync/x\"y",
+      "pathname": "/v1/orgs/aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/sync/x%22y"
+    },
+    {
+      "url": "https://api.titanwarden.com/v1/orgs/aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/sync/x{y}",
+      "pathname": "/v1/orgs/aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/sync/x%7By%7D"
+    },
+    {
+      "url": "https://api.titanwarden.com/v1/orgs/aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/sync/x^y",
+      "pathname": "/v1/orgs/aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/sync/x%5Ey"
+    },
+    {
+      "url": "https://api.titanwarden.com/v1/orgs/aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/sync/x`y",
+      "pathname": "/v1/orgs/aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/sync/x%60y"
+    },
+    {
+      "url": "https://api.titanwarden.com/v1/orgs/aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/sync/x<y>",
+      "pathname": "/v1/orgs/aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/sync/x%3Cy%3E"
+    },
+    {
+      "url": "https://api.titanwarden.com/v1/orgs/aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/sync/café",
+      "pathname": "/v1/orgs/aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/sync/caf%C3%A9"
+    },
+    {
+      "url": "https://api.titanwarden.com/v1/orgs/aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/sync/snow☃",
+      "pathname": "/v1/orgs/aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/sync/snow%E2%98%83"
+    },
+    {
+      "url": "https://api.titanwarden.com/v1/orgs/aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/sync/x[y]",
+      "pathname": "/v1/orgs/aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/sync/x[y]"
+    },
+    {
+      "url": "https://api.titanwarden.com/v1/orgs/aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/sync/x|y",
+      "pathname": "/v1/orgs/aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/sync/x|y"
+    },
+    {
+      "url": "https://api.titanwarden.com/v1/orgs/aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/sync/x%22y",
+      "pathname": "/v1/orgs/aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/sync/x%22y"
+    },
+    {
+      "url": "https://api.titanwarden.com/v1/orgs/aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/sync/x'y",
+      "pathname": "/v1/orgs/aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/sync/x'y"
+    }
+  ]
+}

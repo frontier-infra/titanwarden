@@ -1,0 +1,2372 @@
+{
+  "revision": 3,
+  "description": "Adopt reservation, preparation deadline, domain-separated root proof and legacy refusal.",
+  "profile": "production",
+  "production_acceptable": true,
+  "composition": [
+    "enrollment",
+    "genesis",
+    "recovery",
+    "requests"
+  ],
+  "producer": {
+    "base_commit": "6a2d52f",
+    "generator": "npm run fixtures",
+    "crypto": "Public test-only broker JWKs and deterministic fixture entropy. All verification uses real WebCrypto."
+  },
+  "org_id": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+  "received_at": "2027-01-15T08:00:00.000Z",
+  "test_only_keys": {
+    "warning": "PUBLIC TEST-ONLY PRIVATE KEYS. Never use for deployment.",
+    "signing_jwk": {
+      "key_ops": [
+        "sign"
+      ],
+      "ext": true,
+      "kty": "EC",
+      "x": "J0_3nv3UnQO0rl1Ovw680HU2yco4FGrLkw0Pj3O1UvE",
+      "y": "chfkIbYWb9SaV866z8PsQzzDCwgCAbh7boBisNIeNy0",
+      "crv": "P-256",
+      "d": "AfI7hM0WX6jxOoPMFV6n8DmCyxRdpu84gcoTXKXuN4A"
+    },
+    "kx_jwk": {
+      "key_ops": [
+        "deriveBits"
+      ],
+      "ext": true,
+      "kty": "EC",
+      "x": "Z7_g-SA5Wg_NfRUrR9z9035RNKQqAcR-Cj99Lp25l-I",
+      "y": "GnZOJhmbcXdV6nqxGrkm55IkIH1ybun2j6QeArQleMM",
+      "crv": "P-256",
+      "d": "ARJbpO02f8gRWqPsNX7HEFmi6zR9xg9YoeozfMUOV6A"
+    },
+    "wrapped_omk_hex": "0101010101010101010101010101010101010101010101010101010101010101"
+  },
+  "steps": [
+    {
+      "id": "prepare-adoption-with-deadline",
+      "received_at": "2027-01-15T08:00:00.000Z",
+      "input": {
+        "op": "prepare",
+        "identity": {
+          "kind": "human",
+          "id": "user-owner",
+          "org_id": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "credential": "public-fixture-only"
+        }
+      },
+      "predecessor": {
+        "authority_core": {
+          "v": 1,
+          "org_id": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "head": {
+            "seq": 0,
+            "hash": "0000000000000000000000000000000000000000000000000000000000000000"
+          },
+          "root": null,
+          "certificates": [],
+          "proposals": {},
+          "recovery": null,
+          "recovery_ever_set": false,
+          "founding_broker": null,
+          "used_challenges": [],
+          "founder": null,
+          "founder_pending": null,
+          "recovery_seq": 0,
+          "triggers": {},
+          "brokers": [],
+          "core_commitments": [],
+          "retired_recovery_points": {
+            "sign_pub": [],
+            "kx_pub": []
+          }
+        },
+        "authority_core_sha256": "404483d95ccbd6b546674983df13db5a4e496aeefb4c055384556f4f4172082d",
+        "epoch": {
+          "generation": 0,
+          "active_kek": {},
+          "keyring": [],
+          "org_wraps": [],
+          "broker_wraps": [],
+          "epochs": [],
+          "used_triggers": [],
+          "last_discretionary_rotation": null,
+          "pending": null,
+          "versions": []
+        },
+        "tables": {
+          "brokers": [],
+          "enroll_tickets": [],
+          "enrollment_records": [],
+          "enrollment_adoption_proofs": [],
+          "genesis_adoptions": [],
+          "enrollment_wrap_digests": [],
+          "seen_nonces": [],
+          "receipts": [],
+          "genesis_preparations": []
+        },
+        "preparation_deadline": null,
+        "state": null,
+        "audit_ops": []
+      },
+      "response": {
+        "status": 200,
+        "body": "{\"ok\":true,\"code\":\"ok\",\"result\":{\"org_id\":\"aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\",\"state\":\"keyless\"}}"
+      },
+      "post_state": {
+        "authority_core": {
+          "v": 1,
+          "org_id": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "head": {
+            "seq": 0,
+            "hash": "0000000000000000000000000000000000000000000000000000000000000000"
+          },
+          "root": null,
+          "certificates": [],
+          "proposals": {},
+          "recovery": null,
+          "recovery_ever_set": false,
+          "founding_broker": null,
+          "used_challenges": [],
+          "founder": null,
+          "founder_pending": null,
+          "recovery_seq": 0,
+          "triggers": {},
+          "brokers": [],
+          "core_commitments": [],
+          "retired_recovery_points": {
+            "sign_pub": [],
+            "kx_pub": []
+          }
+        },
+        "authority_core_sha256": "404483d95ccbd6b546674983df13db5a4e496aeefb4c055384556f4f4172082d",
+        "epoch": {
+          "generation": 0,
+          "active_kek": {},
+          "keyring": [],
+          "org_wraps": [],
+          "broker_wraps": [],
+          "epochs": [],
+          "used_triggers": [],
+          "last_discretionary_rotation": null,
+          "pending": null,
+          "versions": []
+        },
+        "tables": {
+          "brokers": [],
+          "enroll_tickets": [],
+          "enrollment_records": [],
+          "enrollment_adoption_proofs": [],
+          "genesis_adoptions": [],
+          "enrollment_wrap_digests": [],
+          "seen_nonces": [],
+          "receipts": [],
+          "genesis_preparations": [
+            {
+              "org_id": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+              "prepared_by": "user-owner",
+              "mode": "adopt",
+              "expires_at": "2027-01-15T08:10:00.000Z",
+              "used_at": null
+            }
+          ]
+        },
+        "preparation_deadline": "2027-01-15T08:10:00.000Z",
+        "state": "preparing",
+        "audit_ops": [
+          {
+            "op": "org_prepare"
+          }
+        ]
+      }
+    },
+    {
+      "id": "ticket-issuance",
+      "received_at": "2027-01-15T08:00:00.000Z",
+      "input": {
+        "op": "http",
+        "request": {
+          "url": "https://api.titanwarden.com/v1/orgs/aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/brokers/tickets",
+          "method": "POST",
+          "headers": {
+            "authorization": "Bearer public-fixture-only",
+            "content-type": "application/json",
+            "TW-Request-Id": "00000000-0000-4000-8000-0000000003ed",
+            "x-fixture-preparing": "1"
+          },
+          "body_b64": "eyJtb2RlIjoiYWRvcHQiLCJzY29wZSI6WyIqIl19",
+          "path": "/v1/orgs/aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/brokers/tickets",
+          "raw_query": "",
+          "canonical_query": "-"
+        }
+      },
+      "predecessor": {
+        "authority_core": {
+          "v": 1,
+          "org_id": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "head": {
+            "seq": 0,
+            "hash": "0000000000000000000000000000000000000000000000000000000000000000"
+          },
+          "root": null,
+          "certificates": [],
+          "proposals": {},
+          "recovery": null,
+          "recovery_ever_set": false,
+          "founding_broker": null,
+          "used_challenges": [],
+          "founder": null,
+          "founder_pending": null,
+          "recovery_seq": 0,
+          "triggers": {},
+          "brokers": [],
+          "core_commitments": [],
+          "retired_recovery_points": {
+            "sign_pub": [],
+            "kx_pub": []
+          }
+        },
+        "authority_core_sha256": "404483d95ccbd6b546674983df13db5a4e496aeefb4c055384556f4f4172082d",
+        "epoch": {
+          "generation": 0,
+          "active_kek": {},
+          "keyring": [],
+          "org_wraps": [],
+          "broker_wraps": [],
+          "epochs": [],
+          "used_triggers": [],
+          "last_discretionary_rotation": null,
+          "pending": null,
+          "versions": []
+        },
+        "tables": {
+          "brokers": [],
+          "enroll_tickets": [],
+          "enrollment_records": [],
+          "enrollment_adoption_proofs": [],
+          "genesis_adoptions": [],
+          "enrollment_wrap_digests": [],
+          "seen_nonces": [],
+          "receipts": [],
+          "genesis_preparations": [
+            {
+              "org_id": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+              "prepared_by": "user-owner",
+              "mode": "adopt",
+              "expires_at": "2027-01-15T08:10:00.000Z",
+              "used_at": null
+            }
+          ]
+        },
+        "preparation_deadline": "2027-01-15T08:10:00.000Z",
+        "state": "preparing",
+        "audit_ops": [
+          {
+            "op": "org_prepare"
+          }
+        ]
+      },
+      "response": {
+        "status": 200,
+        "body": "{\"ok\":true,\"code\":\"ok\",\"result\":{\"ticket_id\":\"enr_jgjnwjdnw37u\",\"ticket_code\":\"enr_jgjnwjdnw37u.shncg3fv7zdzbwjcno2p2rup3a\"}}"
+      },
+      "post_state": {
+        "authority_core": {
+          "v": 1,
+          "org_id": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "head": {
+            "seq": 0,
+            "hash": "0000000000000000000000000000000000000000000000000000000000000000"
+          },
+          "root": null,
+          "certificates": [],
+          "proposals": {},
+          "recovery": null,
+          "recovery_ever_set": false,
+          "founding_broker": null,
+          "used_challenges": [],
+          "founder": null,
+          "founder_pending": null,
+          "recovery_seq": 0,
+          "triggers": {},
+          "brokers": [],
+          "core_commitments": [],
+          "retired_recovery_points": {
+            "sign_pub": [],
+            "kx_pub": []
+          }
+        },
+        "authority_core_sha256": "404483d95ccbd6b546674983df13db5a4e496aeefb4c055384556f4f4172082d",
+        "epoch": {
+          "generation": 0,
+          "active_kek": {},
+          "keyring": [],
+          "org_wraps": [],
+          "broker_wraps": [],
+          "epochs": [],
+          "used_triggers": [],
+          "last_discretionary_rotation": null,
+          "pending": null,
+          "versions": []
+        },
+        "tables": {
+          "brokers": [],
+          "enroll_tickets": [
+            {
+              "ticket_id": "enr_jgjnwjdnw37u",
+              "secret_hash": {
+                "$bytes": "d998db1a7c4237f3512c880eb01a9c8dcc599877829499b29030e02b9764d1ce"
+              },
+              "created_by": "user-owner",
+              "mode": "adopt",
+              "scope_json": "[\"*\"]",
+              "created_at": "2027-01-15T08:00:00.000Z",
+              "expires_at": "2027-01-15T08:15:00.000Z",
+              "used_at": null,
+              "broker_id": null,
+              "revoked_at": null
+            }
+          ],
+          "enrollment_records": [],
+          "enrollment_adoption_proofs": [],
+          "genesis_adoptions": [],
+          "enrollment_wrap_digests": [],
+          "seen_nonces": [],
+          "receipts": [
+            {
+              "actor": "human:user-owner",
+              "op": "brokerTicket",
+              "request_id": "00000000-0000-4000-8000-0000000003ed",
+              "principal_id": "human:user-owner",
+              "body_digest": {
+                "$bytes": "7139d6ad3c80f878fced5fd780ba5d69cfd5b8c0360550fceb5129818db8c376"
+              },
+              "response_json": "{\"ticket_id\":\"enr_jgjnwjdnw37u\"}",
+              "created_at": "2027-01-15T08:00:00.000Z"
+            }
+          ],
+          "genesis_preparations": [
+            {
+              "org_id": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+              "prepared_by": "user-owner",
+              "mode": "adopt",
+              "expires_at": "2027-01-15T08:10:00.000Z",
+              "used_at": null
+            }
+          ]
+        },
+        "preparation_deadline": "2027-01-15T08:10:00.000Z",
+        "state": "preparing",
+        "audit_ops": [
+          {
+            "op": "org_prepare"
+          },
+          {
+            "op": "broker_ticket_created"
+          },
+          {
+            "op": "enrollment_route_published"
+          }
+        ]
+      }
+    },
+    {
+      "id": "adopt-reservation",
+      "received_at": "2027-01-15T08:00:00.000Z",
+      "input": {
+        "op": "http",
+        "request": {
+          "url": "https://api.titanwarden.com/v1/enroll",
+          "method": "POST",
+          "headers": {
+            "content-type": "application/json"
+          },
+          "body_b64": "eyJwcm9vZiI6IlRRcEJSdFNtQWtlMjVtcHlqcm9HUlBjRS1fYjRRLXRYc0ZoR2t3OEZ4bEpoYlJuanBGU3RINTJJcXFrMmJRQjJYUFk5RTZfS2p4cXNhYzVrcHFmcWdRIiwidGlja2V0X2NvZGUiOiJlbnJfamdqbndqZG53Mzd1LnNobmNnM2Z2N3pkemJ3amNubzJwMnJ1cDNhIiwidHJhbnNjcmlwdCI6eyJreF9wdWIiOiJCR2VfNFBrZ09Wb1B6WDBWSzBmY19kTi1VVFNrS2dIRWZnb19mUzZkdVpmaUduWk9KaG1iY1hkVjZucXhHcmttNTVJa0lIMXlidW4yajZRZUFyUWxlTU0iLCJtb2RlIjoiYWRvcHQiLCJuYW1lIjoiUHVibGljIHBhaXJlZCBicm9rZXIiLCJzaWduX3B1YiI6IkJDZFA5NTc5MUowRHRLNWRUcjhPdk5CMU5zbktPQlJxeTVNTkQ0OXp0Vkx4Y2hma0liWVdiOVNhVjg2Nno4UHNRenpEQ3dnQ0FiaDdib0Jpc05JZU55MCIsInN0b3JlX2lkIjoiYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWEiLCJ2ZXJzaW9uIjoiMi4wLjAifX0",
+          "path": "/v1/enroll",
+          "raw_query": "",
+          "canonical_query": "-"
+        }
+      },
+      "predecessor": {
+        "authority_core": {
+          "v": 1,
+          "org_id": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "head": {
+            "seq": 0,
+            "hash": "0000000000000000000000000000000000000000000000000000000000000000"
+          },
+          "root": null,
+          "certificates": [],
+          "proposals": {},
+          "recovery": null,
+          "recovery_ever_set": false,
+          "founding_broker": null,
+          "used_challenges": [],
+          "founder": null,
+          "founder_pending": null,
+          "recovery_seq": 0,
+          "triggers": {},
+          "brokers": [],
+          "core_commitments": [],
+          "retired_recovery_points": {
+            "sign_pub": [],
+            "kx_pub": []
+          }
+        },
+        "authority_core_sha256": "404483d95ccbd6b546674983df13db5a4e496aeefb4c055384556f4f4172082d",
+        "epoch": {
+          "generation": 0,
+          "active_kek": {},
+          "keyring": [],
+          "org_wraps": [],
+          "broker_wraps": [],
+          "epochs": [],
+          "used_triggers": [],
+          "last_discretionary_rotation": null,
+          "pending": null,
+          "versions": []
+        },
+        "tables": {
+          "brokers": [],
+          "enroll_tickets": [
+            {
+              "ticket_id": "enr_jgjnwjdnw37u",
+              "secret_hash": {
+                "$bytes": "d998db1a7c4237f3512c880eb01a9c8dcc599877829499b29030e02b9764d1ce"
+              },
+              "created_by": "user-owner",
+              "mode": "adopt",
+              "scope_json": "[\"*\"]",
+              "created_at": "2027-01-15T08:00:00.000Z",
+              "expires_at": "2027-01-15T08:15:00.000Z",
+              "used_at": null,
+              "broker_id": null,
+              "revoked_at": null
+            }
+          ],
+          "enrollment_records": [],
+          "enrollment_adoption_proofs": [],
+          "genesis_adoptions": [],
+          "enrollment_wrap_digests": [],
+          "seen_nonces": [],
+          "receipts": [
+            {
+              "actor": "human:user-owner",
+              "op": "brokerTicket",
+              "request_id": "00000000-0000-4000-8000-0000000003ed",
+              "principal_id": "human:user-owner",
+              "body_digest": {
+                "$bytes": "7139d6ad3c80f878fced5fd780ba5d69cfd5b8c0360550fceb5129818db8c376"
+              },
+              "response_json": "{\"ticket_id\":\"enr_jgjnwjdnw37u\"}",
+              "created_at": "2027-01-15T08:00:00.000Z"
+            }
+          ],
+          "genesis_preparations": [
+            {
+              "org_id": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+              "prepared_by": "user-owner",
+              "mode": "adopt",
+              "expires_at": "2027-01-15T08:10:00.000Z",
+              "used_at": null
+            }
+          ]
+        },
+        "preparation_deadline": "2027-01-15T08:10:00.000Z",
+        "state": "preparing",
+        "audit_ops": [
+          {
+            "op": "org_prepare"
+          },
+          {
+            "op": "broker_ticket_created"
+          },
+          {
+            "op": "enrollment_route_published"
+          }
+        ]
+      },
+      "response": {
+        "status": 200,
+        "body": "{\"ok\":true,\"code\":\"ok\",\"result\":{\"org_id\":\"aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\",\"broker_id\":\"brk_216ab3fc458ed72069b2fb448dd61f68\",\"genesis\":null,\"policy_head\":{\"seq\":0,\"hash\":\"0000000000000000000000000000000000000000000000000000000000000000\"},\"state\":\"pending\"}}"
+      },
+      "post_state": {
+        "authority_core": {
+          "v": 1,
+          "org_id": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "head": {
+            "seq": 0,
+            "hash": "0000000000000000000000000000000000000000000000000000000000000000"
+          },
+          "root": null,
+          "certificates": [],
+          "proposals": {},
+          "recovery": null,
+          "recovery_ever_set": false,
+          "founding_broker": null,
+          "used_challenges": [],
+          "founder": null,
+          "founder_pending": null,
+          "recovery_seq": 0,
+          "triggers": {},
+          "brokers": [],
+          "core_commitments": [],
+          "retired_recovery_points": {
+            "sign_pub": [],
+            "kx_pub": []
+          }
+        },
+        "authority_core_sha256": "404483d95ccbd6b546674983df13db5a4e496aeefb4c055384556f4f4172082d",
+        "epoch": {
+          "generation": 0,
+          "active_kek": {},
+          "keyring": [],
+          "org_wraps": [],
+          "broker_wraps": [],
+          "epochs": [],
+          "used_triggers": [],
+          "last_discretionary_rotation": null,
+          "pending": null,
+          "versions": []
+        },
+        "tables": {
+          "brokers": [
+            {
+              "broker_id": "brk_216ab3fc458ed72069b2fb448dd61f68",
+              "name": "Public paired broker",
+              "sign_pub": {
+                "$bytes": "04274ff79efdd49d03b4ae5d4ebf0ebcd07536c9ca38146acb930d0f8f73b552f17217e421b6166fd49a57cebacfc3ec433cc30b080201b87b6e8062b0d21e372d"
+              },
+              "kx_pub": {
+                "$bytes": "0467bfe0f920395a0fcd7d152b47dcfdd37e5134a42a01c47e0a3f7d2e9db997e21a764e26199b717755ea7ab11ab926e79224207d726ee9f68fa41e02b42578c3"
+              },
+              "state": "pending",
+              "scope_json": "[\"*\"]",
+              "keeper": 1,
+              "full_custody_generation": null,
+              "version": "2.0.0",
+              "ticket_id": "enr_jgjnwjdnw37u",
+              "transcript_digest": {
+                "$bytes": "769c364d2b4e6ba97680cccf1c57197b17467aeebab19b79c9d671fc91968868"
+              },
+              "cert_seq": null,
+              "requested_at": "2027-01-15T08:00:00.000Z",
+              "approved_by": null,
+              "approved_at": null,
+              "revoked_at": null,
+              "last_seen_at": null,
+              "policy_head_seen": null,
+              "epoch_seen": null,
+              "audit_head_seq": null
+            }
+          ],
+          "enroll_tickets": [
+            {
+              "ticket_id": "enr_jgjnwjdnw37u",
+              "secret_hash": {
+                "$bytes": "d998db1a7c4237f3512c880eb01a9c8dcc599877829499b29030e02b9764d1ce"
+              },
+              "created_by": "user-owner",
+              "mode": "adopt",
+              "scope_json": "[\"*\"]",
+              "created_at": "2027-01-15T08:00:00.000Z",
+              "expires_at": "2027-01-15T08:15:00.000Z",
+              "used_at": null,
+              "broker_id": "brk_216ab3fc458ed72069b2fb448dd61f68",
+              "revoked_at": null
+            }
+          ],
+          "enrollment_records": [
+            {
+              "broker_id": "brk_216ab3fc458ed72069b2fb448dd61f68",
+              "ticket_id": "enr_jgjnwjdnw37u",
+              "transcript_json": "{\"kx_pub\":\"BGe_4PkgOVoPzX0VK0fc_dN-UTSkKgHEfgo_fS6duZfiGnZOJhmbcXdV6nqxGrkm55IkIH1ybun2j6QeArQleMM\",\"mode\":\"adopt\",\"name\":\"Public paired broker\",\"sign_pub\":\"BCdP95791J0DtK5dTr8OvNB1NsnKOBRqy5MND49ztVLxchfkIbYWb9SaV866z8PsQzzDCwgCAbh7boBisNIeNy0\",\"store_id\":\"aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\",\"version\":\"2.0.0\"}",
+              "transcript_digest": "769c364d2b4e6ba97680cccf1c57197b17467aeebab19b79c9d671fc91968868",
+              "proof": "TQpBRtSmAke25mpyjroGRPcE-_b4Q-tXsFhGkw8FxlJhbRnjpFStH52Iqqk2bQB2XPY9E6_Kjxqsac5kpqfqgQ",
+              "created_at": "2027-01-15T08:00:00.000Z"
+            }
+          ],
+          "enrollment_adoption_proofs": [],
+          "genesis_adoptions": [],
+          "enrollment_wrap_digests": [],
+          "seen_nonces": [],
+          "receipts": [
+            {
+              "actor": "human:user-owner",
+              "op": "brokerTicket",
+              "request_id": "00000000-0000-4000-8000-0000000003ed",
+              "principal_id": "human:user-owner",
+              "body_digest": {
+                "$bytes": "7139d6ad3c80f878fced5fd780ba5d69cfd5b8c0360550fceb5129818db8c376"
+              },
+              "response_json": "{\"ticket_id\":\"enr_jgjnwjdnw37u\"}",
+              "created_at": "2027-01-15T08:00:00.000Z"
+            }
+          ],
+          "genesis_preparations": [
+            {
+              "org_id": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+              "prepared_by": "user-owner",
+              "mode": "adopt",
+              "expires_at": "2027-01-15T08:10:00.000Z",
+              "used_at": null
+            }
+          ]
+        },
+        "preparation_deadline": "2027-01-15T08:10:00.000Z",
+        "state": "preparing",
+        "audit_ops": [
+          {
+            "op": "org_prepare"
+          },
+          {
+            "op": "broker_ticket_created"
+          },
+          {
+            "op": "enrollment_route_published"
+          },
+          {
+            "op": "broker_enrolled_pending"
+          }
+        ]
+      }
+    },
+    {
+      "id": "substituted-adopt-root-refused",
+      "received_at": "2027-01-15T08:00:00.000Z",
+      "input": {
+        "op": "adoptProof",
+        "identity": {
+          "kind": "human",
+          "id": "user-owner",
+          "org_id": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "credential": "public-fixture-only"
+        },
+        "candidate": {
+          "org_id": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "root": "5c0405624d33dde787131d67642d2a977b06681428f7a1464ef095c85ae01514",
+          "mode": "adopt",
+          "founder": {
+            "kind": "broker",
+            "id": "brk_216ab3fc458ed72069b2fb448dd61f68",
+            "sign_pub": "BCdP95791J0DtK5dTr8OvNB1NsnKOBRqy5MND49ztVLxchfkIbYWb9SaV866z8PsQzzDCwgCAbh7boBisNIeNy0",
+            "kx_pub": "BGe_4PkgOVoPzX0VK0fc_dN-UTSkKgHEfgo_fS6duZfiGnZOJhmbcXdV6nqxGrkm55IkIH1ybun2j6QeArQleMM"
+          }
+        },
+        "enrollment": {
+          "ticket_code": "enr_jgjnwjdnw37u.shncg3fv7zdzbwjcno2p2rup3a",
+          "transcript": {
+            "name": "Public paired broker",
+            "version": "2.0.0",
+            "mode": "adopt",
+            "sign_pub": "BCdP95791J0DtK5dTr8OvNB1NsnKOBRqy5MND49ztVLxchfkIbYWb9SaV866z8PsQzzDCwgCAbh7boBisNIeNy0",
+            "kx_pub": "BGe_4PkgOVoPzX0VK0fc_dN-UTSkKgHEfgo_fS6duZfiGnZOJhmbcXdV6nqxGrkm55IkIH1ybun2j6QeArQleMM",
+            "store_id": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+          },
+          "proof": "TQpBRtSmAke25mpyjroGRPcE-_b4Q-tXsFhGkw8FxlJhbRnjpFStH52Iqqk2bQB2XPY9E6_Kjxqsac5kpqfqgQ",
+          "candidate_root": "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff",
+          "root_proof": "u-RBxYj__JFvbuQrW_DOErPjgQZEixh9NJa7XgXNNRgfnEFPT7Ot_khloGmJNIEPn5HNMnKp9GJZaOXhOxVzbA"
+        }
+      },
+      "predecessor": {
+        "authority_core": {
+          "v": 1,
+          "org_id": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "head": {
+            "seq": 0,
+            "hash": "0000000000000000000000000000000000000000000000000000000000000000"
+          },
+          "root": null,
+          "certificates": [],
+          "proposals": {},
+          "recovery": null,
+          "recovery_ever_set": false,
+          "founding_broker": null,
+          "used_challenges": [],
+          "founder": null,
+          "founder_pending": null,
+          "recovery_seq": 0,
+          "triggers": {},
+          "brokers": [],
+          "core_commitments": [],
+          "retired_recovery_points": {
+            "sign_pub": [],
+            "kx_pub": []
+          }
+        },
+        "authority_core_sha256": "404483d95ccbd6b546674983df13db5a4e496aeefb4c055384556f4f4172082d",
+        "epoch": {
+          "generation": 0,
+          "active_kek": {},
+          "keyring": [],
+          "org_wraps": [],
+          "broker_wraps": [],
+          "epochs": [],
+          "used_triggers": [],
+          "last_discretionary_rotation": null,
+          "pending": null,
+          "versions": []
+        },
+        "tables": {
+          "brokers": [
+            {
+              "broker_id": "brk_216ab3fc458ed72069b2fb448dd61f68",
+              "name": "Public paired broker",
+              "sign_pub": {
+                "$bytes": "04274ff79efdd49d03b4ae5d4ebf0ebcd07536c9ca38146acb930d0f8f73b552f17217e421b6166fd49a57cebacfc3ec433cc30b080201b87b6e8062b0d21e372d"
+              },
+              "kx_pub": {
+                "$bytes": "0467bfe0f920395a0fcd7d152b47dcfdd37e5134a42a01c47e0a3f7d2e9db997e21a764e26199b717755ea7ab11ab926e79224207d726ee9f68fa41e02b42578c3"
+              },
+              "state": "pending",
+              "scope_json": "[\"*\"]",
+              "keeper": 1,
+              "full_custody_generation": null,
+              "version": "2.0.0",
+              "ticket_id": "enr_jgjnwjdnw37u",
+              "transcript_digest": {
+                "$bytes": "769c364d2b4e6ba97680cccf1c57197b17467aeebab19b79c9d671fc91968868"
+              },
+              "cert_seq": null,
+              "requested_at": "2027-01-15T08:00:00.000Z",
+              "approved_by": null,
+              "approved_at": null,
+              "revoked_at": null,
+              "last_seen_at": null,
+              "policy_head_seen": null,
+              "epoch_seen": null,
+              "audit_head_seq": null
+            }
+          ],
+          "enroll_tickets": [
+            {
+              "ticket_id": "enr_jgjnwjdnw37u",
+              "secret_hash": {
+                "$bytes": "d998db1a7c4237f3512c880eb01a9c8dcc599877829499b29030e02b9764d1ce"
+              },
+              "created_by": "user-owner",
+              "mode": "adopt",
+              "scope_json": "[\"*\"]",
+              "created_at": "2027-01-15T08:00:00.000Z",
+              "expires_at": "2027-01-15T08:15:00.000Z",
+              "used_at": null,
+              "broker_id": "brk_216ab3fc458ed72069b2fb448dd61f68",
+              "revoked_at": null
+            }
+          ],
+          "enrollment_records": [
+            {
+              "broker_id": "brk_216ab3fc458ed72069b2fb448dd61f68",
+              "ticket_id": "enr_jgjnwjdnw37u",
+              "transcript_json": "{\"kx_pub\":\"BGe_4PkgOVoPzX0VK0fc_dN-UTSkKgHEfgo_fS6duZfiGnZOJhmbcXdV6nqxGrkm55IkIH1ybun2j6QeArQleMM\",\"mode\":\"adopt\",\"name\":\"Public paired broker\",\"sign_pub\":\"BCdP95791J0DtK5dTr8OvNB1NsnKOBRqy5MND49ztVLxchfkIbYWb9SaV866z8PsQzzDCwgCAbh7boBisNIeNy0\",\"store_id\":\"aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\",\"version\":\"2.0.0\"}",
+              "transcript_digest": "769c364d2b4e6ba97680cccf1c57197b17467aeebab19b79c9d671fc91968868",
+              "proof": "TQpBRtSmAke25mpyjroGRPcE-_b4Q-tXsFhGkw8FxlJhbRnjpFStH52Iqqk2bQB2XPY9E6_Kjxqsac5kpqfqgQ",
+              "created_at": "2027-01-15T08:00:00.000Z"
+            }
+          ],
+          "enrollment_adoption_proofs": [],
+          "genesis_adoptions": [],
+          "enrollment_wrap_digests": [],
+          "seen_nonces": [],
+          "receipts": [
+            {
+              "actor": "human:user-owner",
+              "op": "brokerTicket",
+              "request_id": "00000000-0000-4000-8000-0000000003ed",
+              "principal_id": "human:user-owner",
+              "body_digest": {
+                "$bytes": "7139d6ad3c80f878fced5fd780ba5d69cfd5b8c0360550fceb5129818db8c376"
+              },
+              "response_json": "{\"ticket_id\":\"enr_jgjnwjdnw37u\"}",
+              "created_at": "2027-01-15T08:00:00.000Z"
+            }
+          ],
+          "genesis_preparations": [
+            {
+              "org_id": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+              "prepared_by": "user-owner",
+              "mode": "adopt",
+              "expires_at": "2027-01-15T08:10:00.000Z",
+              "used_at": null
+            }
+          ]
+        },
+        "preparation_deadline": "2027-01-15T08:10:00.000Z",
+        "state": "preparing",
+        "audit_ops": [
+          {
+            "op": "org_prepare"
+          },
+          {
+            "op": "broker_ticket_created"
+          },
+          {
+            "op": "enrollment_route_published"
+          },
+          {
+            "op": "broker_enrolled_pending"
+          }
+        ]
+      },
+      "response": {
+        "status": 409,
+        "body": "{\"ok\":false,\"code\":\"E_ENROLLMENT\",\"error\":\"tw: enrollment operation refused\",\"next\":\"Check the request and try again.\"}"
+      },
+      "post_state": {
+        "authority_core": {
+          "v": 1,
+          "org_id": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "head": {
+            "seq": 0,
+            "hash": "0000000000000000000000000000000000000000000000000000000000000000"
+          },
+          "root": null,
+          "certificates": [],
+          "proposals": {},
+          "recovery": null,
+          "recovery_ever_set": false,
+          "founding_broker": null,
+          "used_challenges": [],
+          "founder": null,
+          "founder_pending": null,
+          "recovery_seq": 0,
+          "triggers": {},
+          "brokers": [],
+          "core_commitments": [],
+          "retired_recovery_points": {
+            "sign_pub": [],
+            "kx_pub": []
+          }
+        },
+        "authority_core_sha256": "404483d95ccbd6b546674983df13db5a4e496aeefb4c055384556f4f4172082d",
+        "epoch": {
+          "generation": 0,
+          "active_kek": {},
+          "keyring": [],
+          "org_wraps": [],
+          "broker_wraps": [],
+          "epochs": [],
+          "used_triggers": [],
+          "last_discretionary_rotation": null,
+          "pending": null,
+          "versions": []
+        },
+        "tables": {
+          "brokers": [
+            {
+              "broker_id": "brk_216ab3fc458ed72069b2fb448dd61f68",
+              "name": "Public paired broker",
+              "sign_pub": {
+                "$bytes": "04274ff79efdd49d03b4ae5d4ebf0ebcd07536c9ca38146acb930d0f8f73b552f17217e421b6166fd49a57cebacfc3ec433cc30b080201b87b6e8062b0d21e372d"
+              },
+              "kx_pub": {
+                "$bytes": "0467bfe0f920395a0fcd7d152b47dcfdd37e5134a42a01c47e0a3f7d2e9db997e21a764e26199b717755ea7ab11ab926e79224207d726ee9f68fa41e02b42578c3"
+              },
+              "state": "pending",
+              "scope_json": "[\"*\"]",
+              "keeper": 1,
+              "full_custody_generation": null,
+              "version": "2.0.0",
+              "ticket_id": "enr_jgjnwjdnw37u",
+              "transcript_digest": {
+                "$bytes": "769c364d2b4e6ba97680cccf1c57197b17467aeebab19b79c9d671fc91968868"
+              },
+              "cert_seq": null,
+              "requested_at": "2027-01-15T08:00:00.000Z",
+              "approved_by": null,
+              "approved_at": null,
+              "revoked_at": null,
+              "last_seen_at": null,
+              "policy_head_seen": null,
+              "epoch_seen": null,
+              "audit_head_seq": null
+            }
+          ],
+          "enroll_tickets": [
+            {
+              "ticket_id": "enr_jgjnwjdnw37u",
+              "secret_hash": {
+                "$bytes": "d998db1a7c4237f3512c880eb01a9c8dcc599877829499b29030e02b9764d1ce"
+              },
+              "created_by": "user-owner",
+              "mode": "adopt",
+              "scope_json": "[\"*\"]",
+              "created_at": "2027-01-15T08:00:00.000Z",
+              "expires_at": "2027-01-15T08:15:00.000Z",
+              "used_at": null,
+              "broker_id": "brk_216ab3fc458ed72069b2fb448dd61f68",
+              "revoked_at": null
+            }
+          ],
+          "enrollment_records": [
+            {
+              "broker_id": "brk_216ab3fc458ed72069b2fb448dd61f68",
+              "ticket_id": "enr_jgjnwjdnw37u",
+              "transcript_json": "{\"kx_pub\":\"BGe_4PkgOVoPzX0VK0fc_dN-UTSkKgHEfgo_fS6duZfiGnZOJhmbcXdV6nqxGrkm55IkIH1ybun2j6QeArQleMM\",\"mode\":\"adopt\",\"name\":\"Public paired broker\",\"sign_pub\":\"BCdP95791J0DtK5dTr8OvNB1NsnKOBRqy5MND49ztVLxchfkIbYWb9SaV866z8PsQzzDCwgCAbh7boBisNIeNy0\",\"store_id\":\"aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\",\"version\":\"2.0.0\"}",
+              "transcript_digest": "769c364d2b4e6ba97680cccf1c57197b17467aeebab19b79c9d671fc91968868",
+              "proof": "TQpBRtSmAke25mpyjroGRPcE-_b4Q-tXsFhGkw8FxlJhbRnjpFStH52Iqqk2bQB2XPY9E6_Kjxqsac5kpqfqgQ",
+              "created_at": "2027-01-15T08:00:00.000Z"
+            }
+          ],
+          "enrollment_adoption_proofs": [],
+          "genesis_adoptions": [],
+          "enrollment_wrap_digests": [],
+          "seen_nonces": [],
+          "receipts": [
+            {
+              "actor": "human:user-owner",
+              "op": "brokerTicket",
+              "request_id": "00000000-0000-4000-8000-0000000003ed",
+              "principal_id": "human:user-owner",
+              "body_digest": {
+                "$bytes": "7139d6ad3c80f878fced5fd780ba5d69cfd5b8c0360550fceb5129818db8c376"
+              },
+              "response_json": "{\"ticket_id\":\"enr_jgjnwjdnw37u\"}",
+              "created_at": "2027-01-15T08:00:00.000Z"
+            }
+          ],
+          "genesis_preparations": [
+            {
+              "org_id": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+              "prepared_by": "user-owner",
+              "mode": "adopt",
+              "expires_at": "2027-01-15T08:10:00.000Z",
+              "used_at": null
+            }
+          ]
+        },
+        "preparation_deadline": "2027-01-15T08:10:00.000Z",
+        "state": "preparing",
+        "audit_ops": [
+          {
+            "op": "org_prepare"
+          },
+          {
+            "op": "broker_ticket_created"
+          },
+          {
+            "op": "enrollment_route_published"
+          },
+          {
+            "op": "broker_enrolled_pending"
+          }
+        ]
+      }
+    },
+    {
+      "id": "legacy-aad-v1-ingestion-refused",
+      "received_at": "2027-01-15T08:00:00.000Z",
+      "input": {
+        "op": "genesis",
+        "enrollment": {
+          "ticket_code": "enr_jgjnwjdnw37u.shncg3fv7zdzbwjcno2p2rup3a",
+          "transcript": {
+            "name": "Public paired broker",
+            "version": "2.0.0",
+            "mode": "adopt",
+            "sign_pub": "BCdP95791J0DtK5dTr8OvNB1NsnKOBRqy5MND49ztVLxchfkIbYWb9SaV866z8PsQzzDCwgCAbh7boBisNIeNy0",
+            "kx_pub": "BGe_4PkgOVoPzX0VK0fc_dN-UTSkKgHEfgo_fS6duZfiGnZOJhmbcXdV6nqxGrkm55IkIH1ybun2j6QeArQleMM",
+            "store_id": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+          },
+          "proof": "TQpBRtSmAke25mpyjroGRPcE-_b4Q-tXsFhGkw8FxlJhbRnjpFStH52Iqqk2bQB2XPY9E6_Kjxqsac5kpqfqgQ",
+          "candidate_root": "5c0405624d33dde787131d67642d2a977b06681428f7a1464ef095c85ae01514",
+          "root_proof": "u-RBxYj__JFvbuQrW_DOErPjgQZEixh9NJa7XgXNNRgfnEFPT7Ot_khloGmJNIEPn5HNMnKp9GJZaOXhOxVzbA"
+        },
+        "input": {
+          "org_id": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "routeId": "genesis",
+          "identity": {
+            "kind": "human",
+            "id": "user-owner",
+            "org_id": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+            "credential": "public-fixture-only"
+          },
+          "params": {
+            "org": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+          },
+          "query": {},
+          "body": {
+            "entries": [
+              {
+                "entry": {
+                  "v": 2,
+                  "org_id": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                  "seq": 1,
+                  "prev_hash": "0000000000000000000000000000000000000000000000000000000000000000",
+                  "ts": "2027-01-15T08:00:00.000Z",
+                  "kind": "genesis",
+                  "signer": {
+                    "kind": "broker",
+                    "id": "brk_216ab3fc458ed72069b2fb448dd61f68"
+                  },
+                  "body": {
+                    "org_id": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                    "founder": {
+                      "kind": "broker",
+                      "id": "brk_216ab3fc458ed72069b2fb448dd61f68",
+                      "sign_pub": "BCdP95791J0DtK5dTr8OvNB1NsnKOBRqy5MND49ztVLxchfkIbYWb9SaV866z8PsQzzDCwgCAbh7boBisNIeNy0",
+                      "kx_pub": "BGe_4PkgOVoPzX0VK0fc_dN-UTSkKgHEfgo_fS6duZfiGnZOJhmbcXdV6nqxGrkm55IkIH1ybun2j6QeArQleMM"
+                    },
+                    "recovery_kx_pub": null,
+                    "recovery_sign_pub": null,
+                    "default_rules": {},
+                    "max_policy_age": 3600
+                  }
+                },
+                "sig": "4y0KTqt7cszNjyDiLf-YOZJuFH5dbPAv8Q2-V1s5L2gJxIqoGzgIeJohSNVF8khOVV6V77N2XhpUmdxZEmnpEQ"
+              },
+              {
+                "entry": {
+                  "v": 2,
+                  "org_id": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                  "seq": 2,
+                  "prev_hash": "5c0405624d33dde787131d67642d2a977b06681428f7a1464ef095c85ae01514",
+                  "ts": "2027-01-15T08:00:00.000Z",
+                  "kind": "epoch_init",
+                  "body": {
+                    "generation": 1,
+                    "recipients": [
+                      {
+                        "kind": "broker",
+                        "id": "brk_216ab3fc458ed72069b2fb448dd61f68",
+                        "kx_pub_sha256": "364f992f426c321f67d515815dcf5e0858ec9b73a64ad90cc243cb2fc5f7971c",
+                        "wrap_digest": "899fa65ce65fa21ec23334c23926e23763617bc158a7b26763595bfacc1192c1"
+                      }
+                    ],
+                    "scoped_seals": [],
+                    "keyring": [
+                      {
+                        "key_id": "kek_twcanary_AAAAAAAAAAAAAAAAAAAA_1",
+                        "purpose": "kek",
+                        "scope": "twcanary_AAAAAAAAAAAAAAAAAAAA",
+                        "digest": "475afd153aa40abcf6f5255c7ca023b202f34e7fced16fbee71347d875102112"
+                      },
+                      {
+                        "key_id": "fk",
+                        "purpose": "fingerprint",
+                        "scope": "*",
+                        "digest": "491552ca3e32fb1c546826d1e3456a0814afe3d414c5c50ed133b47301372563"
+                      }
+                    ],
+                    "active_kek": {
+                      "twcanary_AAAAAAAAAAAAAAAAAAAA": "kek_twcanary_AAAAAAAAAAAAAAAAAAAA_1"
+                    }
+                  },
+                  "signer": {
+                    "kind": "broker",
+                    "id": "brk_216ab3fc458ed72069b2fb448dd61f68"
+                  }
+                },
+                "sig": "_EwHhQO_GG0I2B_lntdbk_jJwMDL3TqCJXLvwm_afZwlr-yqKZtrNHXcD9CVAQR4Rx2RIepLjFIOLYjXtK5oaw"
+              }
+            ],
+            "stage": {
+              "keyring": [
+                {
+                  "key_id": "kek_twcanary_AAAAAAAAAAAAAAAAAAAA_1",
+                  "purpose": "kek",
+                  "project": "twcanary_AAAAAAAAAAAAAAAAAAAA",
+                  "version": 1,
+                  "wrapped_key": "9c079efe94d1e6621399175708eb96dba0842b1a40e525906c7b03c90a112898cf7bc2a6316c51c17242990157194d88",
+                  "nonce": "95de2770b9024b94dd266fb8",
+                  "mk_generation": 1,
+                  "aad_v": 2
+                },
+                {
+                  "key_id": "fk",
+                  "purpose": "fingerprint",
+                  "project": null,
+                  "version": 1,
+                  "wrapped_key": "61ab39687972aff2f0aabe4f8f3193b5e48c3ea4de0680ba21981515719006c4ff3df5c0340d601c4d32a40fff424f3a",
+                  "nonce": "014a93dc256eb7014a93dc25",
+                  "mk_generation": 1,
+                  "aad_v": 2
+                }
+              ],
+              "wraps": [
+                {
+                  "recipient_kind": "broker",
+                  "recipient_id": "brk_216ab3fc458ed72069b2fb448dd61f68",
+                  "omk_generation": 1,
+                  "eph_pub": "04065524a94f6931d48cb0b6f9c3540d19594d9f7fa80193599ca3f37048bae318ebac55c76e89cfc00aaa03fb54b4777175f14624f86a7d0fd502ce7d14e214bc",
+                  "nonce": "8ed72069b2fb448dd61f68b1",
+                  "wrapped_omk": "76d9123c5572d012420980b58c488323eefea0424823299d72bc5f1b6059bac755bbbd714dde13178c96e6c3f461ed54",
+                  "wrap_digest": "899fa65ce65fa21ec23334c23926e23763617bc158a7b26763595bfacc1192c1"
+                }
+              ],
+              "scoped_seals": []
+            },
+            "canary": "twcanary_AAAAAAAAAAAAAAAAAAAA",
+            "versions": []
+          }
+        }
+      },
+      "predecessor": {
+        "authority_core": {
+          "v": 1,
+          "org_id": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "head": {
+            "seq": 0,
+            "hash": "0000000000000000000000000000000000000000000000000000000000000000"
+          },
+          "root": null,
+          "certificates": [],
+          "proposals": {},
+          "recovery": null,
+          "recovery_ever_set": false,
+          "founding_broker": null,
+          "used_challenges": [],
+          "founder": null,
+          "founder_pending": null,
+          "recovery_seq": 0,
+          "triggers": {},
+          "brokers": [],
+          "core_commitments": [],
+          "retired_recovery_points": {
+            "sign_pub": [],
+            "kx_pub": []
+          }
+        },
+        "authority_core_sha256": "404483d95ccbd6b546674983df13db5a4e496aeefb4c055384556f4f4172082d",
+        "epoch": {
+          "generation": 0,
+          "active_kek": {},
+          "keyring": [],
+          "org_wraps": [],
+          "broker_wraps": [],
+          "epochs": [],
+          "used_triggers": [],
+          "last_discretionary_rotation": null,
+          "pending": null,
+          "versions": []
+        },
+        "tables": {
+          "brokers": [
+            {
+              "broker_id": "brk_216ab3fc458ed72069b2fb448dd61f68",
+              "name": "Public paired broker",
+              "sign_pub": {
+                "$bytes": "04274ff79efdd49d03b4ae5d4ebf0ebcd07536c9ca38146acb930d0f8f73b552f17217e421b6166fd49a57cebacfc3ec433cc30b080201b87b6e8062b0d21e372d"
+              },
+              "kx_pub": {
+                "$bytes": "0467bfe0f920395a0fcd7d152b47dcfdd37e5134a42a01c47e0a3f7d2e9db997e21a764e26199b717755ea7ab11ab926e79224207d726ee9f68fa41e02b42578c3"
+              },
+              "state": "pending",
+              "scope_json": "[\"*\"]",
+              "keeper": 1,
+              "full_custody_generation": null,
+              "version": "2.0.0",
+              "ticket_id": "enr_jgjnwjdnw37u",
+              "transcript_digest": {
+                "$bytes": "769c364d2b4e6ba97680cccf1c57197b17467aeebab19b79c9d671fc91968868"
+              },
+              "cert_seq": null,
+              "requested_at": "2027-01-15T08:00:00.000Z",
+              "approved_by": null,
+              "approved_at": null,
+              "revoked_at": null,
+              "last_seen_at": null,
+              "policy_head_seen": null,
+              "epoch_seen": null,
+              "audit_head_seq": null
+            }
+          ],
+          "enroll_tickets": [
+            {
+              "ticket_id": "enr_jgjnwjdnw37u",
+              "secret_hash": {
+                "$bytes": "d998db1a7c4237f3512c880eb01a9c8dcc599877829499b29030e02b9764d1ce"
+              },
+              "created_by": "user-owner",
+              "mode": "adopt",
+              "scope_json": "[\"*\"]",
+              "created_at": "2027-01-15T08:00:00.000Z",
+              "expires_at": "2027-01-15T08:15:00.000Z",
+              "used_at": null,
+              "broker_id": "brk_216ab3fc458ed72069b2fb448dd61f68",
+              "revoked_at": null
+            }
+          ],
+          "enrollment_records": [
+            {
+              "broker_id": "brk_216ab3fc458ed72069b2fb448dd61f68",
+              "ticket_id": "enr_jgjnwjdnw37u",
+              "transcript_json": "{\"kx_pub\":\"BGe_4PkgOVoPzX0VK0fc_dN-UTSkKgHEfgo_fS6duZfiGnZOJhmbcXdV6nqxGrkm55IkIH1ybun2j6QeArQleMM\",\"mode\":\"adopt\",\"name\":\"Public paired broker\",\"sign_pub\":\"BCdP95791J0DtK5dTr8OvNB1NsnKOBRqy5MND49ztVLxchfkIbYWb9SaV866z8PsQzzDCwgCAbh7boBisNIeNy0\",\"store_id\":\"aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\",\"version\":\"2.0.0\"}",
+              "transcript_digest": "769c364d2b4e6ba97680cccf1c57197b17467aeebab19b79c9d671fc91968868",
+              "proof": "TQpBRtSmAke25mpyjroGRPcE-_b4Q-tXsFhGkw8FxlJhbRnjpFStH52Iqqk2bQB2XPY9E6_Kjxqsac5kpqfqgQ",
+              "created_at": "2027-01-15T08:00:00.000Z"
+            }
+          ],
+          "enrollment_adoption_proofs": [],
+          "genesis_adoptions": [],
+          "enrollment_wrap_digests": [],
+          "seen_nonces": [],
+          "receipts": [
+            {
+              "actor": "human:user-owner",
+              "op": "brokerTicket",
+              "request_id": "00000000-0000-4000-8000-0000000003ed",
+              "principal_id": "human:user-owner",
+              "body_digest": {
+                "$bytes": "7139d6ad3c80f878fced5fd780ba5d69cfd5b8c0360550fceb5129818db8c376"
+              },
+              "response_json": "{\"ticket_id\":\"enr_jgjnwjdnw37u\"}",
+              "created_at": "2027-01-15T08:00:00.000Z"
+            }
+          ],
+          "genesis_preparations": [
+            {
+              "org_id": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+              "prepared_by": "user-owner",
+              "mode": "adopt",
+              "expires_at": "2027-01-15T08:10:00.000Z",
+              "used_at": null
+            }
+          ]
+        },
+        "preparation_deadline": "2027-01-15T08:10:00.000Z",
+        "state": "preparing",
+        "audit_ops": [
+          {
+            "op": "org_prepare"
+          },
+          {
+            "op": "broker_ticket_created"
+          },
+          {
+            "op": "enrollment_route_published"
+          },
+          {
+            "op": "broker_enrolled_pending"
+          }
+        ]
+      },
+      "response": {
+        "status": 409,
+        "body": "{\"ok\":false,\"code\":\"E_LEGACY_ADOPTION\",\"error\":\"tw: legacy adoption ingestion unavailable\",\"next\":\"Check the request and try again.\"}"
+      },
+      "post_state": {
+        "authority_core": {
+          "v": 1,
+          "org_id": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "head": {
+            "seq": 0,
+            "hash": "0000000000000000000000000000000000000000000000000000000000000000"
+          },
+          "root": null,
+          "certificates": [],
+          "proposals": {},
+          "recovery": null,
+          "recovery_ever_set": false,
+          "founding_broker": null,
+          "used_challenges": [],
+          "founder": null,
+          "founder_pending": null,
+          "recovery_seq": 0,
+          "triggers": {},
+          "brokers": [],
+          "core_commitments": [],
+          "retired_recovery_points": {
+            "sign_pub": [],
+            "kx_pub": []
+          }
+        },
+        "authority_core_sha256": "404483d95ccbd6b546674983df13db5a4e496aeefb4c055384556f4f4172082d",
+        "epoch": {
+          "generation": 0,
+          "active_kek": {},
+          "keyring": [],
+          "org_wraps": [],
+          "broker_wraps": [],
+          "epochs": [],
+          "used_triggers": [],
+          "last_discretionary_rotation": null,
+          "pending": null,
+          "versions": []
+        },
+        "tables": {
+          "brokers": [
+            {
+              "broker_id": "brk_216ab3fc458ed72069b2fb448dd61f68",
+              "name": "Public paired broker",
+              "sign_pub": {
+                "$bytes": "04274ff79efdd49d03b4ae5d4ebf0ebcd07536c9ca38146acb930d0f8f73b552f17217e421b6166fd49a57cebacfc3ec433cc30b080201b87b6e8062b0d21e372d"
+              },
+              "kx_pub": {
+                "$bytes": "0467bfe0f920395a0fcd7d152b47dcfdd37e5134a42a01c47e0a3f7d2e9db997e21a764e26199b717755ea7ab11ab926e79224207d726ee9f68fa41e02b42578c3"
+              },
+              "state": "pending",
+              "scope_json": "[\"*\"]",
+              "keeper": 1,
+              "full_custody_generation": null,
+              "version": "2.0.0",
+              "ticket_id": "enr_jgjnwjdnw37u",
+              "transcript_digest": {
+                "$bytes": "769c364d2b4e6ba97680cccf1c57197b17467aeebab19b79c9d671fc91968868"
+              },
+              "cert_seq": null,
+              "requested_at": "2027-01-15T08:00:00.000Z",
+              "approved_by": null,
+              "approved_at": null,
+              "revoked_at": null,
+              "last_seen_at": null,
+              "policy_head_seen": null,
+              "epoch_seen": null,
+              "audit_head_seq": null
+            }
+          ],
+          "enroll_tickets": [
+            {
+              "ticket_id": "enr_jgjnwjdnw37u",
+              "secret_hash": {
+                "$bytes": "d998db1a7c4237f3512c880eb01a9c8dcc599877829499b29030e02b9764d1ce"
+              },
+              "created_by": "user-owner",
+              "mode": "adopt",
+              "scope_json": "[\"*\"]",
+              "created_at": "2027-01-15T08:00:00.000Z",
+              "expires_at": "2027-01-15T08:15:00.000Z",
+              "used_at": null,
+              "broker_id": "brk_216ab3fc458ed72069b2fb448dd61f68",
+              "revoked_at": null
+            }
+          ],
+          "enrollment_records": [
+            {
+              "broker_id": "brk_216ab3fc458ed72069b2fb448dd61f68",
+              "ticket_id": "enr_jgjnwjdnw37u",
+              "transcript_json": "{\"kx_pub\":\"BGe_4PkgOVoPzX0VK0fc_dN-UTSkKgHEfgo_fS6duZfiGnZOJhmbcXdV6nqxGrkm55IkIH1ybun2j6QeArQleMM\",\"mode\":\"adopt\",\"name\":\"Public paired broker\",\"sign_pub\":\"BCdP95791J0DtK5dTr8OvNB1NsnKOBRqy5MND49ztVLxchfkIbYWb9SaV866z8PsQzzDCwgCAbh7boBisNIeNy0\",\"store_id\":\"aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\",\"version\":\"2.0.0\"}",
+              "transcript_digest": "769c364d2b4e6ba97680cccf1c57197b17467aeebab19b79c9d671fc91968868",
+              "proof": "TQpBRtSmAke25mpyjroGRPcE-_b4Q-tXsFhGkw8FxlJhbRnjpFStH52Iqqk2bQB2XPY9E6_Kjxqsac5kpqfqgQ",
+              "created_at": "2027-01-15T08:00:00.000Z"
+            }
+          ],
+          "enrollment_adoption_proofs": [],
+          "genesis_adoptions": [],
+          "enrollment_wrap_digests": [],
+          "seen_nonces": [],
+          "receipts": [
+            {
+              "actor": "human:user-owner",
+              "op": "brokerTicket",
+              "request_id": "00000000-0000-4000-8000-0000000003ed",
+              "principal_id": "human:user-owner",
+              "body_digest": {
+                "$bytes": "7139d6ad3c80f878fced5fd780ba5d69cfd5b8c0360550fceb5129818db8c376"
+              },
+              "response_json": "{\"ticket_id\":\"enr_jgjnwjdnw37u\"}",
+              "created_at": "2027-01-15T08:00:00.000Z"
+            }
+          ],
+          "genesis_preparations": [
+            {
+              "org_id": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+              "prepared_by": "user-owner",
+              "mode": "adopt",
+              "expires_at": "2027-01-15T08:10:00.000Z",
+              "used_at": null
+            }
+          ]
+        },
+        "preparation_deadline": "2027-01-15T08:10:00.000Z",
+        "state": "preparing",
+        "audit_ops": [
+          {
+            "op": "org_prepare"
+          },
+          {
+            "op": "broker_ticket_created"
+          },
+          {
+            "op": "enrollment_route_published"
+          },
+          {
+            "op": "broker_enrolled_pending"
+          }
+        ]
+      }
+    },
+    {
+      "id": "adopt-root-proof-and-production-genesis",
+      "received_at": "2027-01-15T08:00:00.000Z",
+      "input": {
+        "op": "genesis",
+        "enrollment": {
+          "ticket_code": "enr_jgjnwjdnw37u.shncg3fv7zdzbwjcno2p2rup3a",
+          "transcript": {
+            "name": "Public paired broker",
+            "version": "2.0.0",
+            "mode": "adopt",
+            "sign_pub": "BCdP95791J0DtK5dTr8OvNB1NsnKOBRqy5MND49ztVLxchfkIbYWb9SaV866z8PsQzzDCwgCAbh7boBisNIeNy0",
+            "kx_pub": "BGe_4PkgOVoPzX0VK0fc_dN-UTSkKgHEfgo_fS6duZfiGnZOJhmbcXdV6nqxGrkm55IkIH1ybun2j6QeArQleMM",
+            "store_id": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+          },
+          "proof": "TQpBRtSmAke25mpyjroGRPcE-_b4Q-tXsFhGkw8FxlJhbRnjpFStH52Iqqk2bQB2XPY9E6_Kjxqsac5kpqfqgQ",
+          "candidate_root": "5c0405624d33dde787131d67642d2a977b06681428f7a1464ef095c85ae01514",
+          "root_proof": "u-RBxYj__JFvbuQrW_DOErPjgQZEixh9NJa7XgXNNRgfnEFPT7Ot_khloGmJNIEPn5HNMnKp9GJZaOXhOxVzbA"
+        },
+        "input": {
+          "org_id": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "routeId": "genesis",
+          "identity": {
+            "kind": "human",
+            "id": "user-owner",
+            "org_id": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+            "credential": "public-fixture-only"
+          },
+          "params": {
+            "org": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+          },
+          "query": {},
+          "body": {
+            "entries": [
+              {
+                "entry": {
+                  "v": 2,
+                  "org_id": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                  "seq": 1,
+                  "prev_hash": "0000000000000000000000000000000000000000000000000000000000000000",
+                  "ts": "2027-01-15T08:00:00.000Z",
+                  "kind": "genesis",
+                  "signer": {
+                    "kind": "broker",
+                    "id": "brk_216ab3fc458ed72069b2fb448dd61f68"
+                  },
+                  "body": {
+                    "org_id": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                    "founder": {
+                      "kind": "broker",
+                      "id": "brk_216ab3fc458ed72069b2fb448dd61f68",
+                      "sign_pub": "BCdP95791J0DtK5dTr8OvNB1NsnKOBRqy5MND49ztVLxchfkIbYWb9SaV866z8PsQzzDCwgCAbh7boBisNIeNy0",
+                      "kx_pub": "BGe_4PkgOVoPzX0VK0fc_dN-UTSkKgHEfgo_fS6duZfiGnZOJhmbcXdV6nqxGrkm55IkIH1ybun2j6QeArQleMM"
+                    },
+                    "recovery_kx_pub": null,
+                    "recovery_sign_pub": null,
+                    "default_rules": {},
+                    "max_policy_age": 3600
+                  }
+                },
+                "sig": "4y0KTqt7cszNjyDiLf-YOZJuFH5dbPAv8Q2-V1s5L2gJxIqoGzgIeJohSNVF8khOVV6V77N2XhpUmdxZEmnpEQ"
+              },
+              {
+                "entry": {
+                  "v": 2,
+                  "org_id": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                  "seq": 2,
+                  "prev_hash": "5c0405624d33dde787131d67642d2a977b06681428f7a1464ef095c85ae01514",
+                  "ts": "2027-01-15T08:00:00.000Z",
+                  "kind": "epoch_init",
+                  "body": {
+                    "generation": 1,
+                    "recipients": [
+                      {
+                        "kind": "broker",
+                        "id": "brk_216ab3fc458ed72069b2fb448dd61f68",
+                        "kx_pub_sha256": "364f992f426c321f67d515815dcf5e0858ec9b73a64ad90cc243cb2fc5f7971c",
+                        "wrap_digest": "899fa65ce65fa21ec23334c23926e23763617bc158a7b26763595bfacc1192c1"
+                      }
+                    ],
+                    "scoped_seals": [],
+                    "keyring": [
+                      {
+                        "key_id": "kek_twcanary_AAAAAAAAAAAAAAAAAAAA_1",
+                        "purpose": "kek",
+                        "scope": "twcanary_AAAAAAAAAAAAAAAAAAAA",
+                        "digest": "475afd153aa40abcf6f5255c7ca023b202f34e7fced16fbee71347d875102112"
+                      },
+                      {
+                        "key_id": "fk",
+                        "purpose": "fingerprint",
+                        "scope": "*",
+                        "digest": "491552ca3e32fb1c546826d1e3456a0814afe3d414c5c50ed133b47301372563"
+                      }
+                    ],
+                    "active_kek": {
+                      "twcanary_AAAAAAAAAAAAAAAAAAAA": "kek_twcanary_AAAAAAAAAAAAAAAAAAAA_1"
+                    }
+                  },
+                  "signer": {
+                    "kind": "broker",
+                    "id": "brk_216ab3fc458ed72069b2fb448dd61f68"
+                  }
+                },
+                "sig": "_EwHhQO_GG0I2B_lntdbk_jJwMDL3TqCJXLvwm_afZwlr-yqKZtrNHXcD9CVAQR4Rx2RIepLjFIOLYjXtK5oaw"
+              }
+            ],
+            "stage": {
+              "keyring": [
+                {
+                  "key_id": "kek_twcanary_AAAAAAAAAAAAAAAAAAAA_1",
+                  "purpose": "kek",
+                  "project": "twcanary_AAAAAAAAAAAAAAAAAAAA",
+                  "version": 1,
+                  "wrapped_key": "9c079efe94d1e6621399175708eb96dba0842b1a40e525906c7b03c90a112898cf7bc2a6316c51c17242990157194d88",
+                  "nonce": "95de2770b9024b94dd266fb8",
+                  "mk_generation": 1,
+                  "aad_v": 2
+                },
+                {
+                  "key_id": "fk",
+                  "purpose": "fingerprint",
+                  "project": null,
+                  "version": 1,
+                  "wrapped_key": "61ab39687972aff2f0aabe4f8f3193b5e48c3ea4de0680ba21981515719006c4ff3df5c0340d601c4d32a40fff424f3a",
+                  "nonce": "014a93dc256eb7014a93dc25",
+                  "mk_generation": 1,
+                  "aad_v": 2
+                }
+              ],
+              "wraps": [
+                {
+                  "recipient_kind": "broker",
+                  "recipient_id": "brk_216ab3fc458ed72069b2fb448dd61f68",
+                  "omk_generation": 1,
+                  "eph_pub": "04065524a94f6931d48cb0b6f9c3540d19594d9f7fa80193599ca3f37048bae318ebac55c76e89cfc00aaa03fb54b4777175f14624f86a7d0fd502ce7d14e214bc",
+                  "nonce": "8ed72069b2fb448dd61f68b1",
+                  "wrapped_omk": "76d9123c5572d012420980b58c488323eefea0424823299d72bc5f1b6059bac755bbbd714dde13178c96e6c3f461ed54",
+                  "wrap_digest": "899fa65ce65fa21ec23334c23926e23763617bc158a7b26763595bfacc1192c1"
+                }
+              ],
+              "scoped_seals": []
+            },
+            "canary": "twcanary_AAAAAAAAAAAAAAAAAAAA"
+          }
+        }
+      },
+      "predecessor": {
+        "authority_core": {
+          "v": 1,
+          "org_id": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "head": {
+            "seq": 0,
+            "hash": "0000000000000000000000000000000000000000000000000000000000000000"
+          },
+          "root": null,
+          "certificates": [],
+          "proposals": {},
+          "recovery": null,
+          "recovery_ever_set": false,
+          "founding_broker": null,
+          "used_challenges": [],
+          "founder": null,
+          "founder_pending": null,
+          "recovery_seq": 0,
+          "triggers": {},
+          "brokers": [],
+          "core_commitments": [],
+          "retired_recovery_points": {
+            "sign_pub": [],
+            "kx_pub": []
+          }
+        },
+        "authority_core_sha256": "404483d95ccbd6b546674983df13db5a4e496aeefb4c055384556f4f4172082d",
+        "epoch": {
+          "generation": 0,
+          "active_kek": {},
+          "keyring": [],
+          "org_wraps": [],
+          "broker_wraps": [],
+          "epochs": [],
+          "used_triggers": [],
+          "last_discretionary_rotation": null,
+          "pending": null,
+          "versions": []
+        },
+        "tables": {
+          "brokers": [
+            {
+              "broker_id": "brk_216ab3fc458ed72069b2fb448dd61f68",
+              "name": "Public paired broker",
+              "sign_pub": {
+                "$bytes": "04274ff79efdd49d03b4ae5d4ebf0ebcd07536c9ca38146acb930d0f8f73b552f17217e421b6166fd49a57cebacfc3ec433cc30b080201b87b6e8062b0d21e372d"
+              },
+              "kx_pub": {
+                "$bytes": "0467bfe0f920395a0fcd7d152b47dcfdd37e5134a42a01c47e0a3f7d2e9db997e21a764e26199b717755ea7ab11ab926e79224207d726ee9f68fa41e02b42578c3"
+              },
+              "state": "pending",
+              "scope_json": "[\"*\"]",
+              "keeper": 1,
+              "full_custody_generation": null,
+              "version": "2.0.0",
+              "ticket_id": "enr_jgjnwjdnw37u",
+              "transcript_digest": {
+                "$bytes": "769c364d2b4e6ba97680cccf1c57197b17467aeebab19b79c9d671fc91968868"
+              },
+              "cert_seq": null,
+              "requested_at": "2027-01-15T08:00:00.000Z",
+              "approved_by": null,
+              "approved_at": null,
+              "revoked_at": null,
+              "last_seen_at": null,
+              "policy_head_seen": null,
+              "epoch_seen": null,
+              "audit_head_seq": null
+            }
+          ],
+          "enroll_tickets": [
+            {
+              "ticket_id": "enr_jgjnwjdnw37u",
+              "secret_hash": {
+                "$bytes": "d998db1a7c4237f3512c880eb01a9c8dcc599877829499b29030e02b9764d1ce"
+              },
+              "created_by": "user-owner",
+              "mode": "adopt",
+              "scope_json": "[\"*\"]",
+              "created_at": "2027-01-15T08:00:00.000Z",
+              "expires_at": "2027-01-15T08:15:00.000Z",
+              "used_at": null,
+              "broker_id": "brk_216ab3fc458ed72069b2fb448dd61f68",
+              "revoked_at": null
+            }
+          ],
+          "enrollment_records": [
+            {
+              "broker_id": "brk_216ab3fc458ed72069b2fb448dd61f68",
+              "ticket_id": "enr_jgjnwjdnw37u",
+              "transcript_json": "{\"kx_pub\":\"BGe_4PkgOVoPzX0VK0fc_dN-UTSkKgHEfgo_fS6duZfiGnZOJhmbcXdV6nqxGrkm55IkIH1ybun2j6QeArQleMM\",\"mode\":\"adopt\",\"name\":\"Public paired broker\",\"sign_pub\":\"BCdP95791J0DtK5dTr8OvNB1NsnKOBRqy5MND49ztVLxchfkIbYWb9SaV866z8PsQzzDCwgCAbh7boBisNIeNy0\",\"store_id\":\"aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\",\"version\":\"2.0.0\"}",
+              "transcript_digest": "769c364d2b4e6ba97680cccf1c57197b17467aeebab19b79c9d671fc91968868",
+              "proof": "TQpBRtSmAke25mpyjroGRPcE-_b4Q-tXsFhGkw8FxlJhbRnjpFStH52Iqqk2bQB2XPY9E6_Kjxqsac5kpqfqgQ",
+              "created_at": "2027-01-15T08:00:00.000Z"
+            }
+          ],
+          "enrollment_adoption_proofs": [],
+          "genesis_adoptions": [],
+          "enrollment_wrap_digests": [],
+          "seen_nonces": [],
+          "receipts": [
+            {
+              "actor": "human:user-owner",
+              "op": "brokerTicket",
+              "request_id": "00000000-0000-4000-8000-0000000003ed",
+              "principal_id": "human:user-owner",
+              "body_digest": {
+                "$bytes": "7139d6ad3c80f878fced5fd780ba5d69cfd5b8c0360550fceb5129818db8c376"
+              },
+              "response_json": "{\"ticket_id\":\"enr_jgjnwjdnw37u\"}",
+              "created_at": "2027-01-15T08:00:00.000Z"
+            }
+          ],
+          "genesis_preparations": [
+            {
+              "org_id": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+              "prepared_by": "user-owner",
+              "mode": "adopt",
+              "expires_at": "2027-01-15T08:10:00.000Z",
+              "used_at": null
+            }
+          ]
+        },
+        "preparation_deadline": "2027-01-15T08:10:00.000Z",
+        "state": "preparing",
+        "audit_ops": [
+          {
+            "op": "org_prepare"
+          },
+          {
+            "op": "broker_ticket_created"
+          },
+          {
+            "op": "enrollment_route_published"
+          },
+          {
+            "op": "broker_enrolled_pending"
+          }
+        ]
+      },
+      "response": {
+        "status": 200,
+        "body": "{\"ok\":true,\"code\":\"ok\",\"result\":{\"org_id\":\"aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\",\"org_root\":\"5c0405624d33dde787131d67642d2a977b06681428f7a1464ef095c85ae01514\",\"policy_head_seq\":2}}"
+      },
+      "post_state": {
+        "authority_core": {
+          "v": 1,
+          "org_id": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "head": {
+            "hash": "5e8b3cd91c7bb610452598710f7b63d179708074a5675dd49814fdb9cbd5937c",
+            "seq": 2
+          },
+          "root": "5c0405624d33dde787131d67642d2a977b06681428f7a1464ef095c85ae01514",
+          "certificates": [],
+          "proposals": {},
+          "recovery": null,
+          "recovery_ever_set": false,
+          "founding_broker": {
+            "id": "brk_216ab3fc458ed72069b2fb448dd61f68",
+            "kx_pub": "BGe_4PkgOVoPzX0VK0fc_dN-UTSkKgHEfgo_fS6duZfiGnZOJhmbcXdV6nqxGrkm55IkIH1ybun2j6QeArQleMM",
+            "sign_pub": "BCdP95791J0DtK5dTr8OvNB1NsnKOBRqy5MND49ztVLxchfkIbYWb9SaV866z8PsQzzDCwgCAbh7boBisNIeNy0"
+          },
+          "used_challenges": [],
+          "founder": {
+            "init_predecessor_seq": 1,
+            "mode": "broker",
+            "signer": {
+              "id": "brk_216ab3fc458ed72069b2fb448dd61f68",
+              "kind": "broker"
+            }
+          },
+          "founder_pending": null,
+          "recovery_seq": 0,
+          "triggers": {},
+          "brokers": [],
+          "core_commitments": [],
+          "retired_recovery_points": {
+            "sign_pub": [],
+            "kx_pub": []
+          }
+        },
+        "authority_core_sha256": "8244ef5bae0f2e0545343e40ac2abf7dfb83db9c10e87d28632499d353ecb6a4",
+        "epoch": {
+          "active_kek": {
+            "twcanary_AAAAAAAAAAAAAAAAAAAA": "kek_twcanary_AAAAAAAAAAAAAAAAAAAA_1"
+          },
+          "broker_wraps": [],
+          "epochs": [
+            {
+              "active_kek": {
+                "twcanary_AAAAAAAAAAAAAAAAAAAA": "kek_twcanary_AAAAAAAAAAAAAAAAAAAA_1"
+              },
+              "commit_seq": 2,
+              "covered_triggers": [],
+              "generation": 1,
+              "kind": "full",
+              "projects": [
+                "twcanary_AAAAAAAAAAAAAAAAAAAA"
+              ],
+              "seq": 2
+            }
+          ],
+          "generation": 1,
+          "keyring": [
+            {
+              "aad_v": 2,
+              "key_id": "kek_twcanary_AAAAAAAAAAAAAAAAAAAA_1",
+              "mk_generation": 1,
+              "nonce": "95de2770b9024b94dd266fb8",
+              "project": "twcanary_AAAAAAAAAAAAAAAAAAAA",
+              "purpose": "kek",
+              "version": 1,
+              "wrapped_key": "9c079efe94d1e6621399175708eb96dba0842b1a40e525906c7b03c90a112898cf7bc2a6316c51c17242990157194d88"
+            },
+            {
+              "aad_v": 2,
+              "key_id": "fk",
+              "mk_generation": 1,
+              "nonce": "014a93dc256eb7014a93dc25",
+              "project": null,
+              "purpose": "fingerprint",
+              "version": 1,
+              "wrapped_key": "61ab39687972aff2f0aabe4f8f3193b5e48c3ea4de0680ba21981515719006c4ff3df5c0340d601c4d32a40fff424f3a"
+            }
+          ],
+          "last_discretionary_rotation": null,
+          "org_wraps": [
+            {
+              "eph_pub": "04065524a94f6931d48cb0b6f9c3540d19594d9f7fa80193599ca3f37048bae318ebac55c76e89cfc00aaa03fb54b4777175f14624f86a7d0fd502ce7d14e214bc",
+              "nonce": "8ed72069b2fb448dd61f68b1",
+              "omk_generation": 1,
+              "recipient_id": "brk_216ab3fc458ed72069b2fb448dd61f68",
+              "recipient_kind": "broker",
+              "wrap_digest": "899fa65ce65fa21ec23334c23926e23763617bc158a7b26763595bfacc1192c1",
+              "wrapped_omk": "76d9123c5572d012420980b58c488323eefea0424823299d72bc5f1b6059bac755bbbd714dde13178c96e6c3f461ed54"
+            }
+          ],
+          "pending": null,
+          "used_triggers": [],
+          "versions": []
+        },
+        "tables": {
+          "brokers": [
+            {
+              "broker_id": "brk_216ab3fc458ed72069b2fb448dd61f68",
+              "name": "Public paired broker",
+              "sign_pub": {
+                "$bytes": "04274ff79efdd49d03b4ae5d4ebf0ebcd07536c9ca38146acb930d0f8f73b552f17217e421b6166fd49a57cebacfc3ec433cc30b080201b87b6e8062b0d21e372d"
+              },
+              "kx_pub": {
+                "$bytes": "0467bfe0f920395a0fcd7d152b47dcfdd37e5134a42a01c47e0a3f7d2e9db997e21a764e26199b717755ea7ab11ab926e79224207d726ee9f68fa41e02b42578c3"
+              },
+              "state": "active",
+              "scope_json": "[\"*\"]",
+              "keeper": 1,
+              "full_custody_generation": 1,
+              "version": null,
+              "ticket_id": "enr_jgjnwjdnw37u",
+              "transcript_digest": {
+                "$bytes": "769c364d2b4e6ba97680cccf1c57197b17467aeebab19b79c9d671fc91968868"
+              },
+              "cert_seq": null,
+              "requested_at": "2027-01-15T08:00:00.000Z",
+              "approved_by": null,
+              "approved_at": "2027-01-15T08:00:00.000Z",
+              "revoked_at": null,
+              "last_seen_at": null,
+              "policy_head_seen": null,
+              "epoch_seen": null,
+              "audit_head_seq": null
+            }
+          ],
+          "enroll_tickets": [
+            {
+              "ticket_id": "enr_jgjnwjdnw37u",
+              "secret_hash": {
+                "$bytes": "d998db1a7c4237f3512c880eb01a9c8dcc599877829499b29030e02b9764d1ce"
+              },
+              "created_by": "user-owner",
+              "mode": "adopt",
+              "scope_json": "[\"*\"]",
+              "created_at": "2027-01-15T08:00:00.000Z",
+              "expires_at": "2027-01-15T08:15:00.000Z",
+              "used_at": "2027-01-15T08:00:00.000Z",
+              "broker_id": "brk_216ab3fc458ed72069b2fb448dd61f68",
+              "revoked_at": null
+            }
+          ],
+          "enrollment_records": [
+            {
+              "broker_id": "brk_216ab3fc458ed72069b2fb448dd61f68",
+              "ticket_id": "enr_jgjnwjdnw37u",
+              "transcript_json": "{\"kx_pub\":\"BGe_4PkgOVoPzX0VK0fc_dN-UTSkKgHEfgo_fS6duZfiGnZOJhmbcXdV6nqxGrkm55IkIH1ybun2j6QeArQleMM\",\"mode\":\"adopt\",\"name\":\"Public paired broker\",\"sign_pub\":\"BCdP95791J0DtK5dTr8OvNB1NsnKOBRqy5MND49ztVLxchfkIbYWb9SaV866z8PsQzzDCwgCAbh7boBisNIeNy0\",\"store_id\":\"aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\",\"version\":\"2.0.0\"}",
+              "transcript_digest": "769c364d2b4e6ba97680cccf1c57197b17467aeebab19b79c9d671fc91968868",
+              "proof": "TQpBRtSmAke25mpyjroGRPcE-_b4Q-tXsFhGkw8FxlJhbRnjpFStH52Iqqk2bQB2XPY9E6_Kjxqsac5kpqfqgQ",
+              "created_at": "2027-01-15T08:00:00.000Z"
+            }
+          ],
+          "enrollment_adoption_proofs": [
+            {
+              "broker_id": "brk_216ab3fc458ed72069b2fb448dd61f68",
+              "candidate_root": "5c0405624d33dde787131d67642d2a977b06681428f7a1464ef095c85ae01514",
+              "proof": "u-RBxYj__JFvbuQrW_DOErPjgQZEixh9NJa7XgXNNRgfnEFPT7Ot_khloGmJNIEPn5HNMnKp9GJZaOXhOxVzbA"
+            }
+          ],
+          "genesis_adoptions": [
+            {
+              "singleton": 1,
+              "org_root": "5c0405624d33dde787131d67642d2a977b06681428f7a1464ef095c85ae01514",
+              "broker_id": "brk_216ab3fc458ed72069b2fb448dd61f68",
+              "metadata_json": "{\"broker_id\":\"brk_216ab3fc458ed72069b2fb448dd61f68\",\"kx_pub\":\"BGe_4PkgOVoPzX0VK0fc_dN-UTSkKgHEfgo_fS6duZfiGnZOJhmbcXdV6nqxGrkm55IkIH1ybun2j6QeArQleMM\",\"name\":\"Public paired broker\",\"sign_pub\":\"BCdP95791J0DtK5dTr8OvNB1NsnKOBRqy5MND49ztVLxchfkIbYWb9SaV866z8PsQzzDCwgCAbh7boBisNIeNy0\",\"ticket_id\":\"enr_jgjnwjdnw37u\",\"transcript_digest\":\"769c364d2b4e6ba97680cccf1c57197b17467aeebab19b79c9d671fc91968868\"}",
+              "accepted_at": "2027-01-15T08:00:00.000Z"
+            }
+          ],
+          "enrollment_wrap_digests": [],
+          "seen_nonces": [],
+          "receipts": [
+            {
+              "actor": "human:user-owner",
+              "op": "brokerTicket",
+              "request_id": "00000000-0000-4000-8000-0000000003ed",
+              "principal_id": "human:user-owner",
+              "body_digest": {
+                "$bytes": "7139d6ad3c80f878fced5fd780ba5d69cfd5b8c0360550fceb5129818db8c376"
+              },
+              "response_json": "{\"ticket_id\":\"enr_jgjnwjdnw37u\"}",
+              "created_at": "2027-01-15T08:00:00.000Z"
+            }
+          ],
+          "genesis_preparations": [
+            {
+              "org_id": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+              "prepared_by": "user-owner",
+              "mode": "adopt",
+              "expires_at": "2027-01-15T08:10:00.000Z",
+              "used_at": "2027-01-15T08:00:00.000Z"
+            }
+          ]
+        },
+        "preparation_deadline": null,
+        "state": "active",
+        "audit_ops": [
+          {
+            "op": "org_prepare"
+          },
+          {
+            "op": "broker_ticket_created"
+          },
+          {
+            "op": "enrollment_route_published"
+          },
+          {
+            "op": "broker_enrolled_pending"
+          },
+          {
+            "op": "adopt_ticket_consumed"
+          },
+          {
+            "op": "genesis"
+          },
+          {
+            "op": "epoch_init"
+          }
+        ]
+      }
+    },
+    {
+      "id": "first-certificate-without-certified-human-refused",
+      "received_at": "2027-01-15T08:00:00.000Z",
+      "input": {
+        "op": "http",
+        "request": {
+          "url": "https://api.titanwarden.com/v1/orgs/aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/brokers/brk_216ab3fc458ed72069b2fb448dd61f68/approve",
+          "method": "POST",
+          "headers": {
+            "authorization": "Bearer public-fixture-only",
+            "content-type": "application/json",
+            "TW-Request-Id": "00000000-0000-4000-8000-0000000003ee"
+          },
+          "body_b64": "e30",
+          "path": "/v1/orgs/aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/brokers/brk_216ab3fc458ed72069b2fb448dd61f68/approve",
+          "raw_query": "",
+          "canonical_query": "-"
+        }
+      },
+      "predecessor": {
+        "authority_core": {
+          "v": 1,
+          "org_id": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "head": {
+            "hash": "5e8b3cd91c7bb610452598710f7b63d179708074a5675dd49814fdb9cbd5937c",
+            "seq": 2
+          },
+          "root": "5c0405624d33dde787131d67642d2a977b06681428f7a1464ef095c85ae01514",
+          "certificates": [],
+          "proposals": {},
+          "recovery": null,
+          "recovery_ever_set": false,
+          "founding_broker": {
+            "id": "brk_216ab3fc458ed72069b2fb448dd61f68",
+            "kx_pub": "BGe_4PkgOVoPzX0VK0fc_dN-UTSkKgHEfgo_fS6duZfiGnZOJhmbcXdV6nqxGrkm55IkIH1ybun2j6QeArQleMM",
+            "sign_pub": "BCdP95791J0DtK5dTr8OvNB1NsnKOBRqy5MND49ztVLxchfkIbYWb9SaV866z8PsQzzDCwgCAbh7boBisNIeNy0"
+          },
+          "used_challenges": [],
+          "founder": {
+            "init_predecessor_seq": 1,
+            "mode": "broker",
+            "signer": {
+              "id": "brk_216ab3fc458ed72069b2fb448dd61f68",
+              "kind": "broker"
+            }
+          },
+          "founder_pending": null,
+          "recovery_seq": 0,
+          "triggers": {},
+          "brokers": [],
+          "core_commitments": [],
+          "retired_recovery_points": {
+            "sign_pub": [],
+            "kx_pub": []
+          }
+        },
+        "authority_core_sha256": "8244ef5bae0f2e0545343e40ac2abf7dfb83db9c10e87d28632499d353ecb6a4",
+        "epoch": {
+          "active_kek": {
+            "twcanary_AAAAAAAAAAAAAAAAAAAA": "kek_twcanary_AAAAAAAAAAAAAAAAAAAA_1"
+          },
+          "broker_wraps": [],
+          "epochs": [
+            {
+              "active_kek": {
+                "twcanary_AAAAAAAAAAAAAAAAAAAA": "kek_twcanary_AAAAAAAAAAAAAAAAAAAA_1"
+              },
+              "commit_seq": 2,
+              "covered_triggers": [],
+              "generation": 1,
+              "kind": "full",
+              "projects": [
+                "twcanary_AAAAAAAAAAAAAAAAAAAA"
+              ],
+              "seq": 2
+            }
+          ],
+          "generation": 1,
+          "keyring": [
+            {
+              "aad_v": 2,
+              "key_id": "kek_twcanary_AAAAAAAAAAAAAAAAAAAA_1",
+              "mk_generation": 1,
+              "nonce": "95de2770b9024b94dd266fb8",
+              "project": "twcanary_AAAAAAAAAAAAAAAAAAAA",
+              "purpose": "kek",
+              "version": 1,
+              "wrapped_key": "9c079efe94d1e6621399175708eb96dba0842b1a40e525906c7b03c90a112898cf7bc2a6316c51c17242990157194d88"
+            },
+            {
+              "aad_v": 2,
+              "key_id": "fk",
+              "mk_generation": 1,
+              "nonce": "014a93dc256eb7014a93dc25",
+              "project": null,
+              "purpose": "fingerprint",
+              "version": 1,
+              "wrapped_key": "61ab39687972aff2f0aabe4f8f3193b5e48c3ea4de0680ba21981515719006c4ff3df5c0340d601c4d32a40fff424f3a"
+            }
+          ],
+          "last_discretionary_rotation": null,
+          "org_wraps": [
+            {
+              "eph_pub": "04065524a94f6931d48cb0b6f9c3540d19594d9f7fa80193599ca3f37048bae318ebac55c76e89cfc00aaa03fb54b4777175f14624f86a7d0fd502ce7d14e214bc",
+              "nonce": "8ed72069b2fb448dd61f68b1",
+              "omk_generation": 1,
+              "recipient_id": "brk_216ab3fc458ed72069b2fb448dd61f68",
+              "recipient_kind": "broker",
+              "wrap_digest": "899fa65ce65fa21ec23334c23926e23763617bc158a7b26763595bfacc1192c1",
+              "wrapped_omk": "76d9123c5572d012420980b58c488323eefea0424823299d72bc5f1b6059bac755bbbd714dde13178c96e6c3f461ed54"
+            }
+          ],
+          "pending": null,
+          "used_triggers": [],
+          "versions": []
+        },
+        "tables": {
+          "brokers": [
+            {
+              "broker_id": "brk_216ab3fc458ed72069b2fb448dd61f68",
+              "name": "Public paired broker",
+              "sign_pub": {
+                "$bytes": "04274ff79efdd49d03b4ae5d4ebf0ebcd07536c9ca38146acb930d0f8f73b552f17217e421b6166fd49a57cebacfc3ec433cc30b080201b87b6e8062b0d21e372d"
+              },
+              "kx_pub": {
+                "$bytes": "0467bfe0f920395a0fcd7d152b47dcfdd37e5134a42a01c47e0a3f7d2e9db997e21a764e26199b717755ea7ab11ab926e79224207d726ee9f68fa41e02b42578c3"
+              },
+              "state": "active",
+              "scope_json": "[\"*\"]",
+              "keeper": 1,
+              "full_custody_generation": 1,
+              "version": null,
+              "ticket_id": "enr_jgjnwjdnw37u",
+              "transcript_digest": {
+                "$bytes": "769c364d2b4e6ba97680cccf1c57197b17467aeebab19b79c9d671fc91968868"
+              },
+              "cert_seq": null,
+              "requested_at": "2027-01-15T08:00:00.000Z",
+              "approved_by": null,
+              "approved_at": "2027-01-15T08:00:00.000Z",
+              "revoked_at": null,
+              "last_seen_at": null,
+              "policy_head_seen": null,
+              "epoch_seen": null,
+              "audit_head_seq": null
+            }
+          ],
+          "enroll_tickets": [
+            {
+              "ticket_id": "enr_jgjnwjdnw37u",
+              "secret_hash": {
+                "$bytes": "d998db1a7c4237f3512c880eb01a9c8dcc599877829499b29030e02b9764d1ce"
+              },
+              "created_by": "user-owner",
+              "mode": "adopt",
+              "scope_json": "[\"*\"]",
+              "created_at": "2027-01-15T08:00:00.000Z",
+              "expires_at": "2027-01-15T08:15:00.000Z",
+              "used_at": "2027-01-15T08:00:00.000Z",
+              "broker_id": "brk_216ab3fc458ed72069b2fb448dd61f68",
+              "revoked_at": null
+            }
+          ],
+          "enrollment_records": [
+            {
+              "broker_id": "brk_216ab3fc458ed72069b2fb448dd61f68",
+              "ticket_id": "enr_jgjnwjdnw37u",
+              "transcript_json": "{\"kx_pub\":\"BGe_4PkgOVoPzX0VK0fc_dN-UTSkKgHEfgo_fS6duZfiGnZOJhmbcXdV6nqxGrkm55IkIH1ybun2j6QeArQleMM\",\"mode\":\"adopt\",\"name\":\"Public paired broker\",\"sign_pub\":\"BCdP95791J0DtK5dTr8OvNB1NsnKOBRqy5MND49ztVLxchfkIbYWb9SaV866z8PsQzzDCwgCAbh7boBisNIeNy0\",\"store_id\":\"aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\",\"version\":\"2.0.0\"}",
+              "transcript_digest": "769c364d2b4e6ba97680cccf1c57197b17467aeebab19b79c9d671fc91968868",
+              "proof": "TQpBRtSmAke25mpyjroGRPcE-_b4Q-tXsFhGkw8FxlJhbRnjpFStH52Iqqk2bQB2XPY9E6_Kjxqsac5kpqfqgQ",
+              "created_at": "2027-01-15T08:00:00.000Z"
+            }
+          ],
+          "enrollment_adoption_proofs": [
+            {
+              "broker_id": "brk_216ab3fc458ed72069b2fb448dd61f68",
+              "candidate_root": "5c0405624d33dde787131d67642d2a977b06681428f7a1464ef095c85ae01514",
+              "proof": "u-RBxYj__JFvbuQrW_DOErPjgQZEixh9NJa7XgXNNRgfnEFPT7Ot_khloGmJNIEPn5HNMnKp9GJZaOXhOxVzbA"
+            }
+          ],
+          "genesis_adoptions": [
+            {
+              "singleton": 1,
+              "org_root": "5c0405624d33dde787131d67642d2a977b06681428f7a1464ef095c85ae01514",
+              "broker_id": "brk_216ab3fc458ed72069b2fb448dd61f68",
+              "metadata_json": "{\"broker_id\":\"brk_216ab3fc458ed72069b2fb448dd61f68\",\"kx_pub\":\"BGe_4PkgOVoPzX0VK0fc_dN-UTSkKgHEfgo_fS6duZfiGnZOJhmbcXdV6nqxGrkm55IkIH1ybun2j6QeArQleMM\",\"name\":\"Public paired broker\",\"sign_pub\":\"BCdP95791J0DtK5dTr8OvNB1NsnKOBRqy5MND49ztVLxchfkIbYWb9SaV866z8PsQzzDCwgCAbh7boBisNIeNy0\",\"ticket_id\":\"enr_jgjnwjdnw37u\",\"transcript_digest\":\"769c364d2b4e6ba97680cccf1c57197b17467aeebab19b79c9d671fc91968868\"}",
+              "accepted_at": "2027-01-15T08:00:00.000Z"
+            }
+          ],
+          "enrollment_wrap_digests": [],
+          "seen_nonces": [],
+          "receipts": [
+            {
+              "actor": "human:user-owner",
+              "op": "brokerTicket",
+              "request_id": "00000000-0000-4000-8000-0000000003ed",
+              "principal_id": "human:user-owner",
+              "body_digest": {
+                "$bytes": "7139d6ad3c80f878fced5fd780ba5d69cfd5b8c0360550fceb5129818db8c376"
+              },
+              "response_json": "{\"ticket_id\":\"enr_jgjnwjdnw37u\"}",
+              "created_at": "2027-01-15T08:00:00.000Z"
+            }
+          ],
+          "genesis_preparations": [
+            {
+              "org_id": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+              "prepared_by": "user-owner",
+              "mode": "adopt",
+              "expires_at": "2027-01-15T08:10:00.000Z",
+              "used_at": "2027-01-15T08:00:00.000Z"
+            }
+          ]
+        },
+        "preparation_deadline": null,
+        "state": "active",
+        "audit_ops": [
+          {
+            "op": "org_prepare"
+          },
+          {
+            "op": "broker_ticket_created"
+          },
+          {
+            "op": "enrollment_route_published"
+          },
+          {
+            "op": "broker_enrolled_pending"
+          },
+          {
+            "op": "adopt_ticket_consumed"
+          },
+          {
+            "op": "genesis"
+          },
+          {
+            "op": "epoch_init"
+          }
+        ]
+      },
+      "response": {
+        "status": 404,
+        "body": "{\"ok\":false,\"code\":\"E_NOT_FOUND\",\"error\":\"tw: not found\",\"next\":\"Check the org and resource ids.\"}"
+      },
+      "post_state": {
+        "authority_core": {
+          "v": 1,
+          "org_id": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "head": {
+            "hash": "5e8b3cd91c7bb610452598710f7b63d179708074a5675dd49814fdb9cbd5937c",
+            "seq": 2
+          },
+          "root": "5c0405624d33dde787131d67642d2a977b06681428f7a1464ef095c85ae01514",
+          "certificates": [],
+          "proposals": {},
+          "recovery": null,
+          "recovery_ever_set": false,
+          "founding_broker": {
+            "id": "brk_216ab3fc458ed72069b2fb448dd61f68",
+            "kx_pub": "BGe_4PkgOVoPzX0VK0fc_dN-UTSkKgHEfgo_fS6duZfiGnZOJhmbcXdV6nqxGrkm55IkIH1ybun2j6QeArQleMM",
+            "sign_pub": "BCdP95791J0DtK5dTr8OvNB1NsnKOBRqy5MND49ztVLxchfkIbYWb9SaV866z8PsQzzDCwgCAbh7boBisNIeNy0"
+          },
+          "used_challenges": [],
+          "founder": {
+            "init_predecessor_seq": 1,
+            "mode": "broker",
+            "signer": {
+              "id": "brk_216ab3fc458ed72069b2fb448dd61f68",
+              "kind": "broker"
+            }
+          },
+          "founder_pending": null,
+          "recovery_seq": 0,
+          "triggers": {},
+          "brokers": [],
+          "core_commitments": [],
+          "retired_recovery_points": {
+            "sign_pub": [],
+            "kx_pub": []
+          }
+        },
+        "authority_core_sha256": "8244ef5bae0f2e0545343e40ac2abf7dfb83db9c10e87d28632499d353ecb6a4",
+        "epoch": {
+          "active_kek": {
+            "twcanary_AAAAAAAAAAAAAAAAAAAA": "kek_twcanary_AAAAAAAAAAAAAAAAAAAA_1"
+          },
+          "broker_wraps": [],
+          "epochs": [
+            {
+              "active_kek": {
+                "twcanary_AAAAAAAAAAAAAAAAAAAA": "kek_twcanary_AAAAAAAAAAAAAAAAAAAA_1"
+              },
+              "commit_seq": 2,
+              "covered_triggers": [],
+              "generation": 1,
+              "kind": "full",
+              "projects": [
+                "twcanary_AAAAAAAAAAAAAAAAAAAA"
+              ],
+              "seq": 2
+            }
+          ],
+          "generation": 1,
+          "keyring": [
+            {
+              "aad_v": 2,
+              "key_id": "kek_twcanary_AAAAAAAAAAAAAAAAAAAA_1",
+              "mk_generation": 1,
+              "nonce": "95de2770b9024b94dd266fb8",
+              "project": "twcanary_AAAAAAAAAAAAAAAAAAAA",
+              "purpose": "kek",
+              "version": 1,
+              "wrapped_key": "9c079efe94d1e6621399175708eb96dba0842b1a40e525906c7b03c90a112898cf7bc2a6316c51c17242990157194d88"
+            },
+            {
+              "aad_v": 2,
+              "key_id": "fk",
+              "mk_generation": 1,
+              "nonce": "014a93dc256eb7014a93dc25",
+              "project": null,
+              "purpose": "fingerprint",
+              "version": 1,
+              "wrapped_key": "61ab39687972aff2f0aabe4f8f3193b5e48c3ea4de0680ba21981515719006c4ff3df5c0340d601c4d32a40fff424f3a"
+            }
+          ],
+          "last_discretionary_rotation": null,
+          "org_wraps": [
+            {
+              "eph_pub": "04065524a94f6931d48cb0b6f9c3540d19594d9f7fa80193599ca3f37048bae318ebac55c76e89cfc00aaa03fb54b4777175f14624f86a7d0fd502ce7d14e214bc",
+              "nonce": "8ed72069b2fb448dd61f68b1",
+              "omk_generation": 1,
+              "recipient_id": "brk_216ab3fc458ed72069b2fb448dd61f68",
+              "recipient_kind": "broker",
+              "wrap_digest": "899fa65ce65fa21ec23334c23926e23763617bc158a7b26763595bfacc1192c1",
+              "wrapped_omk": "76d9123c5572d012420980b58c488323eefea0424823299d72bc5f1b6059bac755bbbd714dde13178c96e6c3f461ed54"
+            }
+          ],
+          "pending": null,
+          "used_triggers": [],
+          "versions": []
+        },
+        "tables": {
+          "brokers": [
+            {
+              "broker_id": "brk_216ab3fc458ed72069b2fb448dd61f68",
+              "name": "Public paired broker",
+              "sign_pub": {
+                "$bytes": "04274ff79efdd49d03b4ae5d4ebf0ebcd07536c9ca38146acb930d0f8f73b552f17217e421b6166fd49a57cebacfc3ec433cc30b080201b87b6e8062b0d21e372d"
+              },
+              "kx_pub": {
+                "$bytes": "0467bfe0f920395a0fcd7d152b47dcfdd37e5134a42a01c47e0a3f7d2e9db997e21a764e26199b717755ea7ab11ab926e79224207d726ee9f68fa41e02b42578c3"
+              },
+              "state": "active",
+              "scope_json": "[\"*\"]",
+              "keeper": 1,
+              "full_custody_generation": 1,
+              "version": null,
+              "ticket_id": "enr_jgjnwjdnw37u",
+              "transcript_digest": {
+                "$bytes": "769c364d2b4e6ba97680cccf1c57197b17467aeebab19b79c9d671fc91968868"
+              },
+              "cert_seq": null,
+              "requested_at": "2027-01-15T08:00:00.000Z",
+              "approved_by": null,
+              "approved_at": "2027-01-15T08:00:00.000Z",
+              "revoked_at": null,
+              "last_seen_at": null,
+              "policy_head_seen": null,
+              "epoch_seen": null,
+              "audit_head_seq": null
+            }
+          ],
+          "enroll_tickets": [
+            {
+              "ticket_id": "enr_jgjnwjdnw37u",
+              "secret_hash": {
+                "$bytes": "d998db1a7c4237f3512c880eb01a9c8dcc599877829499b29030e02b9764d1ce"
+              },
+              "created_by": "user-owner",
+              "mode": "adopt",
+              "scope_json": "[\"*\"]",
+              "created_at": "2027-01-15T08:00:00.000Z",
+              "expires_at": "2027-01-15T08:15:00.000Z",
+              "used_at": "2027-01-15T08:00:00.000Z",
+              "broker_id": "brk_216ab3fc458ed72069b2fb448dd61f68",
+              "revoked_at": null
+            }
+          ],
+          "enrollment_records": [
+            {
+              "broker_id": "brk_216ab3fc458ed72069b2fb448dd61f68",
+              "ticket_id": "enr_jgjnwjdnw37u",
+              "transcript_json": "{\"kx_pub\":\"BGe_4PkgOVoPzX0VK0fc_dN-UTSkKgHEfgo_fS6duZfiGnZOJhmbcXdV6nqxGrkm55IkIH1ybun2j6QeArQleMM\",\"mode\":\"adopt\",\"name\":\"Public paired broker\",\"sign_pub\":\"BCdP95791J0DtK5dTr8OvNB1NsnKOBRqy5MND49ztVLxchfkIbYWb9SaV866z8PsQzzDCwgCAbh7boBisNIeNy0\",\"store_id\":\"aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\",\"version\":\"2.0.0\"}",
+              "transcript_digest": "769c364d2b4e6ba97680cccf1c57197b17467aeebab19b79c9d671fc91968868",
+              "proof": "TQpBRtSmAke25mpyjroGRPcE-_b4Q-tXsFhGkw8FxlJhbRnjpFStH52Iqqk2bQB2XPY9E6_Kjxqsac5kpqfqgQ",
+              "created_at": "2027-01-15T08:00:00.000Z"
+            }
+          ],
+          "enrollment_adoption_proofs": [
+            {
+              "broker_id": "brk_216ab3fc458ed72069b2fb448dd61f68",
+              "candidate_root": "5c0405624d33dde787131d67642d2a977b06681428f7a1464ef095c85ae01514",
+              "proof": "u-RBxYj__JFvbuQrW_DOErPjgQZEixh9NJa7XgXNNRgfnEFPT7Ot_khloGmJNIEPn5HNMnKp9GJZaOXhOxVzbA"
+            }
+          ],
+          "genesis_adoptions": [
+            {
+              "singleton": 1,
+              "org_root": "5c0405624d33dde787131d67642d2a977b06681428f7a1464ef095c85ae01514",
+              "broker_id": "brk_216ab3fc458ed72069b2fb448dd61f68",
+              "metadata_json": "{\"broker_id\":\"brk_216ab3fc458ed72069b2fb448dd61f68\",\"kx_pub\":\"BGe_4PkgOVoPzX0VK0fc_dN-UTSkKgHEfgo_fS6duZfiGnZOJhmbcXdV6nqxGrkm55IkIH1ybun2j6QeArQleMM\",\"name\":\"Public paired broker\",\"sign_pub\":\"BCdP95791J0DtK5dTr8OvNB1NsnKOBRqy5MND49ztVLxchfkIbYWb9SaV866z8PsQzzDCwgCAbh7boBisNIeNy0\",\"ticket_id\":\"enr_jgjnwjdnw37u\",\"transcript_digest\":\"769c364d2b4e6ba97680cccf1c57197b17467aeebab19b79c9d671fc91968868\"}",
+              "accepted_at": "2027-01-15T08:00:00.000Z"
+            }
+          ],
+          "enrollment_wrap_digests": [],
+          "seen_nonces": [],
+          "receipts": [
+            {
+              "actor": "human:user-owner",
+              "op": "brokerTicket",
+              "request_id": "00000000-0000-4000-8000-0000000003ed",
+              "principal_id": "human:user-owner",
+              "body_digest": {
+                "$bytes": "7139d6ad3c80f878fced5fd780ba5d69cfd5b8c0360550fceb5129818db8c376"
+              },
+              "response_json": "{\"ticket_id\":\"enr_jgjnwjdnw37u\"}",
+              "created_at": "2027-01-15T08:00:00.000Z"
+            }
+          ],
+          "genesis_preparations": [
+            {
+              "org_id": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+              "prepared_by": "user-owner",
+              "mode": "adopt",
+              "expires_at": "2027-01-15T08:10:00.000Z",
+              "used_at": "2027-01-15T08:00:00.000Z"
+            }
+          ]
+        },
+        "preparation_deadline": null,
+        "state": "active",
+        "audit_ops": [
+          {
+            "op": "org_prepare"
+          },
+          {
+            "op": "broker_ticket_created"
+          },
+          {
+            "op": "enrollment_route_published"
+          },
+          {
+            "op": "broker_enrolled_pending"
+          },
+          {
+            "op": "adopt_ticket_consumed"
+          },
+          {
+            "op": "genesis"
+          },
+          {
+            "op": "epoch_init"
+          }
+        ]
+      }
+    }
+  ],
+  "limitations": [
+    "After broker-founder genesis there is no certified human. First broker certificate approval requires a recovered or enrolled human owner. This trace records the real refusal at that prerequisite, rather than seeding synthetic owner authority or changing the protocol."
+  ]
+}

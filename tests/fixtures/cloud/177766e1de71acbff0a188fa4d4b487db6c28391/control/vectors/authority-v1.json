@@ -1,0 +1,106 @@
+{
+  "v": 1,
+  "description": "Public test fixtures only. Canonical JSON and SHA256 independently generated in Python. No private keys.",
+  "founder_vectors": [
+    {
+      "id": "founder-certificate-match",
+      "founder": {
+        "kind": "member",
+        "id": "mem_founder",
+        "key": "mky_founder",
+        "sign_pub": "BDcja8JAvFM6l87-xftvptWMfVGf8uZecZ_0RRpuIiGsSGJdMnFxfk9Q0m8E-AiHu4Z9mDV7xcIQSAr8IMwodkM",
+        "kx_pub": "BDcja8JAvFM6l87-xftvptWMfVGf8uZecZ_0RRpuIiGsSGJdMnFxfk9Q0m8E-AiHu4Z9mDV7xcIQSAr8IMwodkM",
+        "certificate_sha256": "7b055792cf3d48de3d9f4574a7021f2f6ca3281bcbf3cd6555ab005fd87cc69f"
+      },
+      "certificate": {
+        "v": 1,
+        "org_id": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "member_id": "mem_founder",
+        "workos_user_id": "test_workos_subject",
+        "cert_no": 1,
+        "role": "owner",
+        "reveal": false,
+        "key_holder": true,
+        "member_key_id": "mky_founder",
+        "sign_pub": "BDcja8JAvFM6l87-xftvptWMfVGf8uZecZ_0RRpuIiGsSGJdMnFxfk9Q0m8E-AiHu4Z9mDV7xcIQSAr8IMwodkM",
+        "kx_pub": "BDcja8JAvFM6l87-xftvptWMfVGf8uZecZ_0RRpuIiGsSGJdMnFxfk9Q0m8E-AiHu4Z9mDV7xcIQSAr8IMwodkM",
+        "passkeys": [
+          {
+            "credential_id": "dGVzdC1wdWJsaWMtY3JlZGVudGlhbC1pZA",
+            "cose_key": "pQECAyYgASFYIDcja8JAvFM6l87-xftvptWMfVGf8uZecZ_0RRpuIiGsIlggSGJdMnFxfk9Q0m8E-AiHu4Z9mDV7xcIQSAr8IMwodkM"
+          }
+        ],
+        "state": "active"
+      },
+      "canonical": "{\"cert_no\":1,\"key_holder\":true,\"kx_pub\":\"BDcja8JAvFM6l87-xftvptWMfVGf8uZecZ_0RRpuIiGsSGJdMnFxfk9Q0m8E-AiHu4Z9mDV7xcIQSAr8IMwodkM\",\"member_id\":\"mem_founder\",\"member_key_id\":\"mky_founder\",\"org_id\":\"aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\",\"passkeys\":[{\"cose_key\":\"pQECAyYgASFYIDcja8JAvFM6l87-xftvptWMfVGf8uZecZ_0RRpuIiGsIlggSGJdMnFxfk9Q0m8E-AiHu4Z9mDV7xcIQSAr8IMwodkM\",\"credential_id\":\"dGVzdC1wdWJsaWMtY3JlZGVudGlhbC1pZA\"}],\"reveal\":false,\"role\":\"owner\",\"sign_pub\":\"BDcja8JAvFM6l87-xftvptWMfVGf8uZecZ_0RRpuIiGsSGJdMnFxfk9Q0m8E-AiHu4Z9mDV7xcIQSAr8IMwodkM\",\"state\":\"active\",\"v\":1,\"workos_user_id\":\"test_workos_subject\"}",
+      "expected_digest": "7b055792cf3d48de3d9f4574a7021f2f6ca3281bcbf3cd6555ab005fd87cc69f",
+      "matches": true
+    },
+    {
+      "id": "founder-one-byte-mismatch",
+      "founder": {
+        "kind": "member",
+        "id": "mem_founder",
+        "key": "mky_founder",
+        "sign_pub": "BDcja8JAvFM6l87-xftvptWMfVGf8uZecZ_0RRpuIiGsSGJdMnFxfk9Q0m8E-AiHu4Z9mDV7xcIQSAr8IMwodkM",
+        "kx_pub": "BDcja8JAvFM6l87-xftvptWMfVGf8uZecZ_0RRpuIiGsSGJdMnFxfk9Q0m8E-AiHu4Z9mDV7xcIQSAr8IMwodkM",
+        "certificate_sha256": "7b055792cf3d48de3d9f4574a7021f2f6ca3281bcbf3cd6555ab005fd87cc69f"
+      },
+      "certificate": {
+        "v": 1,
+        "org_id": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "member_id": "mem_founder",
+        "workos_user_id": "test_workos_subjecU",
+        "cert_no": 1,
+        "role": "owner",
+        "reveal": false,
+        "key_holder": true,
+        "member_key_id": "mky_founder",
+        "sign_pub": "BDcja8JAvFM6l87-xftvptWMfVGf8uZecZ_0RRpuIiGsSGJdMnFxfk9Q0m8E-AiHu4Z9mDV7xcIQSAr8IMwodkM",
+        "kx_pub": "BDcja8JAvFM6l87-xftvptWMfVGf8uZecZ_0RRpuIiGsSGJdMnFxfk9Q0m8E-AiHu4Z9mDV7xcIQSAr8IMwodkM",
+        "passkeys": [
+          {
+            "credential_id": "dGVzdC1wdWJsaWMtY3JlZGVudGlhbC1pZA",
+            "cose_key": "pQECAyYgASFYIDcja8JAvFM6l87-xftvptWMfVGf8uZecZ_0RRpuIiGsIlggSGJdMnFxfk9Q0m8E-AiHu4Z9mDV7xcIQSAr8IMwodkM"
+          }
+        ],
+        "state": "active"
+      },
+      "expected_digest": "2455f3f62f34b752440bc0f6764faaf87a1229082224a01ff6cce2d88eef2073",
+      "matches": false
+    },
+    {
+      "id": "founder-key-mismatch",
+      "founder": {
+        "kind": "member",
+        "id": "mem_founder",
+        "key": "mky_other",
+        "sign_pub": "BDcja8JAvFM6l87-xftvptWMfVGf8uZecZ_0RRpuIiGsSGJdMnFxfk9Q0m8E-AiHu4Z9mDV7xcIQSAr8IMwodkM",
+        "kx_pub": "BDcja8JAvFM6l87-xftvptWMfVGf8uZecZ_0RRpuIiGsSGJdMnFxfk9Q0m8E-AiHu4Z9mDV7xcIQSAr8IMwodkM",
+        "certificate_sha256": "7b055792cf3d48de3d9f4574a7021f2f6ca3281bcbf3cd6555ab005fd87cc69f"
+      },
+      "certificate": {
+        "v": 1,
+        "org_id": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "member_id": "mem_founder",
+        "workos_user_id": "test_workos_subject",
+        "cert_no": 1,
+        "role": "owner",
+        "reveal": false,
+        "key_holder": true,
+        "member_key_id": "mky_founder",
+        "sign_pub": "BDcja8JAvFM6l87-xftvptWMfVGf8uZecZ_0RRpuIiGsSGJdMnFxfk9Q0m8E-AiHu4Z9mDV7xcIQSAr8IMwodkM",
+        "kx_pub": "BDcja8JAvFM6l87-xftvptWMfVGf8uZecZ_0RRpuIiGsSGJdMnFxfk9Q0m8E-AiHu4Z9mDV7xcIQSAr8IMwodkM",
+        "passkeys": [
+          {
+            "credential_id": "dGVzdC1wdWJsaWMtY3JlZGVudGlhbC1pZA",
+            "cose_key": "pQECAyYgASFYIDcja8JAvFM6l87-xftvptWMfVGf8uZecZ_0RRpuIiGsIlggSGJdMnFxfk9Q0m8E-AiHu4Z9mDV7xcIQSAr8IMwodkM"
+          }
+        ],
+        "state": "active"
+      },
+      "expected_digest": "7b055792cf3d48de3d9f4574a7021f2f6ca3281bcbf3cd6555ab005fd87cc69f",
+      "matches": false
+    }
+  ]
+}

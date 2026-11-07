@@ -1,0 +1,11 @@
+{
+  "client": {
+    "change_policy": "client_approval_required",
+    "force_class": "restricted",
+    "import_env": "refuse",
+    "path_roots": [],
+    "repo_patterns": [
+      "example-org/client-app"
+    ]
+  }
+}

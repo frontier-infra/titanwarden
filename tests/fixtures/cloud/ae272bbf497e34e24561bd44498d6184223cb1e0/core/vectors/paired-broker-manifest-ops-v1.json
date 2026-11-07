@@ -1,0 +1,42 @@
+{
+  "revision": 1,
+  "description": "Production operational companion generated from merged 177766e. Exact UTF-8 SHA256 including trailing newline.",
+  "files": [
+    {
+      "file": "broker-ops-reports-v1.json",
+      "records": 15,
+      "cases": 4,
+      "sha256": "5439c25def704dfeeae4053adb7cdd1a92630c5cdf9c76f3cdfd089b29d5e9c0"
+    },
+    {
+      "file": "broker-ops-sync-v1.json",
+      "records": 23,
+      "cases": 7,
+      "sha256": "694a312e01a5ee3f6df223400a7a9c0c2a4bcc6e37a255b75041e199eaec2656"
+    },
+    {
+      "file": "broker-ops-versions-v1.json",
+      "records": 23,
+      "cases": 2,
+      "sha256": "3a567e725f2b26b7824202b69c87b81782a99247b287cefdc65f12b264e14f36"
+    },
+    {
+      "file": "broker-ops-keeper-rekey-v1.json",
+      "records": 23,
+      "cases": 3,
+      "sha256": "0373fa19174c6091f04bf60b97aa437269a3cbf4d1e18fea7d173f8bb338d5eb"
+    },
+    {
+      "file": "broker-ops-audit-v1.json",
+      "records": 10,
+      "cases": 3,
+      "sha256": "daebb9e6a1b8504cb8d68c0b7008d407159706b384b5e7c8b13fff819da4949f"
+    },
+    {
+      "file": "broker-ops-scoped-v1.json",
+      "records": 9,
+      "cases": 1,
+      "sha256": "24626da0eb34bfb25dc9ac554138b96e26a989fb3b94da9e8d89c41507342434"
+    }
+  ]
+}

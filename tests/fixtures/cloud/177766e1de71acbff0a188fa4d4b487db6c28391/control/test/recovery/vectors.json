@@ -1,0 +1,716 @@
+{
+  "format": 1,
+  "protocol": "titanwarden-recovery-v1",
+  "fixture_key": "Public test key derived from core vector 000102...1f; never production",
+  "vectors": [
+    {
+      "id": "old-key-reset-cancel-complete-wire",
+      "op": "reset_cancel",
+      "entry": {
+        "v": 2,
+        "org_id": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "seq": 11,
+        "prev_hash": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+        "ts": "2026-10-16T12:00:00.000Z",
+        "kind": "member_key_reset_cancel",
+        "signer": {
+          "kind": "member",
+          "id": "member",
+          "key": "member-key"
+        },
+        "body": {
+          "reset_id": "reset-vector",
+          "member_id": "member",
+          "prior_cert_seq": 4,
+          "request_id": "cancel-vector"
+        }
+      },
+      "state": {
+        "v": 1,
+        "org_id": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "head": {
+          "seq": 10,
+          "hash": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
+        },
+        "root": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc",
+        "certificates": [
+          {
+            "seq": 4,
+            "certificate": {
+              "v": 1,
+              "org_id": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+              "member_id": "member",
+              "workos_user_id": "user-member",
+              "cert_no": 2,
+              "role": "member",
+              "reveal": false,
+              "key_holder": false,
+              "member_key_id": "member-key",
+              "sign_pub": "BDcja8JAvFM6l87-xftvptWMfVGf8uZecZ_0RRpuIiGsSGJdMnFxfk9Q0m8E-AiHu4Z9mDV7xcIQSAr8IMwodkM",
+              "kx_pub": "BDcja8JAvFM6l87-xftvptWMfVGf8uZecZ_0RRpuIiGsSGJdMnFxfk9Q0m8E-AiHu4Z9mDV7xcIQSAr8IMwodkM",
+              "passkeys": [
+                {
+                  "credential_id": "cmVjb3ZlcnktdmVjdG9yLWNyZWRlbnRpYWw",
+                  "cose_key": "pQECAyYgASFYIDcja8JAvFM6l87-xftvptWMfVGf8uZecZ_0RRpuIiGsIlggSGJdMnFxfk9Q0m8E-AiHu4Z9mDV7xcIQSAr8IMwodkM"
+                }
+              ],
+              "state": "active"
+            }
+          }
+        ],
+        "proposals": {},
+        "recovery": null,
+        "recovery_ever_set": false,
+        "founding_broker": null,
+        "used_challenges": [],
+        "founder": null,
+        "founder_pending": null,
+        "recovery_seq": 0,
+        "triggers": {},
+        "brokers": [],
+        "core_commitments": []
+      },
+      "canonical_hex": "7b22626f6479223a7b226d656d6265725f6964223a226d656d626572222c227072696f725f636572745f736571223a342c22726571756573745f6964223a2263616e63656c2d766563746f72222c2272657365745f6964223a2272657365742d766563746f72227d2c226b696e64223a226d656d6265725f6b65795f72657365745f63616e63656c222c226f72675f6964223a226161616161616161616161616161616161616161616161616161616161616161222c22707265765f68617368223a2262626262626262626262626262626262626262626262626262626262626262626262626262626262626262626262626262626262626262626262626262626262222c22736571223a31312c227369676e6572223a7b226964223a226d656d626572222c226b6579223a226d656d6265722d6b6579222c226b696e64223a226d656d626572227d2c227473223a22323032362d31302d31365431323a30303a30302e3030305a222c2276223a327d",
+      "hash": "f300676b025097f2bf53dc5086e380464745b64b850816f63ea2aff112470df7",
+      "public_key": "BDcja8JAvFM6l87-xftvptWMfVGf8uZecZ_0RRpuIiGsSGJdMnFxfk9Q0m8E-AiHu4Z9mDV7xcIQSAr8IMwodkM",
+      "signature": "1wmsIaZaX8RDNjKTXUUWTV8JC74RdG-onlAzNfMR8F2SRXwmhVG0kiBI24yjejuzwd0-YNS1zvvHjclY5-u7QA",
+      "expected": true
+    },
+    {
+      "id": "old-key-reset-cancel-substitution",
+      "op": "reset_cancel",
+      "entry": {
+        "v": 2,
+        "org_id": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "seq": 11,
+        "prev_hash": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+        "ts": "2026-10-16T12:00:00.000Z",
+        "kind": "member_key_reset_cancel",
+        "signer": {
+          "kind": "member",
+          "id": "member",
+          "key": "member-key"
+        },
+        "body": {
+          "reset_id": "different-reset",
+          "member_id": "member",
+          "prior_cert_seq": 4,
+          "request_id": "cancel-vector"
+        }
+      },
+      "state": {
+        "v": 1,
+        "org_id": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "head": {
+          "seq": 10,
+          "hash": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
+        },
+        "root": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc",
+        "certificates": [
+          {
+            "seq": 4,
+            "certificate": {
+              "v": 1,
+              "org_id": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+              "member_id": "member",
+              "workos_user_id": "user-member",
+              "cert_no": 2,
+              "role": "member",
+              "reveal": false,
+              "key_holder": false,
+              "member_key_id": "member-key",
+              "sign_pub": "BDcja8JAvFM6l87-xftvptWMfVGf8uZecZ_0RRpuIiGsSGJdMnFxfk9Q0m8E-AiHu4Z9mDV7xcIQSAr8IMwodkM",
+              "kx_pub": "BDcja8JAvFM6l87-xftvptWMfVGf8uZecZ_0RRpuIiGsSGJdMnFxfk9Q0m8E-AiHu4Z9mDV7xcIQSAr8IMwodkM",
+              "passkeys": [
+                {
+                  "credential_id": "cmVjb3ZlcnktdmVjdG9yLWNyZWRlbnRpYWw",
+                  "cose_key": "pQECAyYgASFYIDcja8JAvFM6l87-xftvptWMfVGf8uZecZ_0RRpuIiGsIlggSGJdMnFxfk9Q0m8E-AiHu4Z9mDV7xcIQSAr8IMwodkM"
+                }
+              ],
+              "state": "active"
+            }
+          }
+        ],
+        "proposals": {},
+        "recovery": null,
+        "recovery_ever_set": false,
+        "founding_broker": null,
+        "used_challenges": [],
+        "founder": null,
+        "founder_pending": null,
+        "recovery_seq": 0,
+        "triggers": {},
+        "brokers": [],
+        "core_commitments": []
+      },
+      "public_key": "BDcja8JAvFM6l87-xftvptWMfVGf8uZecZ_0RRpuIiGsSGJdMnFxfk9Q0m8E-AiHu4Z9mDV7xcIQSAr8IMwodkM",
+      "signature": "1wmsIaZaX8RDNjKTXUUWTV8JC74RdG-onlAzNfMR8F2SRXwmhVG0kiBI24yjejuzwd0-YNS1zvvHjclY5-u7QA",
+      "expected": false
+    },
+    {
+      "id": "recovery-endorser-0",
+      "op": "recovery_endorser",
+      "generator": "owner",
+      "subject": "member",
+      "endorser": "admin",
+      "expected": true
+    },
+    {
+      "id": "recovery-endorser-1",
+      "op": "recovery_endorser",
+      "generator": "owner",
+      "subject": "member",
+      "endorser": "owner",
+      "expected": false
+    },
+    {
+      "id": "recovery-endorser-2",
+      "op": "recovery_endorser",
+      "generator": "owner",
+      "subject": "member",
+      "endorser": "member",
+      "expected": false
+    },
+    {
+      "id": "recovery-endorser-3",
+      "op": "recovery_endorser",
+      "generator": null,
+      "subject": "member",
+      "endorser": "admin",
+      "expected": false
+    },
+    {
+      "id": "encrypted-slot-commitment",
+      "op": "slot_digest",
+      "blob": {
+        "slot_id": "slot-new",
+        "wrapped_priv": "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+        "nonce": "AAAAAAAAAAAAAAAA"
+      },
+      "expected": "6eb137441cfab3a7e9662f4949a4f8adc50b485b2e2b27d597d4829fb74909c2"
+    },
+    {
+      "id": "recovery-claim-complete-wire",
+      "op": "claim",
+      "entry": {
+        "v": 2,
+        "org_id": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "seq": 11,
+        "prev_hash": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+        "ts": "2026-10-16T12:00:00.000Z",
+        "kind": "cert_proposal",
+        "signer": {
+          "kind": "recovery",
+          "id": "recovery"
+        },
+        "body": {
+          "subject": "member",
+          "prior_cert_seq": 4,
+          "requested": {
+            "kind": "recovery_claim",
+            "certificate": {
+              "v": 1,
+              "org_id": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+              "member_id": "member",
+              "workos_user_id": "user-member",
+              "cert_no": 2,
+              "role": "owner",
+              "reveal": false,
+              "key_holder": true,
+              "member_key_id": "claim-member-key",
+              "sign_pub": "BE0LGrZmRR1duMMxr5iBQ2-KE4dLOYTUVGUzSD2Sgh9FSVxZMDyu3_qiMHdO5yeObaMWNkS0c3hyByr3f5GS89w",
+              "kx_pub": "BNChusrqHwPVQlReBke_KChHf6aeAxYovRQiGWP_hpn8gvL8PfKJEcx7JjQrEy53HrPyYwAvyZpa5CL_LiXoyVM",
+              "passkeys": [
+                {
+                  "credential_id": "Y2xhaW0tbmV3LWNyZWRlbnRpYWw",
+                  "cose_key": "pQECAyYgASFYIF4rVQNB2_Jovo-1wVitCQFXcin48iRsPo1IDiH4-nEfIlggXVjWL8B_-7Rf4QKaUDnldpgJN6ESo8sTtxF2BCkJW_M"
+                }
+              ],
+              "state": "active"
+            },
+            "slot": {
+              "slot_id": "claim-slot-new",
+              "member_key_id": "claim-member-key",
+              "kind": "webauthn_prf",
+              "params": {
+                "credential_id": "Y2xhaW0tbmV3LWNyZWRlbnRpYWw",
+                "prf_salt": "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+              },
+              "label": null,
+              "slot_digest": "6eb137441cfab3a7e9662f4949a4f8adc50b485b2e2b27d597d4829fb74909c2"
+            },
+            "recovery_kx_pub": "BDDhyX-2yrH9ONqxb7n5TSCsbEfMaH36u_V4nTOr-AzPxbEvmoKjT5p-nEg6oGeEfjU1AndUm15X0E7f0m92QmM",
+            "recovery_sign_pub": "BPjIUiCJSXgpSI55Fu9UgGjwrY7FCKvuzowHzpQuqdq3lGsK5uBml-ObcLNKUobPRDLbFL2B7zwRtOuNFtLCzcs",
+            "member_wrap": {
+              "omk_generation": 1,
+              "recipient": {
+                "kind": "member_key",
+                "id": "claim-member-key",
+                "kx_pub_sha256": "57a56fd65df5635ce4cf02e07e10c6a65df918d9f811b4198edb19e93bf98958",
+                "wrap_digest": "e1d1e0afe642f108ac606b938855c39689731844f71d57fecdb6ff0f570996f9"
+              }
+            }
+          },
+          "reason": "recovery_claim",
+          "request_id": "request-claim-vector",
+          "authz": {
+            "v": 2,
+            "dom": "titanwarden.com/authz",
+            "org_id": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+            "actor": {
+              "member_id": "member",
+              "member_key_id": "claim-member-key",
+              "credential_id": "Y2xhaW0tbmV3LWNyZWRlbnRpYWw"
+            },
+            "op": "cert_proposal",
+            "target": {
+              "member_id": "member"
+            },
+            "core_change_sha256": "9d377d49788a21aaf4cb4093d46203ae4015ab2ae5995a1cda46e00e8a998267",
+            "policy_head": {
+              "seq": 10,
+              "hash": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
+            },
+            "request_id": "request-claim-vector",
+            "challenge": "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+            "issued_at": "2026-10-16T12:00:00.000Z",
+            "expires_at": "2026-10-16T12:02:00.000Z"
+          },
+          "assertion": {
+            "authorization": {
+              "credential_id": "Y2xhaW0tbmV3LWNyZWRlbnRpYWw",
+              "clientDataJSON": "eyJ0eXBlIjoid2ViYXV0aG4uZ2V0IiwiY2hhbGxlbmdlIjoiTE1DSVc4Sm5lbnF4SWVyMmVvRXNYYU5tSk1ELXgtT0dleHNQbVlhWEZCayIsIm9yaWdpbiI6Imh0dHBzOi8vYXBwLnRpdGFud2FyZGVuLmNvbSJ9",
+              "authenticatorData": "Kgrkuwj6cf7nEuN9A2s87NeD1tSKz4fEsWlqooPyomEFAAAAAA",
+              "signature": "MEUCIQCy_XGt2loidGk-K4SXLIthWlk-r5pIAvxfMxrr3lYGDgIgAPloe0owvwmdTppqdGVfbSsBqXIw6IeGT7Qc2x4x12k"
+            },
+            "possession": [
+              {
+                "credential_id": "Y2xhaW0tbmV3LWNyZWRlbnRpYWw",
+                "clientDataJSON": "eyJ0eXBlIjoid2ViYXV0aG4uZ2V0IiwiY2hhbGxlbmdlIjoiM3p4NUpwUXplX2VNRWl6Q1VrS2p1VnJ4NW10dFZsVWQ1a1RsQVlRSC1vayIsIm9yaWdpbiI6Imh0dHBzOi8vYXBwLnRpdGFud2FyZGVuLmNvbSJ9",
+                "authenticatorData": "Kgrkuwj6cf7nEuN9A2s87NeD1tSKz4fEsWlqooPyomEFAAAAAA",
+                "signature": "MEYCIQCEpRaMzmuI60JLZlTvtIxlf1aAJEGXcYCx-3ofGAOVLAIhAP0_0ka2SeDK2sgYhxE3yRAtKXhEAPO6NHbK5p_oEF25"
+              }
+            ],
+            "subject_signature": "dSXGDNwh2aQMloCe2i8IBSf5FSLzQ1QOlwTagzATJ9GySYWAnhd61yQTPz3d2-Nasryq7dPUNtwYLIktCJDzlw"
+          }
+        }
+      },
+      "private_slot_blob": {
+        "slot_id": "claim-slot-new",
+        "wrapped_priv": "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+        "nonce": "AAAAAAAAAAAAAAAA"
+      },
+      "member_wrap": {
+        "recipient_kind": "member_key",
+        "recipient_id": "claim-member-key",
+        "omk_generation": 1,
+        "eph_pub": "04e398fdcf77b03efe12425dd25b6eedb5be2a8a3b7d818dae6c1ad13e8cf37c5521a5f430e42ea8f672d6b9f0c928533b0cf9136e07300ccf4053d97475bc5c16",
+        "nonce": "2362a8988b5281dd647e58a8",
+        "wrapped_omk": "22c2e26fa84fd48bdf220bdbbc4e9f7d1530e770c7545e693ac28481369f5221cccdfa823cd2f933c998a7cff3865565",
+        "wrap_digest": "e1d1e0afe642f108ac606b938855c39689731844f71d57fecdb6ff0f570996f9"
+      },
+      "canonical_hex": "7b22626f6479223a7b22617373657274696f6e223a7b22617574686f72697a6174696f6e223a7b2261757468656e74696361746f7244617461223a224b67726b75776a366366376e45754e3941327338374e65443174534b7a34664573576c716f6f50796f6d4546414141414141222c22636c69656e74446174614a534f4e223a2265794a306558426c496a6f696432566959585630614734755a32563049697769593268686247786c626d646c496a6f695445314453566334536d356c626e4634535756794d6d567652584e5959553574536b31454c5867745430646c65484e5162566c6857455a4361794973496d39796157647062694936496d68306448427a4f693876595842774c6e527064474675643246795a4756754c6d4e7662534a39222c2263726564656e7469616c5f6964223a225932786861573074626d56334c574e795a57526c626e5270595777222c227369676e6174757265223a224d455543495143795f584774326c6f6964476b2d4b3453584c497468576c6b2d72357049417678664d787272336c59474467496741506c6f65306f7776776d645470707164475666625373427158497736496547543751633278347831326b227d2c22706f7373657373696f6e223a5b7b2261757468656e74696361746f7244617461223a224b67726b75776a366366376e45754e3941327338374e65443174534b7a34664573576c716f6f50796f6d4546414141414141222c22636c69656e74446174614a534f4e223a2265794a306558426c496a6f696432566959585630614734755a32563049697769593268686247786c626d646c496a6f694d3370344e5570775558706c5832564e52576c365131567253327031566e4a344e57313064465a73565751316131527351566c525343317661794973496d39796157647062694936496d68306448427a4f693876595842774c6e527064474675643246795a4756754c6d4e7662534a39222c2263726564656e7469616c5f6964223a225932786861573074626d56334c574e795a57526c626e5270595777222c227369676e6174757265223a224d455943495143457052614d7a6d754936304a4c5a6c54767449786c663161414a454758635943782d336f6647414f564c4149684150305f306b61325365444b3273675968784533795241744b58684541504f364e48624b35705f6f45463235227d5d2c227375626a6563745f7369676e6174757265223a2264535847444e77683261514d6c6f4365326938494253663546534c7a5131514f6c775461677a41544a394779535957416e68643631795154507a3364322d4e6173727971376450554e7477594c496b74434a447a6c77227d2c22617574687a223a7b226163746f72223a7b2263726564656e7469616c5f6964223a225932786861573074626d56334c574e795a57526c626e5270595777222c226d656d6265725f6964223a226d656d626572222c226d656d6265725f6b65795f6964223a22636c61696d2d6d656d6265722d6b6579227d2c226368616c6c656e6765223a2241414141414141414141414141414141414141414141414141414141414141414141414141414141414141222c22636f72655f6368616e67655f736861323536223a2239643337376434393738386132316161663463623430393364343632303361653430313561623261653539393561316364613436653030653861393938323637222c22646f6d223a22746974616e77617264656e2e636f6d2f617574687a222c22657870697265735f6174223a22323032362d31302d31365431323a30323a30302e3030305a222c226973737565645f6174223a22323032362d31302d31365431323a30303a30302e3030305a222c226f70223a22636572745f70726f706f73616c222c226f72675f6964223a226161616161616161616161616161616161616161616161616161616161616161222c22706f6c6963795f68656164223a7b2268617368223a2262626262626262626262626262626262626262626262626262626262626262626262626262626262626262626262626262626262626262626262626262626262222c22736571223a31307d2c22726571756573745f6964223a22726571756573742d636c61696d2d766563746f72222c22746172676574223a7b226d656d6265725f6964223a226d656d626572227d2c2276223a327d2c227072696f725f636572745f736571223a342c22726561736f6e223a227265636f766572795f636c61696d222c22726571756573745f6964223a22726571756573742d636c61696d2d766563746f72222c22726571756573746564223a7b226365727469666963617465223a7b22636572745f6e6f223a322c226b65795f686f6c646572223a747275652c226b785f707562223a22424e43687573727148775056516c5265426b655f4b436848663661654178596f765251694757505f68706e3867764c3850664b4a456378374a6a5172457935334872507959774176795a706135434c5f4c69586f79564d222c226d656d6265725f6964223a226d656d626572222c226d656d6265725f6b65795f6964223a22636c61696d2d6d656d6265722d6b6579222c226f72675f6964223a226161616161616161616161616161616161616161616161616161616161616161222c22706173736b657973223a5b7b22636f73655f6b6579223a227051454341795967415346594946347256514e42325f4a6f766f2d31775669744351465863696e3438695273506f3149446948342d6e4566496c676758566a574c38425f2d37526634514b6155446e6c6470674a4e3645536f3873547478463242436b4a575f4d222c2263726564656e7469616c5f6964223a225932786861573074626d56334c574e795a57526c626e5270595777227d5d2c2272657665616c223a66616c73652c22726f6c65223a226f776e6572222c227369676e5f707562223a224245304c47725a6d52523164754d4d787235694251322d4b4534644c4f5954555647557a53443253676839465356785a4d447975335f71694d48644f3579654f62614d574e6b5330633368794279723366354753383977222c227374617465223a22616374697665222c2276223a312c22776f726b6f735f757365725f6964223a22757365722d6d656d626572227d2c226b696e64223a227265636f766572795f636c61696d222c226d656d6265725f77726170223a7b226f6d6b5f67656e65726174696f6e223a312c22726563697069656e74223a7b226964223a22636c61696d2d6d656d6265722d6b6579222c226b696e64223a226d656d6265725f6b6579222c226b785f7075625f736861323536223a2235376135366664363564663536333563653463663032653037653130633661363564663931386439663831316234313938656462313965393362663938393538222c22777261705f646967657374223a2265316431653061666536343266313038616336303662393338383535633339363839373331383434663731643537666563646236666630663537303939366639227d7d2c227265636f766572795f6b785f707562223a224244446879582d32797248394f4e717862376e35545343736245664d61483336755f56346e544f722d417a50786245766d6f4b6a5435702d6e4567366f476545666a5531416e64556d31355830453766306d3932516d4d222c227265636f766572795f7369676e5f707562223a2242506a495569434a53586770534935354675395567476a7772593746434b76757a6f77487a705175716471336c47734b3575426d6c2d4f62634c4e4b556f625052444c62464c3242377a7752744f754e46744c437a6373222c22736c6f74223a7b226b696e64223a22776562617574686e5f707266222c226c6162656c223a6e756c6c2c226d656d6265725f6b65795f6964223a22636c61696d2d6d656d6265722d6b6579222c22706172616d73223a7b2263726564656e7469616c5f6964223a225932786861573074626d56334c574e795a57526c626e5270595777222c227072665f73616c74223a2241414141414141414141414141414141414141414141414141414141414141414141414141414141414141227d2c22736c6f745f646967657374223a2236656231333734343163666162336137653936363266343934396134663861646335306234383562326532623237643539376434383239666237343930396332222c22736c6f745f6964223a22636c61696d2d736c6f742d6e6577227d7d2c227375626a656374223a226d656d626572227d2c226b696e64223a22636572745f70726f706f73616c222c226f72675f6964223a226161616161616161616161616161616161616161616161616161616161616161222c22707265765f68617368223a2262626262626262626262626262626262626262626262626262626262626262626262626262626262626262626262626262626262626262626262626262626262222c22736571223a31312c227369676e6572223a7b226964223a227265636f76657279222c226b696e64223a227265636f76657279227d2c227473223a22323032362d31302d31365431323a30303a30302e3030305a222c2276223a327d",
+      "hash": "85f8f389f5e6527d5f63496f3478c433185c11875167f58d4d692c4d75970a98",
+      "public_key": "BDcja8JAvFM6l87-xftvptWMfVGf8uZecZ_0RRpuIiGsSGJdMnFxfk9Q0m8E-AiHu4Z9mDV7xcIQSAr8IMwodkM",
+      "signature": "hyHwTFUBpUQEoo5Fp8LInuuryKiHmu6DvnTYkaMRy62HkfIEhznf5kJKk6JkEiUtXDQk95AjSeOs4RmCb2zNVA",
+      "expected": true
+    },
+    {
+      "id": "passkey-binding-context",
+      "op": "binding_context",
+      "entry": {
+        "v": 2,
+        "org_id": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "seq": 11,
+        "prev_hash": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+        "ts": "2026-10-16T12:00:00.000Z",
+        "kind": "member_cert",
+        "signer": {
+          "kind": "member",
+          "id": "owner",
+          "key": "owner-key"
+        },
+        "body": {
+          "requested": {
+            "kind": "member",
+            "certificate": {
+              "v": 1,
+              "org_id": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+              "member_id": "member",
+              "workos_user_id": "user-member",
+              "cert_no": 2,
+              "role": "member",
+              "reveal": false,
+              "key_holder": false,
+              "member_key_id": "member-key",
+              "sign_pub": "BDcja8JAvFM6l87-xftvptWMfVGf8uZecZ_0RRpuIiGsSGJdMnFxfk9Q0m8E-AiHu4Z9mDV7xcIQSAr8IMwodkM",
+              "kx_pub": "BDcja8JAvFM6l87-xftvptWMfVGf8uZecZ_0RRpuIiGsSGJdMnFxfk9Q0m8E-AiHu4Z9mDV7xcIQSAr8IMwodkM",
+              "passkeys": [
+                {
+                  "credential_id": "cmVjb3ZlcnktdmVjdG9yLWNyZWRlbnRpYWw",
+                  "cose_key": "pQECAyYgASFYIDcja8JAvFM6l87-xftvptWMfVGf8uZecZ_0RRpuIiGsIlggSGJdMnFxfk9Q0m8E-AiHu4Z9mDV7xcIQSAr8IMwodkM"
+                }
+              ],
+              "state": "active"
+            }
+          },
+          "passkey_binding": {
+            "mode": "quorum",
+            "member_id": "member",
+            "prior_cert_seq": 4,
+            "reset_id": null,
+            "slots": [
+              {
+                "slot_id": "slot-new",
+                "member_key_id": "member-key",
+                "kind": "webauthn_prf",
+                "params": {
+                  "credential_id": "cmVjb3ZlcnktdmVjdG9yLWNyZWRlbnRpYWw",
+                  "prf_salt": "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                },
+                "label": null,
+                "slot_digest": "6eb137441cfab3a7e9662f4949a4f8adc50b485b2e2b27d597d4829fb74909c2"
+              }
+            ]
+          },
+          "request_id": "request-binding-vector"
+        }
+      },
+      "core_digest": "75b294ca97d1eba6b09510d89b554e9c888bc0ca510bd2e81f55a89a8165ac71",
+      "context_hex": "7477327c706173736b65792d62696e64696e677c61616161616161616161616161616161616161616161616161616161616161617c37356232393463613937643165626136623039353130643839623535346539633838386263306361353130626432653831663535613839613831363561633731",
+      "challenge_hex": "951207f5ee42f9523097aa3b9b7e5f35b5c2ec5c81e9c723a8f06aabdc685dd3"
+    },
+    {
+      "id": "passkey-binding-subject-proof",
+      "op": "subject_signature",
+      "entry": {
+        "v": 2,
+        "org_id": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "seq": 11,
+        "prev_hash": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+        "ts": "2026-10-16T12:00:00.000Z",
+        "kind": "member_cert",
+        "signer": {
+          "kind": "member",
+          "id": "owner",
+          "key": "owner-key"
+        },
+        "body": {
+          "requested": {
+            "kind": "member",
+            "certificate": {
+              "v": 1,
+              "org_id": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+              "member_id": "member",
+              "workos_user_id": "user-member",
+              "cert_no": 2,
+              "role": "member",
+              "reveal": false,
+              "key_holder": false,
+              "member_key_id": "member-key",
+              "sign_pub": "BDcja8JAvFM6l87-xftvptWMfVGf8uZecZ_0RRpuIiGsSGJdMnFxfk9Q0m8E-AiHu4Z9mDV7xcIQSAr8IMwodkM",
+              "kx_pub": "BDcja8JAvFM6l87-xftvptWMfVGf8uZecZ_0RRpuIiGsSGJdMnFxfk9Q0m8E-AiHu4Z9mDV7xcIQSAr8IMwodkM",
+              "passkeys": [
+                {
+                  "credential_id": "cmVjb3ZlcnktdmVjdG9yLWNyZWRlbnRpYWw",
+                  "cose_key": "pQECAyYgASFYIDcja8JAvFM6l87-xftvptWMfVGf8uZecZ_0RRpuIiGsIlggSGJdMnFxfk9Q0m8E-AiHu4Z9mDV7xcIQSAr8IMwodkM"
+                }
+              ],
+              "state": "active"
+            }
+          },
+          "passkey_binding": {
+            "mode": "quorum",
+            "member_id": "member",
+            "prior_cert_seq": 4,
+            "reset_id": null,
+            "slots": [
+              {
+                "slot_id": "slot-new",
+                "member_key_id": "member-key",
+                "kind": "webauthn_prf",
+                "params": {
+                  "credential_id": "cmVjb3ZlcnktdmVjdG9yLWNyZWRlbnRpYWw",
+                  "prf_salt": "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                },
+                "label": null,
+                "slot_digest": "6eb137441cfab3a7e9662f4949a4f8adc50b485b2e2b27d597d4829fb74909c2"
+              }
+            ]
+          },
+          "request_id": "request-binding-vector"
+        }
+      },
+      "public_key": "BDcja8JAvFM6l87-xftvptWMfVGf8uZecZ_0RRpuIiGsSGJdMnFxfk9Q0m8E-AiHu4Z9mDV7xcIQSAr8IMwodkM",
+      "signature": "6YOaOzsEs-n0NoZGqm-sSk97pPQgvXCXc9x3gbBoO9wzXMd99pnyJJeW1Iw5w4_WN12Qe7AeaCyVVggS9FblYg",
+      "expected": true
+    },
+    {
+      "id": "passkey-binding-possession-proof",
+      "op": "possession",
+      "entry": {
+        "v": 2,
+        "org_id": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "seq": 11,
+        "prev_hash": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+        "ts": "2026-10-16T12:00:00.000Z",
+        "kind": "member_cert",
+        "signer": {
+          "kind": "member",
+          "id": "owner",
+          "key": "owner-key"
+        },
+        "body": {
+          "requested": {
+            "kind": "member",
+            "certificate": {
+              "v": 1,
+              "org_id": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+              "member_id": "member",
+              "workos_user_id": "user-member",
+              "cert_no": 2,
+              "role": "member",
+              "reveal": false,
+              "key_holder": false,
+              "member_key_id": "member-key",
+              "sign_pub": "BDcja8JAvFM6l87-xftvptWMfVGf8uZecZ_0RRpuIiGsSGJdMnFxfk9Q0m8E-AiHu4Z9mDV7xcIQSAr8IMwodkM",
+              "kx_pub": "BDcja8JAvFM6l87-xftvptWMfVGf8uZecZ_0RRpuIiGsSGJdMnFxfk9Q0m8E-AiHu4Z9mDV7xcIQSAr8IMwodkM",
+              "passkeys": [
+                {
+                  "credential_id": "cmVjb3ZlcnktdmVjdG9yLWNyZWRlbnRpYWw",
+                  "cose_key": "pQECAyYgASFYIDcja8JAvFM6l87-xftvptWMfVGf8uZecZ_0RRpuIiGsIlggSGJdMnFxfk9Q0m8E-AiHu4Z9mDV7xcIQSAr8IMwodkM"
+                }
+              ],
+              "state": "active"
+            }
+          },
+          "passkey_binding": {
+            "mode": "quorum",
+            "member_id": "member",
+            "prior_cert_seq": 4,
+            "reset_id": null,
+            "slots": [
+              {
+                "slot_id": "slot-new",
+                "member_key_id": "member-key",
+                "kind": "webauthn_prf",
+                "params": {
+                  "credential_id": "cmVjb3ZlcnktdmVjdG9yLWNyZWRlbnRpYWw",
+                  "prf_salt": "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                },
+                "label": null,
+                "slot_digest": "6eb137441cfab3a7e9662f4949a4f8adc50b485b2e2b27d597d4829fb74909c2"
+              }
+            ]
+          },
+          "request_id": "request-binding-vector"
+        }
+      },
+      "passkey": {
+        "credential_id": "cmVjb3ZlcnktdmVjdG9yLWNyZWRlbnRpYWw",
+        "cose_key": "pQECAyYgASFYIDcja8JAvFM6l87-xftvptWMfVGf8uZecZ_0RRpuIiGsIlggSGJdMnFxfk9Q0m8E-AiHu4Z9mDV7xcIQSAr8IMwodkM"
+      },
+      "assertion": {
+        "credential_id": "cmVjb3ZlcnktdmVjdG9yLWNyZWRlbnRpYWw",
+        "clientDataJSON": "eyJ0eXBlIjoid2ViYXV0aG4uZ2V0IiwiY2hhbGxlbmdlIjoibFJJSDllNUMtVkl3bDZvN20zNWZOYlhDN0Z5QjZjY2pxUEJxcTl4b1hkTSIsIm9yaWdpbiI6Imh0dHBzOi8vYXBwLnRpdGFud2FyZGVuLmNvbSJ9",
+        "authenticatorData": "Kgrkuwj6cf7nEuN9A2s87NeD1tSKz4fEsWlqooPyomEFAAAAAA",
+        "signature": "MEUCIGkT9-z_fH1JQlhvrmFTeZUMeW4lmnTidzrOD4f1OhSFAiEAneB8R9p5ijxwCRsuaMLiPbaklJskmE_6mDpE9KLMlKc"
+      },
+      "expected": true
+    },
+    {
+      "id": "different-binding-request",
+      "op": "possession",
+      "entry": {
+        "v": 2,
+        "org_id": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "seq": 11,
+        "prev_hash": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+        "ts": "2026-10-16T12:00:00.000Z",
+        "kind": "member_cert",
+        "signer": {
+          "kind": "member",
+          "id": "owner",
+          "key": "owner-key"
+        },
+        "body": {
+          "requested": {
+            "kind": "member",
+            "certificate": {
+              "v": 1,
+              "org_id": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+              "member_id": "member",
+              "workos_user_id": "user-member",
+              "cert_no": 2,
+              "role": "member",
+              "reveal": false,
+              "key_holder": false,
+              "member_key_id": "member-key",
+              "sign_pub": "BDcja8JAvFM6l87-xftvptWMfVGf8uZecZ_0RRpuIiGsSGJdMnFxfk9Q0m8E-AiHu4Z9mDV7xcIQSAr8IMwodkM",
+              "kx_pub": "BDcja8JAvFM6l87-xftvptWMfVGf8uZecZ_0RRpuIiGsSGJdMnFxfk9Q0m8E-AiHu4Z9mDV7xcIQSAr8IMwodkM",
+              "passkeys": [
+                {
+                  "credential_id": "cmVjb3ZlcnktdmVjdG9yLWNyZWRlbnRpYWw",
+                  "cose_key": "pQECAyYgASFYIDcja8JAvFM6l87-xftvptWMfVGf8uZecZ_0RRpuIiGsIlggSGJdMnFxfk9Q0m8E-AiHu4Z9mDV7xcIQSAr8IMwodkM"
+                }
+              ],
+              "state": "active"
+            }
+          },
+          "passkey_binding": {
+            "mode": "quorum",
+            "member_id": "member",
+            "prior_cert_seq": 4,
+            "reset_id": null,
+            "slots": [
+              {
+                "slot_id": "slot-new",
+                "member_key_id": "member-key",
+                "kind": "webauthn_prf",
+                "params": {
+                  "credential_id": "cmVjb3ZlcnktdmVjdG9yLWNyZWRlbnRpYWw",
+                  "prf_salt": "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                },
+                "label": null,
+                "slot_digest": "6eb137441cfab3a7e9662f4949a4f8adc50b485b2e2b27d597d4829fb74909c2"
+              }
+            ]
+          },
+          "request_id": "different-request"
+        }
+      },
+      "passkey": {
+        "credential_id": "cmVjb3ZlcnktdmVjdG9yLWNyZWRlbnRpYWw",
+        "cose_key": "pQECAyYgASFYIDcja8JAvFM6l87-xftvptWMfVGf8uZecZ_0RRpuIiGsIlggSGJdMnFxfk9Q0m8E-AiHu4Z9mDV7xcIQSAr8IMwodkM"
+      },
+      "assertion": {
+        "credential_id": "cmVjb3ZlcnktdmVjdG9yLWNyZWRlbnRpYWw",
+        "clientDataJSON": "eyJ0eXBlIjoid2ViYXV0aG4uZ2V0IiwiY2hhbGxlbmdlIjoibFJJSDllNUMtVkl3bDZvN20zNWZOYlhDN0Z5QjZjY2pxUEJxcTl4b1hkTSIsIm9yaWdpbiI6Imh0dHBzOi8vYXBwLnRpdGFud2FyZGVuLmNvbSJ9",
+        "authenticatorData": "Kgrkuwj6cf7nEuN9A2s87NeD1tSKz4fEsWlqooPyomEFAAAAAA",
+        "signature": "MEUCIGkT9-z_fH1JQlhvrmFTeZUMeW4lmnTidzrOD4f1OhSFAiEAneB8R9p5ijxwCRsuaMLiPbaklJskmE_6mDpE9KLMlKc"
+      },
+      "expected": false
+    },
+    {
+      "id": "different-binding-member",
+      "op": "possession",
+      "entry": {
+        "v": 2,
+        "org_id": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "seq": 11,
+        "prev_hash": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+        "ts": "2026-10-16T12:00:00.000Z",
+        "kind": "member_cert",
+        "signer": {
+          "kind": "member",
+          "id": "owner",
+          "key": "owner-key"
+        },
+        "body": {
+          "requested": {
+            "kind": "member",
+            "certificate": {
+              "v": 1,
+              "org_id": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+              "member_id": "member",
+              "workos_user_id": "user-member",
+              "cert_no": 2,
+              "role": "member",
+              "reveal": false,
+              "key_holder": false,
+              "member_key_id": "member-key",
+              "sign_pub": "BDcja8JAvFM6l87-xftvptWMfVGf8uZecZ_0RRpuIiGsSGJdMnFxfk9Q0m8E-AiHu4Z9mDV7xcIQSAr8IMwodkM",
+              "kx_pub": "BDcja8JAvFM6l87-xftvptWMfVGf8uZecZ_0RRpuIiGsSGJdMnFxfk9Q0m8E-AiHu4Z9mDV7xcIQSAr8IMwodkM",
+              "passkeys": [
+                {
+                  "credential_id": "cmVjb3ZlcnktdmVjdG9yLWNyZWRlbnRpYWw",
+                  "cose_key": "pQECAyYgASFYIDcja8JAvFM6l87-xftvptWMfVGf8uZecZ_0RRpuIiGsIlggSGJdMnFxfk9Q0m8E-AiHu4Z9mDV7xcIQSAr8IMwodkM"
+                }
+              ],
+              "state": "active"
+            }
+          },
+          "passkey_binding": {
+            "mode": "quorum",
+            "member_id": "other",
+            "prior_cert_seq": 4,
+            "reset_id": null,
+            "slots": [
+              {
+                "slot_id": "slot-new",
+                "member_key_id": "member-key",
+                "kind": "webauthn_prf",
+                "params": {
+                  "credential_id": "cmVjb3ZlcnktdmVjdG9yLWNyZWRlbnRpYWw",
+                  "prf_salt": "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                },
+                "label": null,
+                "slot_digest": "6eb137441cfab3a7e9662f4949a4f8adc50b485b2e2b27d597d4829fb74909c2"
+              }
+            ]
+          },
+          "request_id": "request-binding-vector"
+        }
+      },
+      "passkey": {
+        "credential_id": "cmVjb3ZlcnktdmVjdG9yLWNyZWRlbnRpYWw",
+        "cose_key": "pQECAyYgASFYIDcja8JAvFM6l87-xftvptWMfVGf8uZecZ_0RRpuIiGsIlggSGJdMnFxfk9Q0m8E-AiHu4Z9mDV7xcIQSAr8IMwodkM"
+      },
+      "assertion": {
+        "credential_id": "cmVjb3ZlcnktdmVjdG9yLWNyZWRlbnRpYWw",
+        "clientDataJSON": "eyJ0eXBlIjoid2ViYXV0aG4uZ2V0IiwiY2hhbGxlbmdlIjoibFJJSDllNUMtVkl3bDZvN20zNWZOYlhDN0Z5QjZjY2pxUEJxcTl4b1hkTSIsIm9yaWdpbiI6Imh0dHBzOi8vYXBwLnRpdGFud2FyZGVuLmNvbSJ9",
+        "authenticatorData": "Kgrkuwj6cf7nEuN9A2s87NeD1tSKz4fEsWlqooPyomEFAAAAAA",
+        "signature": "MEUCIGkT9-z_fH1JQlhvrmFTeZUMeW4lmnTidzrOD4f1OhSFAiEAneB8R9p5ijxwCRsuaMLiPbaklJskmE_6mDpE9KLMlKc"
+      },
+      "expected": false
+    },
+    {
+      "id": "maximum-age-299",
+      "op": "maximum_policy_age",
+      "value": 299,
+      "expected": false
+    },
+    {
+      "id": "maximum-age-300",
+      "op": "maximum_policy_age",
+      "value": 300,
+      "expected": true
+    },
+    {
+      "id": "maximum-age-3600",
+      "op": "maximum_policy_age",
+      "value": 3600,
+      "expected": true
+    },
+    {
+      "id": "maximum-age-86400",
+      "op": "maximum_policy_age",
+      "value": 86400,
+      "expected": true
+    },
+    {
+      "id": "maximum-age-86401",
+      "op": "maximum_policy_age",
+      "value": 86401,
+      "expected": false
+    },
+    {
+      "id": "maximum-age-300.5",
+      "op": "maximum_policy_age",
+      "value": 300.5,
+      "expected": false
+    },
+    {
+      "id": "maximum-age-null",
+      "op": "maximum_policy_age",
+      "value": null,
+      "expected": false
+    },
+    {
+      "id": "maximum-age-3600",
+      "op": "maximum_policy_age",
+      "value": "3600",
+      "expected": false
+    }
+  ]
+}

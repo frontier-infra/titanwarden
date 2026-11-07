@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+  <key>Label</key>
+  <string>org.frontierinfra.titanwarden</string>
+  <key>ProgramArguments</key>
+  <array>
+    <string>/Users/USERNAME/.titanwarden/current/.venv/bin/python</string>
+    <string>-m</string>
+    <string>tw.broker</string>
+    <string>--home</string>
+    <string>/Users/USERNAME/.titanwarden</string>
+    <string>--desk-identity</string>
+    <string>master</string>
+    <string>--desk-project</string>
+    <string>master</string>
+  </array>
+  <key>RunAtLoad</key>
+  <true/>
+  <key>KeepAlive</key>
+  <true/>
+  <key>ProcessType</key>
+  <string>Interactive</string>
+  <key>StandardOutPath</key>
+  <string>/Users/USERNAME/.titanwarden/log/broker.out.log</string>
+  <key>StandardErrorPath</key>
+  <string>/Users/USERNAME/.titanwarden/log/broker.err.log</string>
+</dict>
+</plist>
